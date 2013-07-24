@@ -1,11 +1,11 @@
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
+require 'rdoc/task'
 
 desc 'Default: run unit tests.'
 task :default => :test
 
-desc 'Test the casein gem.'
+desc 'Test the Casein gem.'
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.libs << 'test'
@@ -13,7 +13,7 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = true
 end
 
-desc 'Generate documentation for the casein gem.'
+desc 'Generate documentation for the Casein gem.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'Casein'
@@ -27,13 +27,13 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "casein"
     gem.summary = "A lightweight Ruby on Rails CMS."
-    gem.description = "Casein is an open-source CMS for Ruby on Rails, originally developed by Spoiled Milk."
+    gem.description = "Casein is an open-source CMS for Ruby on Rails."
     gem.files = Dir["Gemfile", "MIT-LICENSE", "Rakefile", "README.rdoc", "PUBLIC_VERSION.yml", "{lib}/**/*", "{app}/**/*", "{config}/**/*"]
     gem.email = "mail@russellquinn.com"
-    gem.authors = ["Russell Quinn", "Spoiled Milk"]
-    gem.homepage = "http://github.com/spoiledmilk/casein3"
-    gem.add_dependency("will_paginate", ["3.0.0"])
-    gem.add_dependency("authlogic", ["3.0.3"])
+    gem.authors = ["Russell Quinn"]
+    gem.homepage = "http://github.com/russellquinn/casein"
+    gem.add_dependency("will_paginate", ["3.0.4"])
+    gem.add_dependency("authlogic", ["3.3.0"])
   end
 rescue
   puts "Jeweler or one of its dependencies is not installed."

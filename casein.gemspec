@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{casein}
-  s.version = "3.1.11"
+  s.name = "casein"
+  s.version = "4.0.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Russell Quinn", "Spoiled Milk"]
-  s.date = %q{2011-09-15}
-  s.description = %q{Casein is an open-source CMS for Ruby on Rails, originally developed by Spoiled Milk.}
-  s.email = %q{mail@russellquinn.com}
+  s.authors = ["Russell Quinn"]
+  s.date = "2013-07-24"
+  s.description = "Casein is an open-source CMS for Ruby on Rails."
+  s.email = "mail@russellquinn.com"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -91,27 +91,27 @@ Gem::Specification.new do |s|
     "lib/generators/casein/update/update_generator.rb",
     "lib/railties/tasks.rake"
   ]
-  s.homepage = %q{http://github.com/spoiledmilk/casein3}
+  s.homepage = "http://github.com/russellquinn/casein"
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.3}
-  s.summary = %q{A lightweight Ruby on Rails CMS.}
+  s.rubygems_version = "2.0.5"
+  s.summary = "A lightweight Ruby on Rails CMS."
 
   if s.respond_to? :specification_version then
-    s.specification_version = 3
+    s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<casein>, [">= 0"])
-      s.add_runtime_dependency(%q<will_paginate>, ["= 3.0.0"])
-      s.add_runtime_dependency(%q<authlogic>, ["= 3.0.3"])
+      s.add_runtime_dependency(%q<will_paginate>, ["= 3.0.4"])
+      s.add_runtime_dependency(%q<authlogic>, ["= 3.3.0"])
     else
       s.add_dependency(%q<casein>, [">= 0"])
-      s.add_dependency(%q<will_paginate>, ["= 3.0.0"])
-      s.add_dependency(%q<authlogic>, ["= 3.0.3"])
+      s.add_dependency(%q<will_paginate>, ["= 3.0.4"])
+      s.add_dependency(%q<authlogic>, ["= 3.3.0"])
     end
   else
     s.add_dependency(%q<casein>, [">= 0"])
-    s.add_dependency(%q<will_paginate>, ["= 3.0.0"])
-    s.add_dependency(%q<authlogic>, ["= 3.0.3"])
+    s.add_dependency(%q<will_paginate>, ["= 3.0.4"])
+    s.add_dependency(%q<authlogic>, ["= 3.3.0"])
   end
 end
 
