@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
     resources :users do
       member do
-        put :update_password, :reset_password
+        patch :update_password, :reset_password
       end
     end
     
