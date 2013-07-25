@@ -1,67 +1,101 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<title><%= casein_generate_page_title %></title>
-		<% casein_config_stylesheet_includes.each do |stylesheet| %>
-			<%= stylesheet_link_tag(stylesheet) %>
-		<% end %>
-		
-		<% casein_config_javascript_includes.each do |javascript| %>
-			<%= javascript_include_tag(javascript) %>
-		<% end %>
+  	<title><%= casein_generate_page_title %></title>
+  	<% casein_config_stylesheet_includes.each do |stylesheet| %>
+  		<%= stylesheet_link_tag(stylesheet) %>
+  	<% end %>
+  	
+  	<% casein_config_javascript_includes.each do |javascript| %>
+  		<%= javascript_include_tag(javascript) %>
+  	<% end %>
 
-		<%= csrf_meta_tag %>
-	</head>
-	<body>
-		<div id="header">
-			<h1><%= link_to(image_tag(casein_config_logo, :alt => casein_config_website_name), :controller => :casein) %></h1>
-			<div id="dashboard">
-				<% if @session_user != nil %>
-				<ul>
-					<li>Hello <%= @session_user.name %></li>
-					<li><%= Time.zone.name %></li>
-					<li><%= link_to 'Profile', casein_user_path(@session_user) %></li>
-					<li class="lastItem"><%= link_to 'Logout', casein_user_session_path, :method => :delete %></li>
-				</ul>	
-				<% end %>
-			</div>
-			<div id="navigation">
-				<ul>
-					<%= render :partial => '/casein/layouts/left_navigation' %>
-				</ul>		
-			</div>
-			<div id="altNavigation">
-				<ul>
-					<% if @session_user.is_admin? %>
-						<li><%= link_to 'Users', casein_users_path %></li>
-					<% end %>
-					<%= render :partial => '/casein/layouts/right_navigation' %>
-				</ul>
-			</div>
-		</div>
-		<div id="rightBar">
-			<div class="spacer"></div>
-			<ul>
-				<%= yield :sidebar %>
-			</ul>
-		</div>
-		<div id="content">
-			<div id="data">
-				<% if flash[:warning] %>
-					<div id="error">
-						<%= flash[:warning] %>
-					</div>
-				<% end %>
-				<% if flash[:notice] %>
-					<div id="notice">
-						<%= flash[:notice] %>
-					</div>
-				<% end %>
-				<%= yield %>
-			</div>
-		</div>
-	</body>
+  	<%= csrf_meta_tag %>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <%= javascript_include_tag("casein/html5shiv") %>
+    <![endif]-->
+
+  </head>
+
+  <body>
+    <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <% if @session_user != nil %>
+            <div id="user-info">
+              <ul>
+                <li class="hideable">Hello <%= @session_user.name %></li>
+                <li class="hideable"><%= Time.zone.name %></li>
+                <li><%= link_to 'Profile', casein_user_path(@session_user) %></li>
+
+              <% if @session_user.is_admin? %>
+                <li><%= link_to 'Edit users', casein_users_path %></li>
+              <% end %>
+
+                <li class="last-item"><%= link_to 'Sign out', casein_user_session_path, :method => :delete %></li>
+              </ul>
+            </div>
+          <% end %>
+          <%= link_to(image_tag(casein_config_logo, :alt => casein_config_website_name), {:controller => :casein}, :class => "brand") %>
+        </div>
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar btn-categories" data-toggle="collapse" data-target=".nav-collapse">
+            <div class="btn-navbar-left">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </div>
+            <div class="btn-navbar-right">
+              Browse
+            </div>
+          </button>       
+          <div class="nav-collapse collapse"> 
+            <ul class="nav top-nav-padding">
+              <%= render :partial => '/casein/layouts/left_navigation' %>
+              <%= render :partial => '/casein/layouts/right_navigation' %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+       <div class="span9">
+          <% if flash[:warning] %>
+            <div id="error">
+              <%= flash[:warning] %>
+            </div>
+          <% end %>
+          <% if flash[:notice] %>
+            <div id="notice">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+          <%= yield %>
+        </div>
+        <div class="span3">
+          <div class="sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Sidebar</li>
+              <%= yield :sidebar %>
+            </ul>
+          </div>
+        </div>
+       
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+
+    </div>
+  </body>
 </html>

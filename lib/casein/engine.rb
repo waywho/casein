@@ -5,7 +5,7 @@ module Casein
   class Engine < Rails::Engine
     
     initializer "casein.assets.precompile" do |app|
-      app.config.assets.precompile += %w(casein/login.js casein/login.css casein/casein.css casein/casein.js casein/custom.css.scss casein/custom.js casein/*.png casein/login/*.png casein/icons/*.png)
+      app.config.assets.precompile += %w(casein/login.css casein/casein.css casein/casein.js casein/html5shiv.js casein/custom.css.scss casein/custom.js casein/*.png)
     end
 
     rake_tasks do

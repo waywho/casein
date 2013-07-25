@@ -1,4 +1,93 @@
 /*
- *= require ./elements.css.scss
- *= require ./screen.css.scss
+ *= require ./bootstrap.css.scss
+ *= require ./bootstrap-responsive.css.scss
 */
+
+body {
+	padding-top: 0px;
+	padding-bottom: 40px;
+}
+
+.navbar {
+	margin-bottom: 30px;
+}
+
+.sidebar-nav {
+	padding: 9px 0;
+}
+
+@media (max-width: 980px) {
+	/* Enable use of floated navbar text */
+	.navbar-text.pull-right {
+		float: none;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.hideable {
+		display: none;
+	}
+}
+
+.navbar .btn-categories {
+	float: left;
+	color: #666;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
+	margin-bottom: 10px;
+}
+
+.btn-navbar-left {
+	float: left;
+	padding-right: 5px;
+}
+
+.btn-navbar-right {
+	float: right;
+	padding-left: 5px;
+}
+
+.top-nav-padding {
+	padding-bottom: 10px;
+}
+
+.navbar .btn-categories:hover,
+.navbar .btn-categories:focus,
+.navbar .btn-categories:active,
+.navbar .btn-categories.active,
+.navbar .btn-categories.disabled,
+.navbar .btn-categories[disabled] {
+  color: #666;
+}
+
+#user-info {
+	font-size: 11px;
+	height: auto;
+	margin-top: 10px;
+}
+
+#user-info ul {
+	list-style: none;
+	float: right;
+}
+
+#user-info li {
+	float: left;
+	border-right: 1px solid #ccc;
+	padding: 0 10px 0 0;
+	margin: 0 0 0 10px;
+	color: #777;
+}
+
+#user-info li.last-item {
+	border-right: none;
+}
+
+#user-info li a {
+	color: #555;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#user-info li a:hover {
+	color: #000;
+}
