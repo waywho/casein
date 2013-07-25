@@ -18,7 +18,7 @@ module Casein
     end
   
     def create
-      @casein_user = Casein::User.new params[:casein_user]
+      @casein_user = Casein::User.new casein_user_params
     
       if @casein_user.save
         flash[:notice] = "An email has been sent to " + @casein_user.name + " with the new account details"
@@ -38,7 +38,7 @@ module Casein
       @casein_user = Casein::User.find params[:id]
       @casein_page_title = @casein_user.name + " | Update User"
 
-      if @casein_user.update_attributes params[:casein_user]
+      if @casein_user.update_attributes casein_user_params
         flash[:notice] = @casein_user.name + " has been updated"
       else
         flash.now[:warning] = "There were problems when trying to update this user"
@@ -58,7 +58,7 @@ module Casein
       @casein_page_title = @casein_user.name + " | Update Password"
        
       if @casein_user.valid_password? params[:form_current_password]
-        if @casein_user.update_attributes params[:casein_user]
+        if @casein_user.update_attributes casein_user_params
           flash.now[:notice] = "Your password has been changed"
         else
           flash.now[:warning] = "There were problems when trying to change the password"
@@ -76,7 +76,7 @@ module Casein
        
       @casein_user.notify_of_new_password = true unless @casein_user.id == @session_user.id
       
-      if @casein_user.update_attributes params[:casein_user]
+      if @casein_user.update_attributes casein_user_params
         if @casein_user.id == @session_user.id
           flash.now[:notice] = "Your password has been reset"
         else    
@@ -97,6 +97,12 @@ module Casein
       end
       redirect_to casein_users_path
     end
+
+    private
+
+      def casein_user_params
+        params.require(:casein_user).permit(:login, :name, :email, :time_zone, :access_level, :password, :password_confirmation)
+      end
  
   end
 end
