@@ -1,30 +1,33 @@
-=Casein - a lightweight Ruby on Rails CMS.
+=Casein - a lightweight Ruby on Rails CMS
 
-=WORK IN PROGRESS FOR A RAILS 4.x VERSION
+**WORK IN PROGRESS FOR A RAILS 4.x VERSION**
 
-Casein is a plugin that provides scaffolding generators and helper functions to quickly create a clean and minimal CRUD (Create, Read, Update and Delete) interface for your data. It also comes with a pre-rolled user authentication system. As Casein is completely decoupled from the front-end, it can be added to a new or existing Rails project, or used as a standalone CMS to drive platforms built on other technologies.
+Casein is a Rails 4.x gem that provides scaffolding generators and helper functions to quickly create a clean and minimal CRUD (Create, Read, Update and Delete) interface for your data. It also comes with a pre-rolled user authentication system. As Casein is completely decoupled from the front-end, it can be added to a new or existing Rails project, or used as a standalone CMS to drive platforms built on other technologies.
+
+==Requirements
 
 This version of Casein is designed for Ruby on Rails 4.x and Ruby 2.x.
 
-For a legacy version that is compatible with Rails 3.x, see: http://github.com/spoiledmilk/casein3, for one that is compatible with Rails 2.x, see: http://github.com/spoiledmilk/casein
+Legacy versions:
+
+Rail 3.x: http://github.com/spoiledmilk/casein3
+Rails 2.x: http://github.com/spoiledmilk/casein
 
 ==Disclaimer
 
-Casein is the in-house CMS framework used by digital agency Spoiled Milk and is being used in many live production websites. This open source project is an attempt to extract and share the core.
+Casein was created and is maintained by Russell Quinn (http://www.russellquinn.com)
+
+Previous versions of Casein were sponsored by Spoiled Milk (http://www.spoiledmilk.com)
 
 Casein is available to use under the terms of the MIT License. See the LICENSE file for more details.
 
-Casein is sponsored by Spoiled Milk (http://www.spoiledmilk.dk) and maintained by Russell Quinn (http://www.russellquinn.com)
+==What’s New
 
-Casein 3.x is built for Ruby on Rails 3 and has the following major updates:
+Casein 4.x built for Ruby on Rails 3 and has the following major updates:
 
-* Authentication changed to use Authlogic
-* Supplied as a gem
-* Runs as an Engine
-* Now properly namespaced
-* Timezone support
-* Rails 3 compatibility fixes
-* Many other tweaks and improvements over Casein 2.x
+* Support for strong parameters
+* Rails 4 compatibility fixes
+* Many other tweaks and improvements over Casein 3.x
 
 ==Installation
 
@@ -40,21 +43,7 @@ Casein 3.x is built for Ruby on Rails 3 and has the following major updates:
 	
 — If you have just created a new project, then remember to add your database details to /config/database.yml at this point.
 
-— These installation instructions also assume that you have set up your RAILS_ENV environment variable.
-
-— To enable Casein notification emails (used for new users and forgotten passwords) then add your SMTP server information to your initializers. For example create a new file called initializers/setup_mail.rb and add the following to it:
-
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.raise_delivery_errors = false
-  ActionMailer::Base.smtp_settings = {
-    :enable_starttls_auto => false,
-    :address => "mail.yourdomain.com",
-    :port => 25,
-    :domain => "yourdomain.com",
-    :user_name => "donotreply@yourdomain.com",
-    :password => "whatever",
-    :authentication => :login
-  }
+— To enable Casein notification emails (used for new users and forgotten passwords) then add your SMTP server information to your initializers. For development, you can use something cool like MailCatcher (http://mailcatcher.me)
 
 — Install Casein configuration files into your project. This should not be run more than once without backing up or merging the generated files, as your customisations will be overwritten:
 
