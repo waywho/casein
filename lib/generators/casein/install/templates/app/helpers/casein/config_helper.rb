@@ -17,7 +17,7 @@ module Casein
       if ENV['RAILS_ENV'] == 'production'
         'http://www.caseincms.com'
       else
-        'http://localhost:3000'
+        'http://0.0.0.0:3000'
       end
     end
 
