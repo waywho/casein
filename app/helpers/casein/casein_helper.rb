@@ -58,11 +58,11 @@ module Casein
     end
 	
   	def casein_show_icon icon_name
-  		"<div class='icon'><img src='/assets/casein/icons/#{icon_name}.png' alt='' /></div>".html_safe
+  		"<div class='icon'>".html_safe + image_tag("casein/icons/#{icon_name}.png", :alt => "") + "</div>".html_safe
   	end
 	
   	def casein_show_row_icon icon_name
-  		"<div class='iconRow'><img src='/assets/casein/icons/#{icon_name}.png' alt='' /></div>".html_safe
+      "<div class='iconRow'>".html_safe + image_tag("casein/icons/#{icon_name}.png", :alt => "") + "</div>".html_safe
   	end
 	
   	# Styled form tag helpers

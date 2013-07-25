@@ -9,7 +9,7 @@ module Casein
 
     # URL to the logo used for the login screen and top banner - it should be a transparent PNG
     def casein_config_logo
-      '/assets/casein/casein.png'
+      'casein/casein.png'
     end
 
     # The server hostname where Casein will run
