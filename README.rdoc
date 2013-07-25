@@ -24,7 +24,7 @@ Casein is available to use under the terms of the MIT License. See the LICENSE f
 
 ==What’s New
 
-Casein 4.x built for Ruby on Rails 3 and has the following major updates:
+Casein 4.x is built for Ruby on Rails 4.x and has the following major updates:
 
 * Support for strong parameters
 * Support for asset pipeline
