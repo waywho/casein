@@ -217,6 +217,10 @@ e.g.
 
   match ':controller(/:action(/:id(.:format)))', :constraints => Casein::RouteConstraint.new
 
+===Default Timezone
+
+Every Casein user can set their own timezone via their profile. To change the default timezone for new users, set config.time_zone in your app.
+
 ==Acknowledgements
 
 The icons used in Casein were created by Mark James and are licensed under the Creative Commons Attribution 2.5 License (http://creativecommons.org/licenses/by/2.5/). The full series of icons are available here: http://www.famfamfam.com/lab/icons/silk/
