@@ -27,6 +27,7 @@ Casein is available to use under the terms of the MIT License. See the LICENSE f
 Casein 4.x built for Ruby on Rails 3 and has the following major updates:
 
 * Support for strong parameters
+* Support for asset pipeline
 * Rails 4 compatibility fixes
 * Many other tweaks and improvements over Casein 3.x
 
@@ -51,10 +52,6 @@ There is no real upgrade path from previous versions of Casein. It’s recommend
 — Install Casein configuration files into your project. This should not be run more than once without backing up or merging the generated files, as your customisations will be overwritten:
 
   rails g casein:install
-	
-— Add Casein assets to your project /public folder. These should not be modified as they may be overwritten in future updates:.
-
-  rails g casein:update
 	
 — Perform a database migration to create the Casein users table:
  
@@ -123,9 +120,9 @@ An ERB partial for the the left navigation tabs. Note that using the scaffolding
 
 An ERB partial for the the right navigation tabs. Note that the ‘users’ tab is added automatically for admin users.
 
-<b>/public/casein/javascripts/custom.js & /public/casein/stylesheets/custom.css</b>
+<b>/assets/javascripts/casein/custom.js & /assets/stylesheets/casein/custom.css</b>
 
-The Casein assets are located in /public/casein. These are the only two files you should change. They allow you to add custom JavaScript or CSS to your Casein deployment. These files are not overwritten using the ‘rails g casein:update’ command.
+These files are added to your app’s /assets directory. They allow you to add custom JavaScript or CSS to your Casein deployment.
 
 ==Customising
 
