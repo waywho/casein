@@ -27,8 +27,8 @@ module Casein
         copy_file "public/robots.txt", "public/robots.txt"
       
         #blank stylesheets and JavaScript files
-  			copy_file "public/casein/stylesheets/custom.css", "public/casein/stylesheets/custom.css"
-  			copy_file "public/casein/javascripts/custom.js", "public/casein/javascripts/custom.js"
+  			copy_file "app/assets/stylesheets/casein/custom.css", "app/assets/stylesheets/casein/custom.css"
+  			copy_file "app/assets/javascripts/casein/custom.js", "app/assets/javascripts/casein/custom.js"
 			
   			#migrations
   			migration_template 'db/migrate/casein_create_users.rb', "db/migrate/casein_create_users.rb"

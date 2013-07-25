@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Russell Quinn"]
-  s.date = "2013-07-24"
+  s.date = "2013-07-25"
   s.description = "Casein is an open-source CMS for Ruby on Rails."
   s.email = "mail@russellquinn.com"
   s.extra_rdoc_files = [
@@ -21,6 +21,30 @@ Gem::Specification.new do |s|
     "PUBLIC_VERSION.yml",
     "README.rdoc",
     "Rakefile",
+    "app/assets/images/casein/casein.png",
+    "app/assets/images/casein/header.png",
+    "app/assets/images/casein/icons/add.png",
+    "app/assets/images/casein/icons/delete.png",
+    "app/assets/images/casein/icons/table.png",
+    "app/assets/images/casein/login/alertBg.png",
+    "app/assets/images/casein/login/background.png",
+    "app/assets/images/casein/login/bottom.png",
+    "app/assets/images/casein/login/loginBoxBg.png",
+    "app/assets/images/casein/login/loginBoxBottom.png",
+    "app/assets/images/casein/login/loginBoxTop.png",
+    "app/assets/images/casein/login/loginSubmit.png",
+    "app/assets/images/casein/login/recoverSubmit.png",
+    "app/assets/images/casein/login/top.png",
+    "app/assets/images/casein/nav.png",
+    "app/assets/images/casein/rightNav.png",
+    "app/assets/images/casein/rightNavButton.png",
+    "app/assets/images/casein/visitSiteNav.png",
+    "app/assets/javascripts/casein/casein.js",
+    "app/assets/javascripts/casein/login.js",
+    "app/assets/stylesheets/casein/casein.css",
+    "app/assets/stylesheets/casein/elements.css",
+    "app/assets/stylesheets/casein/login.css",
+    "app/assets/stylesheets/casein/screen.css",
     "app/controllers/casein/casein_controller.rb",
     "app/controllers/casein/password_resets_controller.rb",
     "app/controllers/casein/user_sessions_controller.rb",
@@ -45,12 +69,12 @@ Gem::Specification.new do |s|
     "lib/casein/engine.rb",
     "lib/generators/casein/install/USAGE",
     "lib/generators/casein/install/install_generator.rb",
+    "lib/generators/casein/install/templates/app/assets/javascripts/casein/custom.js",
+    "lib/generators/casein/install/templates/app/assets/stylesheets/casein/custom.css",
     "lib/generators/casein/install/templates/app/helpers/casein/config_helper.rb",
     "lib/generators/casein/install/templates/app/views/casein/layouts/_left_navigation.html.erb",
     "lib/generators/casein/install/templates/app/views/casein/layouts/_right_navigation.html.erb",
     "lib/generators/casein/install/templates/db/migrate/casein_create_users.rb",
-    "lib/generators/casein/install/templates/public/casein/javascripts/custom.js",
-    "lib/generators/casein/install/templates/public/casein/stylesheets/custom.css",
     "lib/generators/casein/install/templates/public/robots.txt",
     "lib/generators/casein/scaffold/USAGE",
     "lib/generators/casein/scaffold/scaffold_generator.rb",
@@ -62,33 +86,6 @@ Gem::Specification.new do |s|
     "lib/generators/casein/scaffold/templates/views/index.html.erb",
     "lib/generators/casein/scaffold/templates/views/new.html.erb",
     "lib/generators/casein/scaffold/templates/views/show.html.erb",
-    "lib/generators/casein/update/USAGE",
-    "lib/generators/casein/update/templates/public/casein/images/casein.png",
-    "lib/generators/casein/update/templates/public/casein/images/header.png",
-    "lib/generators/casein/update/templates/public/casein/images/icons/add.png",
-    "lib/generators/casein/update/templates/public/casein/images/icons/delete.png",
-    "lib/generators/casein/update/templates/public/casein/images/icons/table.png",
-    "lib/generators/casein/update/templates/public/casein/images/login/alertBg.png",
-    "lib/generators/casein/update/templates/public/casein/images/login/background.png",
-    "lib/generators/casein/update/templates/public/casein/images/login/bottom.png",
-    "lib/generators/casein/update/templates/public/casein/images/login/loginBoxBg.png",
-    "lib/generators/casein/update/templates/public/casein/images/login/loginBoxBottom.png",
-    "lib/generators/casein/update/templates/public/casein/images/login/loginBoxTop.png",
-    "lib/generators/casein/update/templates/public/casein/images/login/loginSubmit.png",
-    "lib/generators/casein/update/templates/public/casein/images/login/recoverSubmit.png",
-    "lib/generators/casein/update/templates/public/casein/images/login/top.png",
-    "lib/generators/casein/update/templates/public/casein/images/nav.png",
-    "lib/generators/casein/update/templates/public/casein/images/rightNav.png",
-    "lib/generators/casein/update/templates/public/casein/images/rightNavButton.png",
-    "lib/generators/casein/update/templates/public/casein/images/visitSiteNav.png",
-    "lib/generators/casein/update/templates/public/casein/javascripts/casein.js",
-    "lib/generators/casein/update/templates/public/casein/javascripts/jquery.js",
-    "lib/generators/casein/update/templates/public/casein/javascripts/login.js",
-    "lib/generators/casein/update/templates/public/casein/javascripts/rails.js",
-    "lib/generators/casein/update/templates/public/casein/stylesheets/elements.css",
-    "lib/generators/casein/update/templates/public/casein/stylesheets/login.css",
-    "lib/generators/casein/update/templates/public/casein/stylesheets/screen.css",
-    "lib/generators/casein/update/update_generator.rb",
     "lib/railties/tasks.rake"
   ]
   s.homepage = "http://github.com/russellquinn/casein"
@@ -103,15 +100,18 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<casein>, [">= 0"])
       s.add_runtime_dependency(%q<will_paginate>, ["= 3.0.4"])
       s.add_runtime_dependency(%q<authlogic>, ["= 3.3.0"])
+      s.add_runtime_dependency(%q<jquery-rails>, [">= 0"])
     else
       s.add_dependency(%q<casein>, [">= 0"])
       s.add_dependency(%q<will_paginate>, ["= 3.0.4"])
       s.add_dependency(%q<authlogic>, ["= 3.3.0"])
+      s.add_dependency(%q<jquery-rails>, [">= 0"])
     end
   else
     s.add_dependency(%q<casein>, [">= 0"])
     s.add_dependency(%q<will_paginate>, ["= 3.0.4"])
     s.add_dependency(%q<authlogic>, ["= 3.3.0"])
+    s.add_dependency(%q<jquery-rails>, [">= 0"])
   end
 end
 

@@ -1,3 +1,5 @@
+//= require jquery
+
 jQuery(document).ready(function()
 { 
 	if(jQuery("#notice"))

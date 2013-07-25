@@ -64,7 +64,7 @@
 
 #content .openFolder {
 	border-bottom: 1px solid #ddd;
-	background: url(/casein/images/icons/folder.png) no-repeat center left;
+	background: url(/assets/casein/folder.png) no-repeat center left;
 	font-weight: bold;
 	cursor: pointer;
 }

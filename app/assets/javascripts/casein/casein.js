@@ -1,3 +1,5 @@
+//= require jquery
+
 jQuery(document).ready(function()
 {
 	var contentHeight = Math.round(jQuery(window).height() - 130);

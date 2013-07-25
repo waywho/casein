@@ -34,6 +34,7 @@ begin
     gem.homepage = "http://github.com/russellquinn/casein"
     gem.add_dependency("will_paginate", ["3.0.4"])
     gem.add_dependency("authlogic", ["3.3.0"])
+    gem.add_dependency("jquery-rails")
   end
 rescue
   puts "Jeweler or one of its dependencies is not installed."
