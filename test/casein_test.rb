@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Casein3Test < ActiveSupport::TestCase
+class CaseinTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true
