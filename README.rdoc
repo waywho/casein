@@ -75,7 +75,39 @@ The default Casein install supports user authentication. Users may have a status
 
 Casein is a framework allowing you to quickly build up an interface to edit and create new records from your database model. As well as the user support and user interface, there are many configurations and generators to help you along the way.
 
-==Configuration
+==Scaffolding
+
+Casein has a scaffolding generator to automatically create all the CRUD views and controllers for your project models. This is the fastest way to add Casein support to your project.
+
+The command to run the scaffolding generator is:
+
+  rails g casein:scaffold ModelName [field:type, field:type]
+
+Where:
+
+* ModelName – The singular name of your model, e.g. customer
+* field:type – The name of your database fields and their types, e.g. name:string. The field name must match the name in your migrations and the type must be one of the Rails migration types (string, text, integer, float, decimal, datetime, timestamp, time, date, binary, boolean). Note that you do not have to specify all of the fields in your model, but just the ones that you wish to be editable in Casein.
+
+e.g. a typical scaffolding command might look like:
+
+  rails g casein:scaffold customer name:string age:integer date_of_birth:date is_male:boolean
+
+There is one command-line option that can be added to the end of the generate command:
+
+  --create-model-and-migration = Also creates a model and migration. By default the scaffold generator will work from existing models, but this option will generate the model and database migration files for you. This means you can also use Casein to set up a new project quickly as well.
+
+Once the command has been executed, the generator will:
+
+* Add a new tab for the model to: app/views/casein/layouts/_left_navigation.html.erb
+* Create a controller with the name: app/controllers/casein/model_controller.erb
+* Add views for index, new and show to: app/views/casein/model/
+* If you restart and run your application now, you’ll be able to log in to Casein and directly edit and create new instances of your model data right away!
+
+However, you’ll probably want to customise your views and side bars and extend your controller to suit your project. The scaffold generator just sets up the defaults for you.
+
+<em>NOTE: Once you start customising the generated scaffolding files, you should be aware that if you run the generator again you should not overwrite the changed files without backing them up first. The generator will warn you each time it finds a file that you’ve customised. If you run the scaffold generator from a new version of Casein, then you should manually merge your backup and the new file. You can of course however, leave your originals untouched.</em>
+
+==General Configuration
 
 <b>app/helpers/casein/config_helper.rb</b>
 
@@ -95,7 +127,7 @@ The Casein assets are located in /public/casein. These are the only two files yo
 
 ==Customising
 
-Now that you have the basic Casein installed and configured, you’ll want to extend it so that it actually has some functionality for your project!
+Once you have the Casein core installed and configured, and have added support for your models with the scaffolding generator, you’ll want to extend it so that it actually has some functionality for your project!
 
 <b>Rules and conventions</b>
 
@@ -136,38 +168,6 @@ There are several Casein Rake tasks available to manage users. To see what is av
   rake -T
 
 The Casein Rake tasks are all namespaced with ‘casein:’
-
-==Scaffolding
-
-Casein has a scaffolding generator to automatically create all the views and controllers for your project models. This is the fastest way to add Casein support to your project.
-
-The command to run the scaffolding generator is:
-
-  rails g casein:scaffold ModelName [field:type, field:type]
-
-Where:
-
-* ModelName – The singular name of your model, e.g. customer
-* field:type – The name of your database fields and their types, e.g. name:string. The field name must match the name in your migrations and the type must be one of the Rails migration types (string, text, integer, float, decimal, datetime, timestamp, time, date, binary, boolean). Note that you do not have to specify all of the fields in your model, but just the ones that you wish to be editable in Casein.
-
-e.g. a typical scaffolding command might look like:
-
-  rails g casein:scaffold customer name:string age:integer date_of_birth:date is_male:boolean
-
-There is one command-line option that can be added to the end of the generate command:
-
-  --create-model-and-migration = Also creates a model and migration. By default the scaffold generator will work from existing models, but this option will generate the model and database migration files for you. This means you can also use Casein to set up a new project quickly as well.
-
-Once the command has been executed, the generator will:
-
-* Add a new tab for the model to: app/views/casein/layouts/_left_navigation.html.erb
-* Create a controller with the name: app/controllers/casein/model_controller.erb
-* Add views for index, new and show to: app/views/casein/model/
-* If you restart and run your application now, you’ll be able to log in to Casein and directly edit and create new instances of your model data right away!
-
-However, you’ll probably want to customise your views and side bars and extend your controller to suit your project. The scaffold generator just sets up the defaults for you.
-
-<em>NOTE: Once you start customising the generated scaffolding files, you should be aware that if you run the generator again you should not overwrite the changed files without backing them up first. The generator will warn you each time it finds a file that you’ve customised. If you run the scaffold generator from a new version of Casein, then you should manually merge your backup and the new file. You can of course however, leave your originals untouched.</em>
 
 ===Changing form elements / other helpers
 
