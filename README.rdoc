@@ -43,7 +43,7 @@ There is no real upgrade path from previous versions of Casein. It’s recommend
 
 — Then use bundler to install Casein and its dependencies:
 
-  sudo bundle install
+  bundle install
 	
 — If you have just created a new project, then remember to add your database details to /config/database.yml at this point.
 
