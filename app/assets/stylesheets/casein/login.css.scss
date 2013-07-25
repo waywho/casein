@@ -16,7 +16,7 @@ a {
 }
 
 #header {
-	background: #efefef url(casein/login/top.png) repeat-x bottom left;
+	background: #efefef image-url('casein/login/top.png') repeat-x bottom left;
 	padding: 80px 0 40px 0;
 }
 
@@ -32,7 +32,7 @@ a {
 }
 
 #content {
-	background: #fff url(casein/login/bottom.png) repeat-x bottom left;
+	background: #fff image-url('casein/login/bottom.png') repeat-x bottom left;
 	padding: 70px 0;
 }
 
