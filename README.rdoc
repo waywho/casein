@@ -11,6 +11,7 @@ This version of Casein is designed for Ruby on Rails 4.x and Ruby 2.x.
 Legacy versions:
 
 Rail 3.x: http://github.com/spoiledmilk/casein3
+
 Rails 2.x: http://github.com/spoiledmilk/casein
 
 ==Disclaimer
@@ -36,8 +37,8 @@ Casein 4.x built for Ruby on Rails 3 and has the following major updates:
 — Add the Casein gem to your Gemfile:
 
   gem 'casein'
-	
-- Then use bundler to install Casein and its dependencies:
+
+— Then use bundler to install Casein and its dependencies:
 
   sudo bundle install
 	
