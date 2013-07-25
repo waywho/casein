@@ -30,6 +30,8 @@ Casein 4.x built for Ruby on Rails 3 and has the following major updates:
 * Rails 4 compatibility fixes
 * Many other tweaks and improvements over Casein 3.x
 
+There is no real upgrade path from previous versions of Casein. It’s recommended to only use Casein 4.x on new projects.
+
 ==Installation
 
 — Create a new Rails project (or use an existing one) and enter the project directory from a terminal prompt.
