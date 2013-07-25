@@ -1,4 +1,5 @@
 //= require jquery
+//= require jquery_ujs
 
 jQuery(document).ready(function()
 {
