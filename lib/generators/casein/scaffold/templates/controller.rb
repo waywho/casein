@@ -23,7 +23,7 @@ module Casein
     end
 
     def create
-      @<%= singular_name %> = <%= class_name %>.new params[:<%= singular_name %>]
+      @<%= singular_name %> = <%= class_name %>.new <%= singular_name %>_params
     
       if @<%= singular_name %>.save
         flash[:notice] = '<%= singular_name.humanize.capitalize %> created'
@@ -39,7 +39,7 @@ module Casein
       
       @<%= singular_name %> = <%= class_name %>.find params[:id]
     
-      if @<%= singular_name %>.update_attributes params[:<%= singular_name %>]
+      if @<%= singular_name %>.update_attributes <%= singular_name %>_params
         flash[:notice] = '<%= singular_name.humanize.capitalize %> has been updated'
         redirect_to casein_<%= @plural_route %>_path
       else
@@ -56,5 +56,17 @@ module Casein
       redirect_to casein_<%= @plural_route %>_path
     end
   
+    private
+      <%
+          permit_list = ""
+          attributes.each_with_index {|attribute|
+            permit_list += ", " unless permit_list.empty?
+            permit_list += ":#{attribute.name}"
+          }
+      %>
+      def <%= singular_name %>_params
+        params.require(:<%= singular_name %>).permit(<%= permit_list %>)
+      end
+
   end
 end
