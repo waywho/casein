@@ -25,7 +25,7 @@ module Casein
   			return casein_config_website_name
   		end
 		
-  		@casein_page_title + " > " + casein_config_website_name
+  		casein_config_website_name + " > " + @casein_page_title  
   	end
 	
   	def casein_get_access_level_text level
