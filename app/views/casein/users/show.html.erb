@@ -89,6 +89,7 @@
 
 <%= content_for :sidebar do %>
 	<% if @session_user.is_admin? %>
-  	<li><%= link_to "#{casein_show_icon('table')}Back to list".html_safe, casein_users_path %></li>
+		<li class="nav-header">Actions</li>
+  		<li><%= link_to "#{casein_show_icon('th-list')}Back to list".html_safe, casein_users_path %></li>
 	<% end %>
 <% end %>

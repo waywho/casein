@@ -20,7 +20,7 @@ module Casein
       
         #initial view partials
         copy_file "app/views/casein/layouts/_left_navigation.html.erb", "app/views/casein/layouts/_left_navigation.html.erb"
-        copy_file "app/views/casein/layouts/_right_navigation.html.erb", "app/views/casein/layouts/_right_navigation.html.erb"
+        copy_file "app/views/casein/layouts/_top_navigation.html.erb", "app/views/casein/layouts/_top_navigation.html.erb"
       
         #robots.txt
         puts " ** Overwrite if you haven't yet modified your robots.txt, otherwise add disallow rules for /casein and /admin manually **"

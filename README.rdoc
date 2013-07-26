@@ -116,9 +116,9 @@ This is the main Casein configuration file that allows you to change things such
 
 An ERB partial for the the left navigation tabs. Note that using the scaffolding generator will automatically add tabs into this file, but it can also be manually edited and rearranged.
 
-<b>view/casein/layouts/_right_navigation.html.erb</b>
+<b>view/casein/layouts/_top_navigation.html.erb</b>
 
-An ERB partial for the the right navigation tabs. Note that the ‘users’ tab is added automatically for admin users.
+An ERB partial for adding items to the top navigation.
 
 <b>/assets/javascripts/casein/custom.js & /assets/stylesheets/casein/custom.css.scss</b>
 
@@ -141,7 +141,8 @@ The right bar in Casein should be used for view specific actions, e.g. "Add user
 To specify the contents of the sidebar, you must add a 'content_for :sidebar' block in the relevant view file (index, show, etc.) e.g.:
  
   <%= content_for :sidebar do %>
-    <li><%= link_to "#{casein_show_icon('table')}Back to list".html_safe, casein_users_path %></li>
+    <li class="nav-header">Actions</li>
+    <li><%= link_to "#{casein_show_icon('th-list')}Back to list".html_safe, casein_users_path %></li>
   <% end %>
 
 The casein_show_icon function will display any icon present in the /public/casein/images/icons folder. By default this only contains add, delete and table after install. However, more can be added as required by downloading from http://www.famfamfam.com/lab/icons/silk/

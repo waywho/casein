@@ -3,9 +3,37 @@
  *= require ./bootstrap-responsive.css.scss
 */
 
+/* BOOTSTRAP OVERRIDES */
+
 body {
 	padding-top: 0px;
 	padding-bottom: 40px;
+	font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  background-image: image-url('casein/glyphicons-halflings.png');
+}
+
+.icon-white,
+.nav-pills > .active > a > [class^="icon-"],
+.nav-pills > .active > a > [class*=" icon-"],
+.nav-list > .active > a > [class^="icon-"],
+.nav-list > .active > a > [class*=" icon-"],
+.navbar-inverse .nav > .active > a > [class^="icon-"],
+.navbar-inverse .nav > .active > a > [class*=" icon-"],
+.dropdown-menu > li > a:hover > [class^="icon-"],
+.dropdown-menu > li > a:focus > [class^="icon-"],
+.dropdown-menu > li > a:hover > [class*=" icon-"],
+.dropdown-menu > li > a:focus > [class*=" icon-"],
+.dropdown-menu > .active > a > [class^="icon-"],
+.dropdown-menu > .active > a > [class*=" icon-"],
+.dropdown-submenu:hover > a > [class^="icon-"],
+.dropdown-submenu:focus > a > [class^="icon-"],
+.dropdown-submenu:hover > a > [class*=" icon-"],
+.dropdown-submenu:focus > a > [class*=" icon-"] {
+  background-image: image-url('casein/glyphicons-halflings-white.png');
 }
 
 .navbar {
@@ -14,19 +42,6 @@ body {
 
 .sidebar-nav {
 	padding: 9px 0;
-}
-
-@media (max-width: 980px) {
-	/* Enable use of floated navbar text */
-	.navbar-text.pull-right {
-		float: none;
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-
-	.hideable {
-		display: none;
-	}
 }
 
 .navbar .btn-categories {
@@ -50,6 +65,10 @@ body {
 	padding-bottom: 10px;
 }
 
+.top-nav-padding a:first {
+	padding-left: 0px;
+}
+
 .navbar .btn-categories:hover,
 .navbar .btn-categories:focus,
 .navbar .btn-categories:active,
@@ -58,6 +77,8 @@ body {
 .navbar .btn-categories[disabled] {
   color: #666;
 }
+
+/* CASEIN GENERAL */
 
 #user-info {
 	font-size: 11px;
@@ -72,9 +93,9 @@ body {
 
 #user-info li {
 	float: left;
-	border-right: 1px solid #ccc;
-	padding: 0 10px 0 0;
-	margin: 0 0 0 10px;
+	border-right: 1px solid #ddd;
+	padding: 0 10px 0 10px;
+	margin: 0;
 	color: #777;
 }
 
@@ -83,7 +104,7 @@ body {
 }
 
 #user-info li a {
-	color: #555;
+	color: #666;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -91,3 +112,340 @@ body {
 #user-info li a:hover {
 	color: #000;
 }
+
+#user-info li.signout:hover {
+	background-color: #da0404;
+}
+
+#user-info li.signout a:hover {
+	color: #eee;
+}
+
+#user-info li.signout:hover a {
+	color: #eee;
+}
+
+div#content {
+	margin-bottom: 20px;
+}
+
+#content h2 {
+	font-size: 18px;
+	font-weight: normal;
+	color: #111;
+	border-bottom: 2px solid #eee;
+	padding: 0 0 5px 0;
+	margin: 0 0 15px 0;
+	position: relative;
+}
+
+.content-inner {
+	padding-bottom: 20px;
+}
+
+footer p {
+	font-size: 10px;
+	text-align: right;
+	color: #ccc;
+}
+
+footer p a {
+	color: #ccc;
+}
+
+footer p a:hover {
+	color: #aaa;
+}
+
+.icon {
+	height: 14px;
+	width: 14px;
+	padding: 0px 7px 0px 0px;
+	display: block;
+	float: left;
+}
+
+.iconRow {
+	height: 14px;
+	width: 14px;
+	padding: 0px;
+	display: block;
+	float: left;
+}
+
+/* CASEIN TABLES */
+
+#content .itemList {
+	width: 100%;
+	border-bottom: 2px solid #ccc;
+}
+
+#content .itemList .center {
+	text-align: center;
+}
+
+#content .itemList .icon {
+	width: 16px;
+}
+
+#content .itemList th {
+	text-align: left;
+	font-size: 11px;
+	padding: 7px 8px 6px 8px;
+	border-bottom: 2px solid #ccc;
+}
+
+#content .itemList th a {
+	color: #000;
+}
+
+#content .delete {
+	width: 16px;
+	height: 16px;
+	padding: 0px;
+}
+
+#content .delete a {
+	float: left;
+	padding: 0px;
+}
+
+#content .itemList td {
+	font-size: 12px;
+	color: #333;
+	border-bottom: 1px solid #ddd;
+	padding: 14px 8px 12px 8px;
+}
+
+#content .itemList td a {
+	display: block;
+	
+	line-height: 11px;
+	color: #333;
+	text-decoration: none;
+}
+
+#content .itemList tr.hover:hover {
+	background: #e7edfc;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+}
+
+#content .even {
+	background: #f7f7f7;
+}
+
+/* BOOTSTRAP RESPONSIVE OVERRIDES */
+
+@media (max-width: 980px) {
+	/* Enable use of floated navbar text */
+	.navbar-text.pull-right {
+		float: none;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.hideable {
+		display: none;
+	}
+}
+
+
+/* CASEIN 3.x LEGACY STYLES */
+
+/*
+
+#content p {
+	font-size: 12px;
+	margin: 1em 0;
+}
+
+#content h1 {
+	border-bottom: 2px solid #DDDDDD;
+	color: #111111;
+	font-size: 1.2em;
+	font-weight: normal;
+	margin: 0 0 15px 0;
+	padding: 0 0 5px 0;
+}
+
+#content h2 img, #preview h2 img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+
+#content .tfContainer {
+	width: 45%;
+	min-height: 60px;
+	float: left;
+	padding: 0 5% 12px 0;
+}
+
+#content .tfContainer p {
+	margin: 0;
+}
+
+#content .tfContainer div {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+#content .tfContainer .caseinDateSelectWrapper div {
+	float: none;
+	margin: 0px;
+	margin-top: 4px;
+}
+
+#content .tfContainerSecond {
+	padding: 0 0 12px 4%;
+}
+
+#content .tfContainerFullWidth {
+	width: 100%;
+	padding-right: 0px;
+}
+
+#content .help {
+	border-bottom: 5px solid #fce701;
+	background: #fff9bb;
+	padding: 12px 20px 8px 20px;
+	font-size: 12px;
+	color: #111111;
+	margin: 0 0 20px 0;
+	font-style: italic;
+}
+
+#content label {
+	font-size: 12px;
+	color: #333;
+}
+
+#content #error {
+	border-bottom: 5px solid #f48e8e;
+	background: #f7b7b7;
+	padding: 12px 20px 8px 20px;
+	font-size: 12px;
+	color: #801616;
+	margin: 0 0 20px 0;
+}
+
+#content #notice {
+	border-bottom: 5px solid #95ccef;
+	background: #d9ebf6;
+	padding: 12px 20px 8px 20px;
+	font-size: 12px;
+	color: #245574;
+	margin: 0 0 20px 0;
+}
+
+#content .tfContainer .caseinTextField {
+	width: 100%;
+	font-size: 12px;
+	padding: 6px 0 5px 0;
+	margin: 3px 0 0 0;
+}
+
+.formError {
+  padding: 7px 0 0 0;
+	color: #801616;
+}
+
+.formError > input, .formError > textarea {
+	border: 1px solid #801616;
+}
+
+#content .extraOptions {
+	font-size: 11px;
+	padding: 10px 0;
+	cursor: pointer;
+	width: 100px;
+}
+
+#content .extras {
+	padding: 15px;
+	border-top: 2px solid #ddd;
+	border-bottom: 2px solid #ddd;
+	margin: 5px 0;
+	background: #eee;
+	position: relative;
+}
+
+#content .extras .checkboxOptions {
+	padding: 20px 0 20px 0;
+	font-size: 11px;
+	color: #222;
+	font-weight: bold;
+}
+
+#content .invalidForm {
+	color: #993333;
+	border: 1px solid #ff6666;
+}
+
+#content .tfContainer .caseinSelect {
+	width: 100%;
+	margin: 5px 0 0 0;
+}
+
+#content .tfContainer .caseinDateTimeSelect {
+	width: auto;
+	margin: 5px 0 0 0;
+}
+
+#content .tfContainer .caseinFileFieldContainer {
+	width: 350px;
+	padding: 3px 5px 4px 5px;
+	margin: 3px 0 0 0;
+	border: 1px solid #ccc;
+}
+
+#content .caseinTextArea, #content .caseinTextAreaBig {
+	width: 100%;
+	height: 120px;
+	font-family: "Lucida Grande", "Trebuchet MS", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	padding: 6px 0 5px 0;
+	margin: 3px 0 0 0;
+}
+
+#content .caseinTextAreaBig {
+	height: 300px;
+}
+
+#content .rcText {
+	font-size: 11px;
+	color: #333;
+}
+
+#content .submits {
+	text-align: right;
+	font-size: 12px;
+	padding: 10px 10px;
+	background-color: #ddd;
+}
+
+#content .cancel, #content a.negative:link, #content a.negative:visited { 
+	color: #ff0000;
+}
+
+#content .cancel:hover, #content a.negative:visited:hover {
+	color: #990000;
+}
+
+#content .pagination {
+	text-align: center;
+	margin: 20px 0px 0px 0px;
+	font-size: 12px;
+	padding: 10px 10px;
+	background-color: #ddd;
+}
+
+#content .pagination a:link, a:visited { 
+	color: #555;
+}
+
+#content .pagination a:hover, a:visited:hover {
+	color: #000;
+}*/

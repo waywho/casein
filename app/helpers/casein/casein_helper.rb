@@ -1,6 +1,10 @@
 module Casein
   module CaseinHelper
 	
+    def casein_get_footer_string
+      "Based on #{link_to 'Casein', 'http://www.caseincms.com'} #{casein_get_short_version_string}.x technology, an open-source project.".html_safe
+    end
+
 	  def casein_get_version_info  
 	    YAML::load_file File.join(File.dirname(__FILE__), '..', '..', '..', 'PUBLIC_VERSION.yml')
 	  end
@@ -58,11 +62,11 @@ module Casein
     end
 	
   	def casein_show_icon icon_name
-  		"<div class='icon'>".html_safe + image_tag("casein/icons/#{icon_name}.png", :alt => "") + "</div>".html_safe
+  		"<div class='icon'><i class='icon-#{icon_name}'></i></div>".html_safe
   	end
 	
   	def casein_show_row_icon icon_name
-      "<div class='iconRow'>".html_safe + image_tag("casein/icons/#{icon_name}.png", :alt => "") + "</div>".html_safe
+      "<div class='iconRow'><i class='icon-#{icon_name}'></i></div>".html_safe
   	end
 	
   	# Styled form tag helpers

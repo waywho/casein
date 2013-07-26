@@ -33,11 +33,12 @@
                 <li class="hideable"><%= Time.zone.name %></li>
                 <li><%= link_to 'Profile', casein_user_path(@session_user) %></li>
 
-              <% if @session_user.is_admin? %>
-                <li><%= link_to 'Edit users', casein_users_path %></li>
-              <% end %>
+                <% if @session_user.is_admin? %>
+                  <li><%= link_to 'Users', casein_users_path %></li>
+                <% end %>
 
-                <li class="last-item"><%= link_to 'Sign out', casein_user_session_path, :method => :delete %></li>
+                <%= render :partial => '/casein/layouts/top_navigation' %>
+                <li class="last-item signout"><%= link_to 'Sign out', casein_user_session_path, :method => :delete %></li>
               </ul>
             </div>
           <% end %>
@@ -57,16 +58,19 @@
           <div class="nav-collapse collapse"> 
             <ul class="nav top-nav-padding">
               <%= render :partial => '/casein/layouts/left_navigation' %>
-              <%= render :partial => '/casein/layouts/right_navigation' %>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container-fluid">
+    <div id="content" class="container-fluid">
       <div class="row-fluid">
-       <div class="span9">
+        <% if content_for?(:sidebar) %>
+          <div class="span10 content-inner">
+        <% else %>
+          <div class="span12 content-inner">
+        <% end %>
           <% if flash[:warning] %>
             <div id="error">
               <%= flash[:warning] %>
@@ -79,21 +83,22 @@
           <% end %>
           <%= yield %>
         </div>
-        <div class="span3">
-          <div class="sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <%= yield :sidebar %>
-            </ul>
+        <% if content_for?(:sidebar) %>
+          <div class="span2">
+            <div class="sidebar-nav">
+              <ul class="nav nav-list">
+                <%= yield :sidebar %>
+              </ul>
+            </div>
           </div>
-        </div>
-       
+        <% end %>
       </div>
-
-      <hr>
+    </div>
+    <div class="container-fluid">
+      <hr />
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <p><%= casein_get_footer_string %></p>
       </footer>
 
     </div>

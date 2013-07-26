@@ -61,7 +61,7 @@ module Casein
     def add_to_navigation
       puts "   casein     adding #{plural_name} to left navigation bar"
       file_to_update = Rails.root + 'app/views/casein/layouts/_left_navigation.html.erb'
-      line_to_add = "<li id=\"visitSite\"><%= link_to \"#{plural_name.humanize.capitalize}\", casein_#{@plural_route}_path %></li>"
+      line_to_add = "<li><%= link_to \"#{plural_name.humanize.capitalize}\", casein_#{@plural_route}_path %></li>"
       insert_sentinel = '<!-- SCAFFOLD_INSERT -->'
       gsub_add_once plural_name, file_to_update, line_to_add, insert_sentinel
     end

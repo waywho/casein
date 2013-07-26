@@ -1,6 +1,6 @@
 <h2>Users</h2>
 
-<table cellpadding="0" cellspacing="0" id="itemList" class="itemList">
+<table cellpadding="0" cellspacing="0" class="itemList">
 	<tr>
 		<th>Login</th>
 		<th>Name</th>
@@ -21,7 +21,7 @@
 						<% confirm_message += "\n\nWARNING: This is your user account. You will be logged out if you proceed." %>
 					<% end %>
 				
-					<%= link_to(casein_show_row_icon("delete"), casein_user_path(user), :method => :delete, :data => { :confirm => confirm_message }) %>
+					<%= link_to(casein_show_row_icon("trash"), casein_user_path(user), :method => :delete, :data => { :confirm => confirm_message }) %>
 				<% end %>
 			</td>
 		</tr>
@@ -31,5 +31,6 @@
 <%= will_paginate @users %>
 
 <%= content_for :sidebar do %>
-  <li><%= link_to "#{casein_show_icon('add')}Add a new user".html_safe, new_casein_user_path %></li>
+  <li class="nav-header">Actions</li>
+  <li><%= link_to "#{casein_show_icon('plus-sign')}Add a new user".html_safe, new_casein_user_path %></li>
 <% end %>
