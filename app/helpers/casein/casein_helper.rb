@@ -2,7 +2,7 @@ module Casein
   module CaseinHelper
 	
     def casein_get_footer_string
-      "Based on #{link_to 'Casein', 'http://www.caseincms.com'} #{casein_get_short_version_string}.x technology, an open-source project.".html_safe
+      "Running on #{link_to 'Casein', 'http://www.caseincms.com'} #{casein_get_full_version_string}.x technology, an open-source project.".html_safe
     end
 
 	  def casein_get_version_info  
