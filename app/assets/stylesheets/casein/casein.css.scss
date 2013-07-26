@@ -80,6 +80,34 @@ body {
 
 /* CASEIN GENERAL */
 
+#content .help {
+	border: 1px solid #fbed53;
+	background: #fff9bb;
+	padding: 12px 20px 8px 20px;
+	font-size: 12px;
+	color: #111111;
+	margin: 0 0 20px 0;
+	font-style: italic;
+}
+
+#content #error {
+	border: 1px solid #f48e8e;
+	background: #f7b7b7;
+	padding: 12px 20px 8px 20px;
+	font-size: 12px;
+	color: #932828;
+	margin: 0 0 20px 0;
+}
+
+#content #notice {
+	border: 1px solid #95ccef;
+	background: #d9ebf6;
+	padding: 12px 20px 8px 20px;
+	font-size: 12px;
+	color: #245574;
+	margin: 0 0 20px 0;
+}
+
 #user-info {
 	font-size: 11px;
 	height: auto;
@@ -307,37 +335,9 @@ footer p a:hover {
 	padding-right: 0px;
 }
 
-#content .help {
-	border-bottom: 5px solid #fce701;
-	background: #fff9bb;
-	padding: 12px 20px 8px 20px;
-	font-size: 12px;
-	color: #111111;
-	margin: 0 0 20px 0;
-	font-style: italic;
-}
-
 #content label {
 	font-size: 12px;
 	color: #333;
-}
-
-#content #error {
-	border-bottom: 5px solid #f48e8e;
-	background: #f7b7b7;
-	padding: 12px 20px 8px 20px;
-	font-size: 12px;
-	color: #801616;
-	margin: 0 0 20px 0;
-}
-
-#content #notice {
-	border-bottom: 5px solid #95ccef;
-	background: #d9ebf6;
-	padding: 12px 20px 8px 20px;
-	font-size: 12px;
-	color: #245574;
-	margin: 0 0 20px 0;
 }
 
 #content .tfContainer .caseinTextField {
