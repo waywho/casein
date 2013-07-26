@@ -1,11 +1,15 @@
 module Casein
   module CaseinHelper
 	
-    def casein_get_footer_string
-      "Running on #{link_to 'Casein', 'http://www.caseincms.com'} #{casein_get_full_version_string}.x technology, an open-source project.".html_safe
+    def casein_get_footer_string include_version = false
+      if include_version
+        "Running on #{link_to 'Casein', 'http://www.caseincms.com'} #{casein_get_full_version_string}, an open-source project.".html_safe
+      else
+        "Running on #{link_to 'Casein', 'http://www.caseincms.com'}, an open-source project.".html_safe
+      end
     end
 
-	  def casein_get_version_info  
+	  def casein_get_version_info 
 	    YAML::load_file File.join(File.dirname(__FILE__), '..', '..', '..', 'PUBLIC_VERSION.yml')
 	  end
 	
