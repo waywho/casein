@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Russell Quinn"]
-  s.date = "2013-07-25"
+  s.date = "2013-07-28"
   s.description = "Casein is an open-source CMS for Ruby on Rails."
   s.email = "mail@russellquinn.com"
   s.extra_rdoc_files = [
@@ -22,29 +22,15 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "app/assets/images/casein/casein.png",
-    "app/assets/images/casein/header.png",
-    "app/assets/images/casein/icons/add.png",
-    "app/assets/images/casein/icons/delete.png",
-    "app/assets/images/casein/icons/table.png",
-    "app/assets/images/casein/login/alertBg.png",
-    "app/assets/images/casein/login/background.png",
-    "app/assets/images/casein/login/bottom.png",
-    "app/assets/images/casein/login/loginBoxBg.png",
-    "app/assets/images/casein/login/loginBoxBottom.png",
-    "app/assets/images/casein/login/loginBoxTop.png",
-    "app/assets/images/casein/login/loginSubmit.png",
-    "app/assets/images/casein/login/recoverSubmit.png",
-    "app/assets/images/casein/login/top.png",
-    "app/assets/images/casein/nav.png",
-    "app/assets/images/casein/rightNav.png",
-    "app/assets/images/casein/rightNavButton.png",
-    "app/assets/images/casein/visitSiteNav.png",
+    "app/assets/images/casein/glyphicons-halflings-white.png",
+    "app/assets/images/casein/glyphicons-halflings.png",
+    "app/assets/javascripts/casein/bootstrap.js",
     "app/assets/javascripts/casein/casein.js",
-    "app/assets/javascripts/casein/login.js",
+    "app/assets/javascripts/casein/html5shiv.js",
+    "app/assets/stylesheets/casein/bootstrap-responsive.css",
+    "app/assets/stylesheets/casein/bootstrap.css",
     "app/assets/stylesheets/casein/casein.css.scss",
-    "app/assets/stylesheets/casein/elements.css.scss",
     "app/assets/stylesheets/casein/login.css.scss",
-    "app/assets/stylesheets/casein/screen.css.scss",
     "app/controllers/casein/casein_controller.rb",
     "app/controllers/casein/password_resets_controller.rb",
     "app/controllers/casein/user_sessions_controller.rb",
@@ -73,7 +59,7 @@ Gem::Specification.new do |s|
     "lib/generators/casein/install/templates/app/assets/stylesheets/casein/custom.css.scss",
     "lib/generators/casein/install/templates/app/helpers/casein/config_helper.rb",
     "lib/generators/casein/install/templates/app/views/casein/layouts/_left_navigation.html.erb",
-    "lib/generators/casein/install/templates/app/views/casein/layouts/_right_navigation.html.erb",
+    "lib/generators/casein/install/templates/app/views/casein/layouts/_top_navigation.html.erb",
     "lib/generators/casein/install/templates/db/migrate/casein_create_users.rb",
     "lib/generators/casein/install/templates/public/robots.txt",
     "lib/generators/casein/scaffold/USAGE",
