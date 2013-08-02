@@ -69,10 +69,16 @@
       <div id="content">
         <div class="row">
           <% if content_for?(:sidebar) %>
-            <div class="col-lg-10 content-bottom-padding">
+             <div id="right-column" class="col-lg-2">
+                <ul class="nav nav-pills nav-stacked content-bottom-padding">
+                  <%= yield :sidebar %>
+                </ul>
+            </div>
+            <div id="left-column" class="col-lg-10 content-bottom-padding">
           <% else %>
             <div class="col-lg-12 content-bottom-padding">
           <% end %>
+
             <% if flash[:warning] %>
               <div id="error" class="alert alert-danger">
                 <%= flash[:warning] %>
@@ -88,17 +94,11 @@
                 <%= yield :help %>
               </div>
             <% end %>
+            
             <%= yield %>
-          </div>
-          <% if content_for?(:sidebar) %>
-            <div class="col-lg-2">
-              <div class="sidebar-nav">
-                <ul class="nav nav-list">
-                  <%= yield :sidebar %>
-                </ul>
-              </div>
+            
             </div>
-          <% end %>
+
         </div>
         <div class="row">
           <div class="col-lg-12">

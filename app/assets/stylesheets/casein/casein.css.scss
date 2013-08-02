@@ -4,6 +4,20 @@
  *= require ./casein-bootstrap-overrides.css
 */
 
+/* CASEIN LAYOUT */
+
+@media (min-width: 992px){
+
+    #left-column {
+    	float: left;
+    }
+
+    #right-column {
+    	float: right;
+    }
+
+}
+
 /* CASEIN NAVIGATION BAR */
 
 #user-info {

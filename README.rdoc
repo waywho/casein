@@ -136,14 +136,13 @@ Once you have the Casein core installed and configured, and have added support f
 * Casein extension controllers should derive from Casein::CaseinController and not ApplicationController
 * To set the page title, your controller action should set @casein_page_title. If this is not set, then Casein will use a default created from your project name.
 
-<b>Right bar</b>
+<b>Sidebar</b>
 
-The right bar in Casein should be used for view specific actions, e.g. "Add user" for users/index, or "Back to list", "Delete user" for users/show.
+The sidebar in Casein should be used for view specific actions, e.g. "Add user" for users/index, or "Back to list", "Delete user" for users/show.
 
 To specify the contents of the sidebar, you must add a 'content_for :sidebar' block in the relevant view file (index, show, etc.) e.g.:
  
   <%= content_for :sidebar do %>
-    <li class="nav-header">Actions</li>
     <li><%= link_to "#{casein_show_icon('th-list')}Back to list".html_safe, casein_users_path %></li>
   <% end %>
 

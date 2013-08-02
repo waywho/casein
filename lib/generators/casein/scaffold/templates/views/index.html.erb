@@ -9,6 +9,5 @@
 </div>
 
 <%%= content_for :sidebar do %>
-	<li class="nav-header">Actions</li>
 	<li><%%= link_to "#{casein_show_icon "plus-sign"}Add a new <%= singular_name.humanize.downcase %>".html_safe, new_casein_<%= singular_name %>_path %></li>
 <%% end %>
