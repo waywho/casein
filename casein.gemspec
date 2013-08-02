@@ -63,7 +63,7 @@ Gem::Specification.new do |s|
     "lib/generators/casein/install/templates/app/assets/javascripts/casein/custom.js",
     "lib/generators/casein/install/templates/app/assets/stylesheets/casein/custom.css.scss",
     "lib/generators/casein/install/templates/app/helpers/casein/config_helper.rb",
-    "lib/generators/casein/install/templates/app/views/casein/layouts/_left_navigation.html.erb",
+    "lib/generators/casein/install/templates/app/views/casein/layouts/_tab_navigation.html.erb",
     "lib/generators/casein/install/templates/app/views/casein/layouts/_top_navigation.html.erb",
     "lib/generators/casein/install/templates/db/migrate/casein_create_users.rb",
     "lib/generators/casein/install/templates/public/robots.txt",

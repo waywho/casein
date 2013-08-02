@@ -99,7 +99,7 @@ There is one command-line option that can be added to the end of the generate co
 
 Once the command has been executed, the generator will:
 
-* Add a new tab for the model to: app/views/casein/layouts/_left_navigation.html.erb
+* Add a new tab for the model to: app/views/casein/layouts/_tab_navigation.html.erb
 * Create a controller with the name: app/controllers/casein/model_controller.erb
 * Add views for index, new and show to: app/views/casein/model/
 * If you restart and run your application now, you’ll be able to log in to Casein and directly edit and create new instances of your model data right away!
@@ -114,7 +114,7 @@ However, you’ll probably want to customise your views and side bars and extend
 
 This is the main Casein configuration file that allows you to change things such as the website name, logo, notification email address, dashboard URL, etc. The options are documented within the file.
 
-<b>views/casein/layouts/_left_navigation.html.erb</b>
+<b>views/casein/layouts/_tab_navigation.html.erb</b>
 
 An ERB partial for the the left navigation tabs. Note that using the scaffolding generator will automatically add tabs into this file, but it can also be manually edited and rearranged.
 

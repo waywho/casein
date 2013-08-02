@@ -19,7 +19,7 @@ module Casein
         copy_file "app/helpers/casein/config_helper.rb", "app/helpers/casein/config_helper.rb"
       
         #initial view partials
-        copy_file "app/views/casein/layouts/_left_navigation.html.erb", "app/views/casein/layouts/_left_navigation.html.erb"
+        copy_file "app/views/casein/layouts/_tab_navigation.html.erb", "app/views/casein/layouts/_tab_navigation.html.erb"
         copy_file "app/views/casein/layouts/_top_navigation.html.erb", "app/views/casein/layouts/_top_navigation.html.erb"
       
         #robots.txt
