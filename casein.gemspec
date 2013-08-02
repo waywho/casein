@@ -77,12 +77,11 @@ Gem::Specification.new do |s|
     "lib/generators/casein/scaffold/templates/views/index.html.erb",
     "lib/generators/casein/scaffold/templates/views/new.html.erb",
     "lib/generators/casein/scaffold/templates/views/show.html.erb",
-    "lib/railties/tasks.rake",
-    "lib/will_paginate.rb"
+    "lib/railties/tasks.rake"
   ]
   s.homepage = "http://github.com/russellquinn/casein"
   s.require_paths = ["lib"]
-  s.rubygems_version = "2.0.5"
+  s.rubygems_version = "2.0.6"
   s.summary = "A lightweight Ruby on Rails CMS."
 
   if s.respond_to? :specification_version then
