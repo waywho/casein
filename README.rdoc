@@ -1,6 +1,6 @@
 =Casein - a lightweight Ruby on Rails CMS
 
-**CASEIN 4.1.0 now available — featuring new responsive UI based on Bootstrap 3**
+**WORK IN PROGRESS ON CASEIN 4.1.0 — featuring new responsive UI based on Bootstrap 3**
 
 Casein is a Rails 4.x gem that provides scaffolding generators and helper functions to quickly create a clean and minimal CRUD (Create, Read, Update and Delete) interface for your data. It also comes with a pre-rolled user authentication system. As Casein is completely decoupled from the front-end, it can be added to a new or existing Rails project, or used as a standalone CMS to drive platforms built on other technologies.
 
