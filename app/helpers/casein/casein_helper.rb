@@ -15,7 +15,7 @@ module Casein
 	
   	def casein_get_full_version_string
   	  version_info = casein_get_version_info
-  	  "v#{version_info['major']}.#{version_info['minor']}.#{version_info['patch']}"
+  	  "v#{version_info['major']}.#{version_info['minor']}.#{version_info['patch']}.#{version_info['build']}"
   	end
 	
   	def casein_get_short_version_string
