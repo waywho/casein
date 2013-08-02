@@ -5,9 +5,9 @@
 
 Gem::Specification.new do |s|
   s.name = "casein"
-  s.version = "4.1.0"
+  s.version = "5.0.0.beta1"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Russell Quinn"]
   s.date = "2013-08-02"
   s.description = "Casein is an open-source CMS for Ruby on Rails."

@@ -1,6 +1,6 @@
 =Casein - a lightweight Ruby on Rails CMS
 
-**WORK IN PROGRESS ON CASEIN 4.1.0 — featuring new responsive UI based on Bootstrap 3**
+**WORK IN PROGRESS ON CASEIN 5.0.0.beta1 — featuring new responsive UI based on Bootstrap 3**
 
 Casein is a Rails 4.x gem that provides scaffolding generators and helper functions to quickly create a clean and minimal CRUD (Create, Read, Update and Delete) interface for your data. It also comes with a pre-rolled user authentication system. As Casein is completely decoupled from the front-end, it can be added to a new or existing Rails project, or used as a standalone CMS to drive platforms built on other technologies.
 
@@ -24,24 +24,24 @@ Casein is available to use under the terms of the MIT License. See the LICENSE f
 
 ==What’s New
 
-Casein 4.x is built for Ruby on Rails 4.x and has the following major updates:
+Casein 5.x is built for Ruby on Rails 4.x and has the following major updates:
 
 * Now based on Bootstrap 3
 * Complete UI overhaul, now mobile-first
 * Support for strong parameters
 * Support for asset pipeline
 * Rails 4 compatibility fixes
-* Many other tweaks and improvements over Casein 3.x
+* Many other tweaks and improvements over Casein 3.x and 4.x
 
-There is no real upgrade path from previous versions of Casein, including v4.0.0. It’s recommended to only use Casein v4.1.0 on new projects.
+There is no real upgrade path from previous versions of Casein, including v4.x. It’s recommended to only use Casein v5.x on new projects.
 
 ==Installation
 
 — Create a new Rails project (or use an existing one) and enter the project directory from a terminal prompt.
 
-— Add the Casein gem to your Gemfile:
+— Add the Casein gem to your Gemfile: (temporary git link, until official release)
 
-  gem 'casein'
+  gem 'casein', :git => 'git://github.com/russellquinn/casein.git', :branch => 'new-ui'
 
 — Then use bundler to install Casein and its dependencies:
 
