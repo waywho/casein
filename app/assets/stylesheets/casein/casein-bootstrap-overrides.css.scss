@@ -7,6 +7,11 @@
 	asset-url("casein/glyphiconshalflings-regular.ttf") format('truetype'),
 	asset-url("casein/glyphiconshalflings-regular.svg#glyphicons_halflingsregular") format('svg')}
 
+.alert {
+	line-height: 22px;
+	padding: 10px 15px 10px 15px;
+}
+
 .navbar-toggle {
 	top: 54px;
 	left: 15px;
