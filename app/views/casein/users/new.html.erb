@@ -2,41 +2,45 @@
 
 <%= form_for @casein_user do |form| %>
 
-	<div class="tfContainer">
-		<%= casein_text_field form, @casein_user, :login, {:size => 30} %>
-	</div>
-	
-	<div class="tfContainer tfContainerSecond">
-		<%= casein_text_field form, @casein_user, :name %>
-	</div>
-	
-	<div class="tfContainer">
-		<%= casein_text_field form, @casein_user, :email %>
+	<div class="row">
+  		<div class="col-lg-6">
+			<%= casein_text_field form, @casein_user, :login, {:size => 30} %>
+		</div>
+		<div class="col-lg-6">
+			<%= casein_text_field form, @casein_user, :name %>
+		</div>
 	</div>
 
-	<div class="tfContainer tfContainerSecond">
-		<%= casein_time_zone_select form, @casein_user, :time_zone, ActiveSupport::TimeZone.us_zones %>
-	</div>
-	
-	<div class="tfContainer">
-		<%= casein_select form, @casein_user, :access_level, casein_get_access_level_array, {:casein_label => "Status"} %>
-	</div>
-
-	<div class="tfContainer tfContainerSecond">
+	<div class="row">
+  		<div class="col-lg-6">
+			<%= casein_text_field form, @casein_user, :email %>
+		</div>
+		<div class="col-lg-6">
+			<%= casein_time_zone_select form, @casein_user, :time_zone, ActiveSupport::TimeZone.us_zones %>
+		</div>
 	</div>
 
-	<div class="tfContainer">
-		<%= casein_password_field form, @casein_user, :password, {:casein_label => "Password"} %>
-	</div>
-	
-	<div class="tfContainer tfContainerSecond">
-		<%= casein_password_field form, @casein_user, :password_confirmation, {:casein_label => "Repeat password"} %>
+
+	<div class="row">
+  		<div class="col-lg-6">
+			<%= casein_select form, @casein_user, :access_level, casein_get_access_level_array, {:casein_label => "Role"} %>
+		</div>
+		<div class="col-lg-6">
+		</div>
 	</div>
 
-	<div class="clearer"></div>
+	<div class="row">
+  		<div class="col-lg-6">
+			<%= casein_password_field form, @casein_user, :password, {:casein_label => "Password"} %>
+		</div>
+		<div class="col-lg-6">
+			<%= casein_password_field form, @casein_user, :password_confirmation, {:casein_label => "Repeat password"} %>
+		</div>
+	</div>
 
 	<p class="submits">
-		<%= form.submit "Add new user", :class => "update" %>
+		<%= link_to 'Cancel', casein_users_path, :class => 'btn btn-mini btn-danger' %>
+		<%= form.submit "Add new user", :class => "btn btn-mini btn-primary" %>
 	</p>
 
 <% end %>

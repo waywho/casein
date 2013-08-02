@@ -72,7 +72,7 @@ There is no real upgrade path from previous versions of Casein, including v4.0.0
 
 ==Usage
 
-The default Casein install supports user authentication. Users may have a status of either ‘admin’ or ‘user’. The former is allowed to add, edit and delete other Casein users. The latter is only allowed to edit their own profile.
+The default Casein install supports user authentication. Users may have a role of either ‘administrator’ or ‘user’. The former is allowed to add, edit and delete other Casein users. The latter is only allowed to edit their own profile.
 
 Casein is a framework allowing you to quickly build up an interface to edit and create new records from your database model. As well as the user support and user interface, there are many configurations and generators to help you along the way.
 

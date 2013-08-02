@@ -170,6 +170,16 @@ footer p a:hover {
 	padding: 13px 10px 0px 10px;
 }
 
+#content .submits {
+	width: 100%;
+	text-align: right;
+	border-radius: 4px;
+	font-size: 12px;
+	padding: 10px 10px;
+	background-color: #eee;
+	margin-bottom: 30px;
+}
+
 /* CASEIN 3.x LEGACY STYLES */
 
 /*
@@ -308,13 +318,6 @@ footer p a:hover {
 #content .rcText {
 	font-size: 11px;
 	color: #333;
-}
-
-#content .submits {
-	text-align: right;
-	font-size: 12px;
-	padding: 10px 10px;
-	background-color: #ddd;
 }
 
 #content .cancel, #content a.negative:link, #content a.negative:visited { 
