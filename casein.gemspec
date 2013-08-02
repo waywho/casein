@@ -77,7 +77,8 @@ Gem::Specification.new do |s|
     "lib/generators/casein/scaffold/templates/views/index.html.erb",
     "lib/generators/casein/scaffold/templates/views/new.html.erb",
     "lib/generators/casein/scaffold/templates/views/show.html.erb",
-    "lib/railties/tasks.rake"
+    "lib/railties/tasks.rake",
+    "lib/will_paginate.rb"
   ]
   s.homepage = "http://github.com/russellquinn/casein"
   s.require_paths = ["lib"]
