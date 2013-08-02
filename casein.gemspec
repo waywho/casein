@@ -82,7 +82,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/russellquinn/casein"
   s.require_paths = ["lib"]
   s.rubygems_version = "2.0.6"
-  s.summary = "A lightweight Ruby on Rails CMS."
+  s.summary = "A lightweight Ruby on Rails CMS, based on Bootstrap"
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
