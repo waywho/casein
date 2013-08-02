@@ -46,6 +46,10 @@ module Casein
   	def casein_get_access_level_array
   	  [["Administrator", $CASEIN_USER_ACCESS_LEVEL_ADMIN], ["User", $CASEIN_USER_ACCESS_LEVEL_USER]]
   	end
+
+    def casein_pagination_details objs
+      " <small class='pagination-details'>/ page #{objs.current_page} of #{objs.total_pages}</small>".html_safe if objs.current_page && objs.total_pages > 1
+    end
 	
   	def casein_table_cell_link contents, link, options = {}
 	  
@@ -66,11 +70,11 @@ module Casein
     end
 	
   	def casein_show_icon icon_name
-  		"<div class='icon'><i class='icon-#{icon_name}'></i></div>".html_safe
+  		"<div class='icon'><span class='glyphicon glyphicon-#{icon_name}'></span></div>".html_safe
   	end
 	
   	def casein_show_row_icon icon_name
-      "<div class='iconRow'><i class='icon-#{icon_name}'></i></div>".html_safe
+      "<div class='iconRow'><span class='glyphicon glyphicon-#{icon_name}'></span></div>".html_safe
   	end
 	
   	# Styled form tag helpers

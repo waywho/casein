@@ -1,0 +1,78 @@
+/* BOOTSTRAP OVERRIDES */
+
+@font-face{
+	src:asset-url("casein/glyphiconshalflings-regular.eot");
+	src:asset-url("casein/glyphiconshalflings-regular.eot?#iefix") format('embedded-opentype'),
+	asset-url("casein/glyphiconshalflings-regular.woff") format('woff'),
+	asset-url("casein/glyphiconshalflings-regular.ttf") format('truetype'),
+	asset-url("casein/glyphiconshalflings-regular.svg#glyphicons_halflingsregular") format('svg')}
+
+.navbar-toggle {
+	top: 54px;
+	left: 15px;
+}
+
+.navbar-brand {
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+	color: #000000;
+  border: 1px solid #cdcdcd;
+  padding: 14px 9px 14px 9px;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+	color: #000000;
+  border: 0px;
+  padding: 15px 10px 15px 10px;
+}
+
+.navbar-nav > li > a {
+	color: #555555;
+	padding: 15px 10px 15px 10px;
+	margin: 3px 0px 3px 0px;
+	border-radius: 6px;
+}
+
+.pagination {
+	margin: 10px 0px 0px 0px;
+}
+
+@media screen and (min-width: 768px) {
+
+	.navbar-brand {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin-left: 1px;
+	}
+
+	.navbar-nav {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	.navbar-nav > li > a:hover,
+	.navbar-nav > li > a:focus {
+	  border: 1px solid #cdcdcd;
+	  padding: 4px 9px 4px 9px;
+	}
+
+	.navbar-nav > .active > a,
+	.navbar-nav > .active > a:hover,
+	.navbar-nav > .active > a:focus {
+	  border: 0px;
+	  padding: 5px 10px 5px 10px;
+	}
+
+	.navbar-nav > li > a {
+		padding: 5px 10px 5px 10px;
+		margin: 5px 5px 5px 5px;
+		border-radius: 6px;
+	}
+
+}

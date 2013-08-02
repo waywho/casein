@@ -1,6 +1,6 @@
 =Casein - a lightweight Ruby on Rails CMS
 
-**CASEIN 4.0.0 now available**
+**CASEIN 4.1.0 now available — featuring new responsive UI based on Bootstrap 3**
 
 Casein is a Rails 4.x gem that provides scaffolding generators and helper functions to quickly create a clean and minimal CRUD (Create, Read, Update and Delete) interface for your data. It also comes with a pre-rolled user authentication system. As Casein is completely decoupled from the front-end, it can be added to a new or existing Rails project, or used as a standalone CMS to drive platforms built on other technologies.
 
@@ -26,12 +26,14 @@ Casein is available to use under the terms of the MIT License. See the LICENSE f
 
 Casein 4.x is built for Ruby on Rails 4.x and has the following major updates:
 
+* Now based on Bootstrap 3
+* Complete UI overhaul, now mobile-first
 * Support for strong parameters
 * Support for asset pipeline
 * Rails 4 compatibility fixes
 * Many other tweaks and improvements over Casein 3.x
 
-There is no real upgrade path from previous versions of Casein. It’s recommended to only use Casein 4.x on new projects.
+There is no real upgrade path from previous versions of Casein, including v4.0.0. It’s recommended to only use Casein v4.1.0 on new projects.
 
 ==Installation
 
@@ -145,7 +147,7 @@ To specify the contents of the sidebar, you must add a 'content_for :sidebar' bl
     <li><%= link_to "#{casein_show_icon('th-list')}Back to list".html_safe, casein_users_path %></li>
   <% end %>
 
-The casein_show_icon function will display any icon present in the /public/casein/images/icons folder. By default this only contains add, delete and table after install. However, more can be added as required by downloading from http://www.famfamfam.com/lab/icons/silk/
+The casein_show_icon function will display any icon from the Glyphicon collection (http://glyphicons.com). Simply enter the short name.
 
 <b>Helper functions</b>
 
@@ -168,6 +170,10 @@ There are several Casein Rake tasks available to manage users. To see what is av
   rake -T
 
 The Casein Rake tasks are all namespaced with ‘casein:’
+
+===Bootstrap
+
+Casein is now based on Bootstrap (http://getbootstrap.com) and jQuery. Bootstrap offers a wealth of UI components, CSS styles, and JavaScript plugins. See the Bootstrap website for full details.
 
 ===Changing form elements / other helpers
 
@@ -205,9 +211,17 @@ A basic two-column layout is automatically created by the scaffold generator. Th
 
 There is an optional container class that forces form elements to use the whole width of the page. This is “tfContainer tfContainerFullWidth” and if used together with casein_text_area_big will create a textarea suitable for, say, editing full page content.
 
-===Adding styled help blocks
+===Using alerts
 
-Sometimes it is necessary or useful to add guidelines or help text to your forms and tables. Casein offers a CSS class for this called “help”, which can be used throughout your views as necessary.
+Casein can display three types of styled alerts: Warning, Notice, and Help.
+
+Warning and Notice are set using Rail’s flash variables. Set flash[:warning] and flash[:notice] respectively.
+
+Help is set on a page by adding a content_for block to a view:
+
+  <%= content_for :help do %>
+    This is some help text. It describes what this page is for in more detail.
+  <% end %>
 
 ===Routes
 
@@ -221,6 +235,8 @@ e.g.
 
 Every Casein user can set their own timezone via their profile. To change the default timezone for new users, set config.time_zone in your app.
 
-==Acknowledgements
+===Acknowledgements
 
-The icons used in Casein were created by Mark James and are licensed under the Creative Commons Attribution 2.5 License (http://creativecommons.org/licenses/by/2.5/). The full series of icons are available here: http://www.famfamfam.com/lab/icons/silk/
+Bootstrap is copyright 2012 Twitter, Inc under the Apache 2.0 license. http://getbootstrap.com
+
+Glyphicons is an extensive glyph library created by Jan Kovařík and made available for Bootstrap. http://glyphicons.getbootstrap.com

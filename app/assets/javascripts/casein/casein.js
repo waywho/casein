@@ -3,10 +3,18 @@
 //= require ./bootstrap.js
 
 jQuery(document).ready(function() {
-	if(jQuery("#notice")) {
+
+	if (current_controller) {
+		active_tab = $("#tab-" + current_controller);
+		if (active_tab) {
+			active_tab.addClass("active");
+		}
+	}
+
+	if($("#notice")) {
 		setTimeout(function() {
-			jQuery("#notice").fadeOut(500);
-		}, 20000);
+			$("#notice").fadeOut(1000);
+		}, 10000);
 	};
 });
 

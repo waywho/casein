@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "casein"
-  s.version = "4.0.0"
+  s.version = "4.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Russell Quinn"]
-  s.date = "2013-07-28"
+  s.date = "2013-08-02"
   s.description = "Casein is an open-source CMS for Ruby on Rails."
   s.email = "mail@russellquinn.com"
   s.extra_rdoc_files = [
@@ -21,14 +21,18 @@ Gem::Specification.new do |s|
     "PUBLIC_VERSION.yml",
     "README.rdoc",
     "Rakefile",
+    "app/assets/fonts/casein/glyphiconshalflings-regular.eot",
+    "app/assets/fonts/casein/glyphiconshalflings-regular.otf",
+    "app/assets/fonts/casein/glyphiconshalflings-regular.svg",
+    "app/assets/fonts/casein/glyphiconshalflings-regular.ttf",
+    "app/assets/fonts/casein/glyphiconshalflings-regular.woff",
     "app/assets/images/casein/casein.png",
-    "app/assets/images/casein/glyphicons-halflings-white.png",
-    "app/assets/images/casein/glyphicons-halflings.png",
     "app/assets/javascripts/casein/bootstrap.js",
     "app/assets/javascripts/casein/casein.js",
     "app/assets/javascripts/casein/html5shiv.js",
-    "app/assets/stylesheets/casein/bootstrap-responsive.css",
+    "app/assets/stylesheets/casein/bootstrap-glyphicons.css",
     "app/assets/stylesheets/casein/bootstrap.css",
+    "app/assets/stylesheets/casein/casein-bootstrap-overrides.css.scss",
     "app/assets/stylesheets/casein/casein.css.scss",
     "app/assets/stylesheets/casein/login.css.scss",
     "app/controllers/casein/casein_controller.rb",
@@ -50,6 +54,7 @@ Gem::Specification.new do |s|
     "app/views/casein/users/show.html.erb",
     "app/views/layouts/casein_auth.html.erb",
     "app/views/layouts/casein_main.html.erb",
+    "config/initializers/will_paginate.rb",
     "config/routes.rb",
     "lib/casein.rb",
     "lib/casein/engine.rb",

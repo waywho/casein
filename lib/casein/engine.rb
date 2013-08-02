@@ -4,8 +4,13 @@ require "rails"
 module Casein
   class Engine < Rails::Engine
     
+    config.after_initialize do
+      Rails.application.config.assets.paths << root.join("app", "assets", "fonts")
+    end
+
     initializer "casein.assets.precompile" do |app|
       app.config.assets.precompile += %w(casein/login.css casein/casein.css casein/casein.js casein/html5shiv.js casein/custom.css.scss casein/custom.js casein/*.png)
+      app.config.assets.precompile += %w( .svg .eot .woff .ttf )
     end
 
     rake_tasks do

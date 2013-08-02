@@ -1,117 +1,15 @@
 /*
  *= require ./bootstrap.css
- *= require ./bootstrap-responsive.css
+ *= require ./bootstrap-glyphicons.css
+ *= require ./casein-bootstrap-overrides.css
 */
 
-/* BOOTSTRAP OVERRIDES */
-
-body {
-	padding-top: 0px;
-	padding-bottom: 40px;
-	font-family: "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-[class^="icon-"],
-[class*=" icon-"] {
-  background-image: image-url('casein/glyphicons-halflings.png');
-}
-
-.icon-white,
-.nav-pills > .active > a > [class^="icon-"],
-.nav-pills > .active > a > [class*=" icon-"],
-.nav-list > .active > a > [class^="icon-"],
-.nav-list > .active > a > [class*=" icon-"],
-.navbar-inverse .nav > .active > a > [class^="icon-"],
-.navbar-inverse .nav > .active > a > [class*=" icon-"],
-.dropdown-menu > li > a:hover > [class^="icon-"],
-.dropdown-menu > li > a:focus > [class^="icon-"],
-.dropdown-menu > li > a:hover > [class*=" icon-"],
-.dropdown-menu > li > a:focus > [class*=" icon-"],
-.dropdown-menu > .active > a > [class^="icon-"],
-.dropdown-menu > .active > a > [class*=" icon-"],
-.dropdown-submenu:hover > a > [class^="icon-"],
-.dropdown-submenu:focus > a > [class^="icon-"],
-.dropdown-submenu:hover > a > [class*=" icon-"],
-.dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: image-url('casein/glyphicons-halflings-white.png');
-}
-
-.navbar {
-	margin-bottom: 30px;
-}
-
-.sidebar-nav {
-	padding: 9px 0;
-}
-
-.navbar .btn-categories {
-	float: left;
-	color: #666;
-	text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
-	margin-bottom: 10px;
-}
-
-.btn-navbar-left {
-	float: left;
-	padding-right: 5px;
-}
-
-.btn-navbar-right {
-	float: right;
-	padding-left: 5px;
-}
-
-.top-nav-padding {
-	padding-bottom: 10px;
-}
-
-.top-nav-padding a:first {
-	padding-left: 0px;
-}
-
-.navbar .btn-categories:hover,
-.navbar .btn-categories:focus,
-.navbar .btn-categories:active,
-.navbar .btn-categories.active,
-.navbar .btn-categories.disabled,
-.navbar .btn-categories[disabled] {
-  color: #666;
-}
-
-/* CASEIN GENERAL */
-
-#content .help {
-	border: 1px solid #fbed53;
-	background: #fff9bb;
-	padding: 12px 20px 8px 20px;
-	font-size: 12px;
-	color: #111111;
-	margin: 0 0 20px 0;
-	font-style: italic;
-}
-
-#content #error {
-	border: 1px solid #f48e8e;
-	background: #f7b7b7;
-	padding: 12px 20px 8px 20px;
-	font-size: 12px;
-	color: #932828;
-	margin: 0 0 20px 0;
-}
-
-#content #notice {
-	border: 1px solid #95ccef;
-	background: #d9ebf6;
-	padding: 12px 20px 8px 20px;
-	font-size: 12px;
-	color: #245574;
-	margin: 0 0 20px 0;
-}
+/* CASEIN NAVIGATION BAR */
 
 #user-info {
-	font-size: 11px;
+	font-size: 12px;
+	padding-top: 10px;
 	height: auto;
-	margin-top: 10px;
 }
 
 #user-info ul {
@@ -122,9 +20,9 @@ body {
 #user-info li {
 	float: left;
 	border-right: 1px solid #ddd;
-	padding: 0 10px 0 10px;
+	padding: 3px 8px 3px 8px;
 	margin: 0;
-	color: #777;
+	color: #888;
 }
 
 #user-info li.last-item {
@@ -132,25 +30,33 @@ body {
 }
 
 #user-info li a {
-	color: #666;
-	font-weight: bold;
+	color: #555;
 	text-decoration: none;
 }
 
 #user-info li a:hover {
 	color: #000;
+	border-bottom: 1px solid #000;
 }
 
 #user-info li.signout:hover {
+	border-radius: 6px;
 	background-color: #da0404;
 }
 
 #user-info li.signout a:hover {
 	color: #eee;
+	border-bottom: none;
 }
 
 #user-info li.signout:hover a {
 	color: #eee;
+}
+
+/* CASEIN CONTENT GENERAL */
+
+small.pagination-details {
+	font-size: 0.5em;
 }
 
 div#content {
@@ -158,16 +64,17 @@ div#content {
 }
 
 #content h2 {
-	font-size: 18px;
-	font-weight: normal;
+	font-size: 20px;
+	font-weight: bold;
 	color: #111;
 	border-bottom: 2px solid #eee;
-	padding: 0 0 5px 0;
+	padding: 0 0 10px 0;
 	margin: 0 0 15px 0;
 	position: relative;
+	line-height: 26px;
 }
 
-.content-inner {
+.content-bottom-padding {
 	padding-bottom: 20px;
 }
 
@@ -186,97 +93,66 @@ footer p a:hover {
 }
 
 .icon {
+	position: relative;
+	top: 1px;
+	float: left;
 	height: 14px;
 	width: 14px;
-	padding: 0px 7px 0px 0px;
-	display: block;
-	float: left;
+	margin-right: 5px;
+	font-size: 14px;
+	padding: 0px;
+	vertical-align: baseline;
 }
 
 .iconRow {
-	height: 14px;
-	width: 14px;
-	padding: 0px;
-	display: block;
-	float: left;
+	position: relative;
+	top: -4px;
+	height: 20px;
+	width: 20px;
+	padding: 4px;
+	font-size: 12px;
+}
+
+.delete:hover .iconRow {
+	border-radius: 4px;
+	background-color: #da0404;
+	color: #ffffff;
 }
 
 /* CASEIN TABLES */
 
-#content .itemList {
+#content .table {
+	border-collapse: collapse;
 	width: 100%;
+	font-size: 12px;
 	border-bottom: 2px solid #ccc;
 }
 
-#content .itemList .center {
+#content .table .center {
 	text-align: center;
 }
 
-#content .itemList .icon {
+#content .table .icon {
 	width: 16px;
 }
 
-#content .itemList th {
-	text-align: left;
-	font-size: 11px;
-	padding: 7px 8px 6px 8px;
+#content .table thead {
 	border-bottom: 2px solid #ccc;
 }
 
-#content .itemList th a {
-	color: #000;
-}
-
-#content .delete {
-	width: 16px;
-	height: 16px;
+#content .table td {
 	padding: 0px;
-}
-
-#content .delete a {
-	float: left;
-	padding: 0px;
-}
-
-#content .itemList td {
 	font-size: 12px;
-	color: #333;
-	border-bottom: 1px solid #ddd;
+	margin: 0px;
 }
 
-#content .itemList td a {
+#content .table td a {
 	display: block;
-	padding: 14px 8px 12px 8px;	
 	line-height: 11px;
 	color: #333;
 	text-decoration: none;
+	padding: 15px 10px 15px 10px;
 }
-
-#content .itemList tr.hover:hover {
-	background: #e7edfc;
-	border-bottom: 1px solid #ccc;
-	cursor: pointer;
-}
-
-#content .even {
-	background: #f7f7f7;
-}
-
-/* BOOTSTRAP RESPONSIVE OVERRIDES */
-
-@media (max-width: 980px) {
-	/* Enable use of floated navbar text */
-	.navbar-text.pull-right {
-		float: none;
-		padding-left: 5px;
-		padding-right: 5px;
-	}
-
-	.hideable {
-		display: none;
-	}
-}
-
 
 /* CASEIN 3.x LEGACY STYLES */
 
