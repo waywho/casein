@@ -178,7 +178,7 @@ Casein is now based on Bootstrap (http://getbootstrap.com) and jQuery. Bootstrap
 
 Casein will insert form elements suitable for the field types you specified in the command line. However, you may wish to customise these, e.g. swap a text field for a password field, swap an integer field for a select dropdown, or swap a date field for a full calendar picker, etc.
 
-You will find the form used for both new and show in a partial named _fields.html.erb
+You will find the form used for both new and show in a partial named _form.html.erb
 
 All of the standard Rails form helpers are available, but the Casein versions are prefixed with casein_. These versions are styled for the Casein interface and have automatic support for validation error reporting.
 
@@ -206,9 +206,7 @@ For more information on each function, check the app/helpers/casein/casein_helpe
 
 ===Changing form layout
 
-A basic two-column layout is automatically created by the scaffold generator. The position of form elements is controlled by parent DIVs. A left column element is housed in a “tfContainer” and a right column element in “tfContainer tfContainerSecond”. Note that the generator does not take form element height into account, so you may need to have two sequential matching tfContainer types to balance out some of the larger components, such as the calendar picker.
-
-There is an optional container class that forces form elements to use the whole width of the page. This is “tfContainer tfContainerFullWidth” and if used together with casein_text_area_big will create a textarea suitable for, say, editing full page content.
+A Bootstrap responsive two-column layout is automatically created by the scaffold generator. You can manually edit this to be any Bootstrap grid configuration. See Bootstrap documentation for full details: http://getbootstrap.com/css/#grid
 
 ===Using alerts
 
