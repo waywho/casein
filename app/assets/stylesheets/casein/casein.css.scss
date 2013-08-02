@@ -104,21 +104,6 @@ footer p a:hover {
 	vertical-align: baseline;
 }
 
-.iconRow {
-	position: relative;
-	top: -4px;
-	height: 20px;
-	width: 20px;
-	padding: 4px;
-	font-size: 12px;
-}
-
-.delete:hover .iconRow {
-	border-radius: 4px;
-	background-color: #da0404;
-	color: #ffffff;
-}
-
 /* CASEIN TABLES */
 
 #content .table {
@@ -152,6 +137,23 @@ footer p a:hover {
 	color: #333;
 	text-decoration: none;
 	padding: 15px 10px 15px 10px;
+}
+
+.iconRow {
+	height: 16px;
+	width: 16px;
+	padding: 2px;
+	font-size: 12px;
+}
+
+#content .table td.delete:hover .iconRow {
+	border-radius: 4px;
+	background-color: #da0404;
+	color: #ffffff;
+}
+
+#content .table td.delete a {
+	padding: 13px 10px 0px 10px;
 }
 
 /* CASEIN 3.x LEGACY STYLES */
