@@ -161,7 +161,7 @@ Your Rails application may discover what version of Casein it is currently runni
 
   casein_get_version_info
 
-This will return an array with the keys 'major', 'minor' and 'patch'.
+This will return an array with the keys 'major', 'minor', 'patch', and 'build'.
 
 <b>Rake tasks</b>
 
