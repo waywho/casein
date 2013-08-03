@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Russell Quinn"]
   s.date = "2013-08-03"
-  s.description = "Casein is an open-source CMS for Ruby on Rails."
+  s.description = "A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap."
   s.email = "mail@russellquinn.com"
   s.extra_rdoc_files = [
     "LICENSE",
@@ -83,7 +83,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/russellquinn/casein"
   s.require_paths = ["lib"]
   s.rubygems_version = "2.0.6"
-  s.summary = "A lightweight Ruby on Rails CMS, based on Bootstrap"
+  s.summary = "A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap."
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

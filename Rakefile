@@ -26,8 +26,8 @@ begin
   require "jeweler"
   Jeweler::Tasks.new do |gem|
     gem.name = "casein"
-    gem.summary = "A lightweight Ruby on Rails CMS, based on Bootstrap"
-    gem.description = "Casein is an open-source CMS for Ruby on Rails."
+    gem.summary = "A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap."
+    gem.description = "A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap."
     gem.files = Dir["Gemfile", "LICENSE", "Rakefile", "README.rdoc", "PUBLIC_VERSION.yml", "{lib}/**/*", "{app}/**/*", "{config}/**/*"]
     gem.email = "mail@russellquinn.com"
     gem.authors = ["Russell Quinn"]
