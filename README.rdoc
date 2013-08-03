@@ -10,7 +10,7 @@ This version of Casein is designed for Ruby on Rails 4.x and Ruby 2.x.
 
 Legacy versions:
 
-Rail 3.x: http://github.com/spoiledmilk/casein3
+Rails 3.x: http://github.com/spoiledmilk/casein3
 
 Rails 2.x: http://github.com/spoiledmilk/casein
 
