@@ -1,3 +1,9 @@
-require 'casein/engine' if defined?(Rails) && Rails::VERSION::MAJOR == 4
-require 'will_paginate'
-require 'authlogic'
+if defined?(Rails) && Rails::VERSION::MAJOR == 4
+	require 'casein/engine' 
+	require 'will_paginate'
+	require 'authlogic'
+else
+	puts("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+	puts("!!! WARNING !!! This version of Casein requires Rails 4.x !!!")
+	puts("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+end
