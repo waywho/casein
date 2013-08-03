@@ -7,7 +7,7 @@ module Casein
   
     argument :attributes, :type => :array, :required => true, :desc => "attribute list required"
     
-    class_options :create_model_and_migration => false, :force_plural => false
+    class_options :create_model_and_migration => false, :read_only => false
   
     def self.next_migration_number dirname
       if ActiveRecord::Base.timestamped_migrations
@@ -19,11 +19,12 @@ module Casein
   
     def generate_files
       @plural_route = (plural_name != singular_name) ? plural_name : "#{plural_name}_index"
-      
+      @read_only = options[:read_only]
+
       template 'controller.rb', "app/controllers/casein/#{plural_name}_controller.rb"
       template 'views/index.html.erb', "app/views/casein/#{plural_name}/index.html.erb"
       template 'views/show.html.erb', "app/views/casein/#{plural_name}/show.html.erb"
-      template 'views/new.html.erb', "app/views/casein/#{plural_name}/new.html.erb"
+      template 'views/new.html.erb', "app/views/casein/#{plural_name}/new.html.erb" unless @read_only
       template 'views/_form.html.erb', "app/views/casein/#{plural_name}/_form.html.erb"
       template 'views/_table.html.erb', "app/views/casein/#{plural_name}/_table.html.erb"
       

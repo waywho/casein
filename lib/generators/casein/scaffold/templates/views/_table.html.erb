@@ -4,15 +4,15 @@
 	<thead>
 		<tr>
 			<% for attribute in attributes %><th><%= attribute.name.humanize %></th>
-			<% end %><th>&nbsp;</th>
+			<% end %><% unless @read_only %><th>&nbsp;</th><% end %>
 		</tr>
 	</thead>
 	
 	<%% <%= plural_name %>.each do |<%= singular_name %>| %>
 		<tr>
 			<% attributes.each do |attribute| %><td><%%= casein_table_cell_link <%= singular_name %>.<%= attribute.name %>, casein_<%= singular_name %>_path(<%= singular_name %>) %></td>
-			<% end %><td class="delete">
-				<%%= link_to(casein_show_row_icon("trash"), casein_<%= singular_name %>_path(<%= singular_name %>), :method => :delete, :data => { :confirm => "Are you sure you want to delete this <%= singular_name.humanize.downcase %>?" }) %>
+			<% end %><% unless @read_only %><td class="delete">
+				<%%= link_to(casein_show_row_icon("trash"), casein_<%= singular_name %>_path(<%= singular_name %>), :method => :delete, :data => { :confirm => "Are you sure you want to delete this <%= singular_name.humanize.downcase %>?" }) %><% end %>
 			</td>
 		</tr>
 	<%% end %>

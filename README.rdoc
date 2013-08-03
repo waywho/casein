@@ -86,16 +86,17 @@ The command to run the scaffolding generator is:
 
 Where:
 
-* ModelName – The singular name of your model, e.g. customer
+* ModelName – The *singular* name of your model, e.g. customer
 * field:type – The name of your database fields and their types, e.g. name:string. The field name must match the name in your migrations and the type must be one of the Rails migration types (string, text, integer, float, decimal, datetime, timestamp, time, date, binary, boolean). Note that you do not have to specify all of the fields in your model, but just the ones that you wish to be editable in Casein.
 
 e.g. a typical scaffolding command might look like:
 
   rails g casein:scaffold customer name:string age:integer date_of_birth:date is_male:boolean
 
-There is one command-line option that can be added to the end of the generate command:
+Command-line options that can be added to the end of the generate command:
 
   --create-model-and-migration = Also creates a model and migration. By default the scaffold generator will work from existing models, but this option will generate the model and database migration files for you. This means you can also use Casein to set up a new project quickly as well.
+  --read-only = Creates scaffolding to view model data only (you will not be able to edit or create records). This is useful if you want to create a read-only viewer of data that's generated elsewhere.
 
 Once the command has been executed, the generator will:
 
