@@ -31,7 +31,7 @@ module Casein
   			copy_file "app/assets/javascripts/casein/custom.js", "app/assets/javascripts/casein/custom.js"
 			
   			#migrations
-  			migration_template 'db/migrate/casein_create_users.rb', "db/migrate/casein_create_users.rb"
+  			migration_template 'db/migrate/casein_create_admin_users.rb', "db/migrate/casein_create_admin_users.rb"
       end  
   end
 end

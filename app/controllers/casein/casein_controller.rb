@@ -32,7 +32,7 @@ module Casein
     def authorise    
       unless current_user
         session[:return_to] = request.fullpath
-        redirect_to new_casein_user_session_url
+        redirect_to new_casein_admin_user_session_url
         return false
       end
     end

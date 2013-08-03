@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Russell Quinn"]
-  s.date = "2013-08-02"
+  s.date = "2013-08-03"
   s.description = "Casein is an open-source CMS for Ruby on Rails."
   s.email = "mail@russellquinn.com"
   s.extra_rdoc_files = [
@@ -35,23 +35,23 @@ Gem::Specification.new do |s|
     "app/assets/stylesheets/casein/casein-bootstrap-overrides.css.scss",
     "app/assets/stylesheets/casein/casein.css.scss",
     "app/assets/stylesheets/casein/login.css.scss",
+    "app/controllers/casein/admin_users_controller.rb",
     "app/controllers/casein/casein_controller.rb",
     "app/controllers/casein/password_resets_controller.rb",
     "app/controllers/casein/user_sessions_controller.rb",
-    "app/controllers/casein/users_controller.rb",
     "app/helpers/casein/casein_helper.rb",
     "app/mailers/casein/casein_notification.rb",
-    "app/models/casein/user.rb",
+    "app/models/casein/admin_user.rb",
     "app/models/casein/user_session.rb",
+    "app/views/casein/admin_users/index.html.erb",
+    "app/views/casein/admin_users/new.html.erb",
+    "app/views/casein/admin_users/show.html.erb",
     "app/views/casein/casein/blank.html.erb",
     "app/views/casein/casein_notification/generate_new_password.erb",
     "app/views/casein/casein_notification/new_user_information.erb",
     "app/views/casein/casein_notification/password_reset_instructions.erb",
     "app/views/casein/password_resets/edit.html.erb",
     "app/views/casein/user_sessions/new.html.erb",
-    "app/views/casein/users/index.html.erb",
-    "app/views/casein/users/new.html.erb",
-    "app/views/casein/users/show.html.erb",
     "app/views/layouts/casein_auth.html.erb",
     "app/views/layouts/casein_main.html.erb",
     "config/initializers/will_paginate.rb",
@@ -65,7 +65,7 @@ Gem::Specification.new do |s|
     "lib/generators/casein/install/templates/app/helpers/casein/config_helper.rb",
     "lib/generators/casein/install/templates/app/views/casein/layouts/_tab_navigation.html.erb",
     "lib/generators/casein/install/templates/app/views/casein/layouts/_top_navigation.html.erb",
-    "lib/generators/casein/install/templates/db/migrate/casein_create_users.rb",
+    "lib/generators/casein/install/templates/db/migrate/casein_create_admin_users.rb",
     "lib/generators/casein/install/templates/public/robots.txt",
     "lib/generators/casein/scaffold/USAGE",
     "lib/generators/casein/scaffold/scaffold_generator.rb",

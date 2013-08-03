@@ -4,7 +4,7 @@ $CASEIN_USER_ACCESS_LEVEL_ADMIN = 0
 $CASEIN_USER_ACCESS_LEVEL_USER = 10
 
 module Casein
-  class User < ActiveRecord::Base
+  class AdminUser < ActiveRecord::Base
 
 	  def self.table_name
       self.to_s.gsub("::", "_").tableize
@@ -24,7 +24,7 @@ module Casein
     validates_presence_of :time_zone
 	  
   	def self.has_more_than_one_admin
-      Casein::User.where(:access_level => $CASEIN_USER_ACCESS_LEVEL_ADMIN).count > 1
+      Casein::AdminUser.where(:access_level => $CASEIN_USER_ACCESS_LEVEL_ADMIN).count > 1
     end
 	
   	def send_create_notification

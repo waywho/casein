@@ -1,7 +1,7 @@
 class CaseinCreateUsers < ActiveRecord::Migration
   
   def self.up
-    create_table :casein_users do |t|   
+    create_table :casein_admin_users do |t|   
       t.string    :login, :null => false
       t.string    :name
       t.string    :email
@@ -24,7 +24,7 @@ class CaseinCreateUsers < ActiveRecord::Migration
   end
   
   def self.down
-    drop_table :casein_users
+    drop_table :casein_admin_users
   end
   
 end

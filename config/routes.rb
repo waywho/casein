@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   namespace :casein do
   
-    resources :users do
+    resources :admin_users do
       member do
         patch :update_password, :reset_password
       end
