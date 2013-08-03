@@ -91,7 +91,7 @@ Where:
 
 e.g. a typical scaffolding command might look like:
 
-  rails g casein:scaffold customer name:string age:integer date_of_birth:date is_male:boolean
+  rails g casein:scaffold Customer name:string age:integer date_of_birth:date is_male:boolean
 
 Command-line options that can be added to the end of the generate command:
 
