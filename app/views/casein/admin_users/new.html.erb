@@ -36,6 +36,13 @@
 		<div class="col-lg-6">
 			<%= casein_password_field form, @casein_admin_user, :password_confirmation, {:casein_label => "Repeat password"} %>
 		</div>
+		<div class="col-lg-12 password-checkbox">
+			<div class="checkbox">
+	      		<label>
+	      			<%= check_box_tag :generate_random_password, "1", false, {:id => 'generate-random-password-checkbox'} %> Generate random password
+	      		</label>
+	    	</div>
+	    </div>
 	</div>
 
 	<p class="submits">

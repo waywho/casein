@@ -47,8 +47,15 @@
 				<%= casein_password_field f, f.object, :password, {:casein_label => "New password"} %>
 			</div>
 			<div class="col-lg-6">
-				<%= casein_password_field f, f.object, :password_confirmation, {:casein_label => "Repeat password"} %>
+				<%= casein_password_field f, f.object, :password_confirmation, {:casein_label => "Repeat new password"} %>
 			</div>
+			<div class="col-lg-12 password-checkbox">
+				<div class="checkbox">
+		      		<label>
+		      			<%= check_box_tag :generate_random_password, "1", false, {:id => 'generate-random-password-checkbox'} %> Generate random password
+		      		</label>
+		    	</div>
+		    </div>
 		</div>
 		
 		<p class="submits">
@@ -65,8 +72,10 @@
 
 		<div class="row">
   			<div class="col-lg-6">
-				<%= label_tag :form_current_password, "Current password" %>
-				<%= password_field_tag :form_current_password, "", {:class => 'form-control'} %>
+  				<div class="form-group">
+					<%= label_tag :form_current_password, "Current password" %>
+					<%= password_field_tag :form_current_password, "", {:class => 'form-control'} %>
+				</div>
 			</div>
 			<div class="col-lg-6">
 			</div>
@@ -77,7 +86,7 @@
 				<%= casein_password_field f, f.object, :password, {:casein_label => "New password"} %>
 			</div>
 			<div class="col-lg-6">
-				<%= casein_password_field f, f.object, :password_confirmation, {:casein_label => "Repeat password"} %>
+				<%= casein_password_field f, f.object, :password_confirmation, {:casein_label => "Repeat new password"} %>
 			</div>
 		</div>
 		

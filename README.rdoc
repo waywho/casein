@@ -60,7 +60,7 @@ There is no real upgrade path from previous versions of Casein, including v4.x. 
   rake db:create (if needed)
   rake db:migrate
 	
-— Run the following Rake task to set up an initial user. The default username and password will be displayed once the task has completed. You should specify your email address. If you set up an SMTP server in your Rails environment then you’ll also receive an email notification about the new account.
+— Run the following Rake task to set up an initial user. The default username and a random password will be displayed once the task has completed. You should specify your email address. If you've set up an SMTP server in your Rails environment then you’ll also receive an email notification about the new account.
 
   rake casein:users:create_admin email=you@yourdomain.com
 
@@ -68,7 +68,7 @@ There is no real upgrade path from previous versions of Casein, including v4.x. 
 
 — You can access Casein at http://yourdomain.com/casein or http://yourdomain.com/admin
 
-<b>Casein should now be running! You should change the default password immediately!</b>
+<b>Casein should now be running!</b>
 
 ==Usage
 
