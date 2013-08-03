@@ -31,6 +31,7 @@ begin
     gem.files = Dir["Gemfile", "LICENSE", "Rakefile", "README.rdoc", "PUBLIC_VERSION.yml", "{lib}/**/*", "{app}/**/*", "{config}/**/*"]
     gem.email = "mail@russellquinn.com"
     gem.authors = ["Russell Quinn"]
+    gem.license = "MIT"
     gem.homepage = "http://github.com/russellquinn/casein"
     gem.add_dependency("will_paginate", ["3.0.4"])
     gem.add_dependency("authlogic", ["3.3.0"])
