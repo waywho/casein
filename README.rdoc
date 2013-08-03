@@ -1,4 +1,4 @@
-=Casein - a lightweight Ruby on Rails CMS
+=Casein - a lightweight CMS toolkit for Ruby on Rails, based on Bootstrap
 
 **WORK IN PROGRESS ON CASEIN 5.0.0.beta1 — featuring new responsive UI based on Bootstrap 3**
 
@@ -16,9 +16,7 @@ Rails 2.x: http://github.com/spoiledmilk/casein
 
 ==Disclaimer
 
-Casein was created and is maintained by Russell Quinn (http://www.russellquinn.com)
-
-Previous versions of Casein were sponsored by Spoiled Milk (http://www.spoiledmilk.com)
+Casein was created and is maintained by Russell Quinn. http://www.russellquinn.com
 
 Casein is available to use under the terms of the MIT License. See the LICENSE file for more details.
 
@@ -236,6 +234,10 @@ Every Casein user can set their own timezone via their profile. To change the de
 
 ===Acknowledgements
 
-Bootstrap is copyright 2012 Twitter, Inc under the Apache 2.0 license. http://getbootstrap.com
+Casein uses Bootstrap and Glyphicons.
 
-Glyphicons is an extensive glyph library created by Jan Kovařík and made available for Bootstrap. http://glyphicons.getbootstrap.com
+Bootstrap is copyright (c) 2013 Twitter and is used under the Apache 2.0 license. http://getbootstrap.com
+
+Glyphicons is an extensive glyph library created by Jan Kovařík and made available for Bootstrap under the same Apache 2.0 license. http://glyphicons.com
+
+Bootstrap-glyphicons is copyright (c) 2013 Mark Otto and is used under the MIT License. http://glyphicons.getbootstrap.com
