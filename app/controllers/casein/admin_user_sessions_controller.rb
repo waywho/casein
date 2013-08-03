@@ -1,5 +1,5 @@
 module Casein
-  class UserSessionsController < Casein::CaseinController
+  class AdminUserSessionsController < Casein::CaseinController
     
     unloadable
     
@@ -9,12 +9,12 @@ module Casein
     layout 'casein_auth'
   
     def new
-      @user_session = Casein::UserSession.new
+      @admin_user_session = Casein::AdminUserSession.new
     end
   
     def create
-      @user_session = Casein::UserSession.new params[:casein_user_session]
-      if @user_session.save
+      @admin_user_session = Casein::AdminUserSession.new params[:casein_admin_user_session]
+      if @admin_user_session.save
         redirect_back_or_default :controller => :casein, :action => :index
       else
         render :action => :new
@@ -22,8 +22,8 @@ module Casein
     end
   
     def destroy
-      current_user_session.destroy
-      redirect_back_or_default new_casein_user_session_url
+      current_admin_user_session.destroy
+      redirect_back_or_default new_casein_admin_user_session_url
     end
 
   private

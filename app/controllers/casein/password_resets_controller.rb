@@ -25,7 +25,7 @@ module Casein
         flash[:warning] = "There is no user with that email"
       end
 
-      redirect_to new_casein_user_session_url
+      redirect_to new_casein_admin_user_session_url
     end
 
     def edit
@@ -43,7 +43,7 @@ module Casein
       
         if @reset_user.save
           flash[:notice] = "Password successfully updated"
-          redirect_to new_casein_user_session_url
+          redirect_to new_casein_admin_user_session_url
           return
         end
       end
@@ -59,7 +59,7 @@ module Casein
       
       unless @reset_user
         flash[:warning] = "Your account could not be located. Try to copy and paste the URL directly from the email."
-        redirect_to new_casein_user_session_url
+        redirect_to new_casein_admin_user_session_url
       end
     end
   end

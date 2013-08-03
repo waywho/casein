@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       end
     end
     
-    resource :user_session
+    resource :admin_user_session
     resource :password_reset, :only => [:create, :edit, :update]
         
     match "/blank" => "casein#blank", :via => :get

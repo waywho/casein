@@ -1,5 +1,5 @@
 module Casein
-  class UserSession < ::Authlogic::Session::Base
+  class AdminUserSession < ::Authlogic::Session::Base
     include ActiveModel::Conversion 
     def persisted? 
       false 

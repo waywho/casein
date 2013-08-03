@@ -13,7 +13,7 @@ module Casein
 
     layout 'casein_main'
    
-    helper_method :current_user_session, :current_user
+    helper_method :current_admin_user_session, :current_user
     before_filter :authorise
     before_filter :set_time_zone
     
@@ -41,14 +41,14 @@ module Casein
       Time.zone = current_user.time_zone if current_user
     end
   
-    def current_user_session
-      return @current_user_session if defined?(@current_user_session)
-      @current_user_session = Casein::UserSession.find
+    def current_admin_user_session
+      return @current_admin_user_session if defined?(@current_admin_user_session)
+      @current_admin_user_session = Casein::AdminUserSession.find
     end
 
     def current_user
       return @session_user if defined?(@session_user)
-      @session_user = current_user_session && current_user_session.user
+      @session_user = current_admin_user_session && current_admin_user_session.admin_user
     end
   
     def needs_admin
