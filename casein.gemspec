@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
     "app/assets/javascripts/casein/bootstrap.js",
     "app/assets/javascripts/casein/casein.js",
     "app/assets/javascripts/casein/html5shiv.js",
-    "app/assets/stylesheets/casein/bootstrap-glyphicons.css",
+    "app/assets/stylesheets/casein/bootstrap-glyphicons.css.scss",
     "app/assets/stylesheets/casein/bootstrap.css",
     "app/assets/stylesheets/casein/casein-bootstrap-overrides.css.scss",
     "app/assets/stylesheets/casein/casein.css.scss",
@@ -90,18 +90,15 @@ Gem::Specification.new do |s|
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<casein>, [">= 0"])
       s.add_runtime_dependency(%q<will_paginate>, ["= 3.0.4"])
       s.add_runtime_dependency(%q<authlogic>, ["= 3.3.0"])
       s.add_runtime_dependency(%q<jquery-rails>, [">= 0"])
     else
-      s.add_dependency(%q<casein>, [">= 0"])
       s.add_dependency(%q<will_paginate>, ["= 3.0.4"])
       s.add_dependency(%q<authlogic>, ["= 3.3.0"])
       s.add_dependency(%q<jquery-rails>, [">= 0"])
     end
   else
-    s.add_dependency(%q<casein>, [">= 0"])
     s.add_dependency(%q<will_paginate>, ["= 3.0.4"])
     s.add_dependency(%q<authlogic>, ["= 3.3.0"])
     s.add_dependency(%q<jquery-rails>, [">= 0"])
