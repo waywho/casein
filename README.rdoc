@@ -86,7 +86,7 @@ The command to run the scaffolding generator is:
 
 Where:
 
-* ModelName – The *singular* name of your model, e.g. customer
+* ModelName – The *singular* name of your model, e.g. Customer
 * field:type – The name of your database fields and their types, e.g. name:string. The field name must match the name in your migrations and the type must be one of the Rails migration types (string, text, integer, float, decimal, datetime, timestamp, time, date, binary, boolean). Note that you do not have to specify all of the fields in your model, but just the ones that you wish to be editable in Casein.
 
 e.g. a typical scaffolding command might look like:
