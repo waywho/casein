@@ -7,7 +7,7 @@ module Casein
       'Casein'
     end
 
-    # URL to the logo used for the login screen and top banner - it should be a transparent PNG
+    # Path to the logo used for the sign in screen and top banner - it should be a transparent PNG (around 140 x 30px)
     def casein_config_logo
       'casein/casein.png'
     end
@@ -26,7 +26,7 @@ module Casein
       'donotreply@caseincms.com'
     end
   
-    # The page that the user is shown when they login or click the logo
+    # The page that the user is shown when they sign in or click the logo
     # do not point this at casein/index!
     def casein_config_dashboard_url
       url_for :controller => :casein, :action => :blank

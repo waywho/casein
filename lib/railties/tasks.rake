@@ -14,7 +14,7 @@ namespace :casein do
       unless admin.save
         puts "[Casein] Failed: check that the 'admin' account doesn't already exist."
       else
-        puts "[Casein] Created new admin user with login 'admin' and password 'password'"
+        puts "[Casein] Created new admin user with username 'admin' and password 'password'"
       end      
     end
 

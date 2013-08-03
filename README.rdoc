@@ -60,7 +60,7 @@ There is no real upgrade path from previous versions of Casein, including v4.x. 
   rake db:create (if needed)
   rake db:migrate
 	
-— Run the following Rake task to set up an initial user. The default login and password will be displayed once the task has completed. You should specify your email address. If you set up an SMTP server in your Rails environment then you’ll also receive an email notification about the new account.
+— Run the following Rake task to set up an initial user. The default username and password will be displayed once the task has completed. You should specify your email address. If you set up an SMTP server in your Rails environment then you’ll also receive an email notification about the new account.
 
   rake casein:users:create_admin email=you@yourdomain.com
 
@@ -102,7 +102,7 @@ Once the command has been executed, the generator will:
 * Add a new tab for the model to: app/views/casein/layouts/_tab_navigation.html.erb
 * Create a controller with the name: app/controllers/casein/model_controller.erb
 * Add views for index, new and show to: app/views/casein/model/
-* If you restart and run your application now, you’ll be able to log in to Casein and directly edit and create new instances of your model data right away!
+* If you restart and run your application now, you’ll be able to sign in to Casein and directly edit and create new instances of your model data right away!
 
 However, you’ll probably want to customise your views and side bars and extend your controller to suit your project. The scaffold generator just sets up the defaults for you.
 
