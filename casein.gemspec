@@ -13,11 +13,12 @@ Gem::Specification.new do |s|
   s.description = "Casein is an open-source CMS for Ruby on Rails."
   s.email = "mail@russellquinn.com"
   s.extra_rdoc_files = [
+    "LICENSE",
     "README.rdoc"
   ]
   s.files = [
     "Gemfile",
-    "MIT-LICENSE",
+    "LICENSE",
     "PUBLIC_VERSION.yml",
     "README.rdoc",
     "Rakefile",

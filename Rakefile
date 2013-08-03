@@ -28,7 +28,7 @@ begin
     gem.name = "casein"
     gem.summary = "A lightweight Ruby on Rails CMS, based on Bootstrap"
     gem.description = "Casein is an open-source CMS for Ruby on Rails."
-    gem.files = Dir["Gemfile", "MIT-LICENSE", "Rakefile", "README.rdoc", "PUBLIC_VERSION.yml", "{lib}/**/*", "{app}/**/*", "{config}/**/*"]
+    gem.files = Dir["Gemfile", "LICENSE", "Rakefile", "README.rdoc", "PUBLIC_VERSION.yml", "{lib}/**/*", "{app}/**/*", "{config}/**/*"]
     gem.email = "mail@russellquinn.com"
     gem.authors = ["Russell Quinn"]
     gem.homepage = "http://github.com/russellquinn/casein"
