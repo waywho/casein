@@ -96,13 +96,8 @@ module Casein
   	end
 	
   	def casein_check_box form, obj, attribute, options = {}
-  	  form_tag = form.check_box(attribute, strip_casein_options(options))
-	  
-  	  if options.key? :casein_box_label
-  	    form_tag = "<div>" + form_tag + "<span class=\"rcText\">#{options[:casein_box_label]}</span></div>".html_safe
-  	  end
-	  
-  	  casein_form_tag_wrapper(form_tag, form, obj, attribute, options).html_safe
+  	  form_tag = "<div class='check-box'>#{form.check_box(attribute, strip_casein_options(options))}</div>".html_safe
+      casein_form_tag_wrapper(form_tag, form, obj, attribute, options).html_safe
   	end
 	
   	def casein_check_box_group form, obj, check_boxes = {}
@@ -112,7 +107,7 @@ module Casein
         form_tags += casein_check_box form, obj, check_box[0], check_box[1]
       end
     
-      casein_form_tag_wrapper form_tag, form, obj, attribute, options
+      casein_form_tag_wrapper(form_tag, form, obj, attribute, options)
     end
 	
   	def casein_radio_button form, obj, attribute, tag_value, options = {}
