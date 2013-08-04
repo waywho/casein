@@ -34,12 +34,12 @@ module Casein
   
     # A list of stylesheet files to include in the page head section
     def casein_config_stylesheet_includes
-      %w[casein/custom casein/casein]
+      %w[casein/casein casein/custom]
     end
   
     # A list of JavaScript files to include in the page head section
     def casein_config_javascript_includes
-      %w[casein/custom casein/casein]
+      %w[casein/casein casein/custom]
     end
     
   end
