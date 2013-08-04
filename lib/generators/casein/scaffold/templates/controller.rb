@@ -9,7 +9,7 @@ module Casein
   
     def index
       @casein_page_title = '<%= plural_name.humanize.capitalize %>'
-  		@<%= plural_name %> = <%= class_name %>.paginate :page => params[:page]
+  		@<%= plural_name %> = <%= class_name %>.order(sort_order(:<%= attributes[0].name %>)).paginate :page => params[:page]
     end
   
     def show

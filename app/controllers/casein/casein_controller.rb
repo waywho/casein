@@ -68,5 +68,9 @@ module Casein
       session[:return_to] = nil
     end
 
+    def sort_order(default)
+      "#{(params[:c] || default.to_s).gsub(/[\s;'\"]/,'')} #{'ASC' if params[:d] == 'up'} #{'DESC' if params[:d] == 'down'}"
+    end
+
   end
 end

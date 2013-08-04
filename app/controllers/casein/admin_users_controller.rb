@@ -10,7 +10,7 @@ module Casein
  
     def index
       @casein_page_title = "Users"
-    	@users = Casein::AdminUser.paginate :order => "login", :page => params[:page]
+      @users = Casein::AdminUser.order(sort_order(:login)).paginate :page => params[:page]
     end
  
     def new

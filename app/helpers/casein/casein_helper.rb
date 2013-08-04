@@ -76,6 +76,24 @@ module Casein
   	def casein_show_row_icon icon_name
       "<div class='iconRow'><span class='glyphicon glyphicon-#{icon_name}'></span></div>".html_safe
   	end
+
+    def casein_format_date date, format = "%b %d, %Y"
+      date.strftime(format)
+    end
+
+    def casein_format_time time, format = "%H:%M:%S"
+      time.strftime(format)
+    end
+
+    def casein_format_datetime datetime, format = "%b %d, %Y %H:%M:%S"
+      datetime.strftime(format)
+    end
+
+    def casein_sort_link title, column, options = {}
+      condition = options[:unless] if options.has_key?(:unless)
+      sort_dir = params[:d] == 'up' ? 'down' : 'up'
+      link_to_unless condition, title, request.parameters.merge( {:c => column, :d => sort_dir} )
+    end
 	
   	# Styled form tag helpers
 	
