@@ -193,6 +193,12 @@ module Casein
           human_attribute_name = options[:casein_label]
         end
 
+        sublabel = ""
+
+        if options.key? :casein_sublabel
+          sublabel = " <small>#{options[:casein_sublabel]}</small>".html_safe
+        end
+
     		html = ""
 
         if obj && obj.errors[attribute].any?
@@ -200,7 +206,7 @@ module Casein
     			html += form.label(attribute, "#{human_attribute_name} #{obj.errors[attribute].first}".html_safe, :class => "control-label")
     		else
           html += "<div class='form-group'>"
-    			html += form.label(attribute, human_attribute_name, :class => "control-label")
+    			html += form.label(attribute, "#{human_attribute_name}#{sublabel}".html_safe, :class => "control-label")
     		end
 
     		html += "<div class='well'>#{form_tag}</div></div>"

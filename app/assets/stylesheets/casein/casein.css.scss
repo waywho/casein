@@ -186,6 +186,13 @@ footer p a:hover {
 
 /* CASEIN FORMS */
 
+label.control-label small {
+	font-weight: normal;
+	color: #666;
+	margin-left: 5px;
+	font-size: 0.8em; 
+}
+
 .casein-date-select select {
 	width: 28%;
 	display: inline-block;
