@@ -183,3 +183,27 @@ footer p a:hover {
 	background-color: #eee;
 	margin-bottom: 30px;
 }
+
+/* CASEIN FORMS */
+
+.casein-date-select select {
+	width: 28%;
+	display: inline-block;
+	margin-left: 2%;
+	margin-right: 2%
+}
+
+.casein-time-select select {
+	width: 44%;
+	display: inline-block;
+	margin-left: 2%;
+	margin-right: 2%
+}
+
+.casein-datetime-select select {
+	width: 27%;
+	display: inline-block;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 20px;
+}

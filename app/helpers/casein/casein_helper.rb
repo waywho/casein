@@ -143,15 +143,15 @@ module Casein
   	end
   	
   	def casein_date_select form, obj, attribute, options = {}
-  	  casein_form_tag_wrapper(form.date_select(attribute, strip_casein_options(options), merged_class_hash(options, 'form-control')), form, obj, attribute, options).html_safe
+  	  casein_form_tag_wrapper("<div class='casein-date-select'>".html_safe + form.date_select(attribute, strip_casein_options(options), merged_class_hash(options, 'form-control')) + "</div>".html_safe, form, obj, attribute, options).html_safe
   	end
 
   	def casein_time_select form, obj, attribute, options = {}
-  	  casein_form_tag_wrapper(form.time_select(attribute, strip_casein_options(options), merged_class_hash(options, 'form-control')), form, obj, attribute, options).html_safe
+  	  casein_form_tag_wrapper("<div class='casein-time-select'>".html_safe + form.time_select(attribute, strip_casein_options(options), merged_class_hash(options, 'form-control')) + "</div>".html_safe, form, obj, attribute, options).html_safe
   	end
 	
   	def casein_datetime_select form, obj, attribute, options = {}
-  	  casein_form_tag_wrapper(form.datetime_select(attribute, strip_casein_options(options), merged_class_hash(options, 'form-control')), form, obj, attribute, options).html_safe
+  	  casein_form_tag_wrapper("<div class='casein-datetime-select'>".html_safe + form.datetime_select(attribute, strip_casein_options(options), merged_class_hash(options, 'form-control')) + "</div>".html_safe, form, obj, attribute, options).html_safe
   	end
 	
   	def casein_file_field form, obj, object_name, attribute, options = {}
