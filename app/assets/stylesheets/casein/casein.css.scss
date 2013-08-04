@@ -143,6 +143,16 @@ footer p a:hover {
 	border-bottom: 2px solid #ccc;
 }
 
+#content .table th div.table-header-icon {
+	display: inline-block;
+	margin-left: 5px;
+	width: 12px;
+	height: 12px;
+	color: #555;
+	position: relative;
+	top: 1px;
+}
+
 #content .table td {
 	padding: 0px;
 	font-size: 12px;

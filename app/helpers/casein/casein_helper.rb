@@ -91,8 +91,13 @@ module Casein
 
     def casein_sort_link title, column, options = {}
       condition = options[:unless] if options.has_key?(:unless)
-      sort_dir = params[:d] == 'up' ? 'down' : 'up'
-      link_to_unless condition, title, request.parameters.merge( {:c => column, :d => sort_dir} )
+      icon_to_show_html = "<div class='table-header-icon'>&nbsp;</div>".html_safe
+      if params[:c].to_s == column.to_s
+        icon_to_show = params[:d] == 'down' ? 'chevron-up' : 'chevron-down'
+        icon_to_show_html = "<div class='table-header-icon glyphicon glyphicon-#{icon_to_show}'></div>".html_safe
+      end
+      sort_dir = params[:d] == 'down' ? 'up' : 'down'
+      link_to_unless(condition, title, request.parameters.merge({:c => column, :d => sort_dir})) + icon_to_show_html
     end
 	
   	# Styled form tag helpers
