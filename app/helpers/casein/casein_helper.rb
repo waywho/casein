@@ -99,6 +99,22 @@ module Casein
       sort_dir = params[:d] == 'down' ? 'up' : 'down'
       link_to_unless(condition, title, request.parameters.merge({:c => column, :d => sort_dir})) + icon_to_show_html
     end
+
+    def casein_yes_no_label value
+      if value
+        return "<span class='label label-success'>Yes</span>".html_safe
+      else
+        return "<span class='label label-danger'>No</span>".html_safe
+      end
+    end
+
+    def casein_no_yes_label value
+      if value
+        return "<span class='label label-danger'>Yes</span>".html_safe
+      else
+        return "<span class='label label-success'>No</span>".html_safe
+      end
+    end
 	
   	# Styled form tag helpers
 	
