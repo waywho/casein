@@ -81,11 +81,11 @@ module Casein
       date.strftime(format)
     end
 
-    def casein_format_time time, format = "%H:%M:%S"
+    def casein_format_time time, format = "%H:%M"
       time.strftime(format)
     end
 
-    def casein_format_datetime datetime, format = "%b %d, %Y %H:%M:%S"
+    def casein_format_datetime datetime, format = "%b %d, %Y %H:%M"
       datetime.strftime(format)
     end
 
