@@ -228,3 +228,10 @@ label.control-label small {
 	margin-right: 2%;
 	margin-bottom: 20px;
 }
+
+@media (min-width: 992px){
+    div.col-lg-12 .casein-datetime-select select {
+		width: 14%;
+	margin-bottom: 0px;
+	}
+}
