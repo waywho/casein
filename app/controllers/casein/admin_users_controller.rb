@@ -3,8 +3,6 @@ require 'securerandom'
 module Casein
   class AdminUsersController < Casein::CaseinController
 
-    unloadable
-  
     before_filter :needs_admin, :except => [:show, :destroy, :update, :update_password]
     before_filter :needs_admin_or_current_user, :only => [:show, :destroy, :update, :update_password]
  

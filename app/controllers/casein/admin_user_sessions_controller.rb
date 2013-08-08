@@ -1,8 +1,6 @@
 module Casein
   class AdminUserSessionsController < Casein::CaseinController
     
-    unloadable
-    
     skip_before_filter :authorise, :only => [:new, :create]
     before_filter :requires_no_session_user, :except => [:destroy]
   

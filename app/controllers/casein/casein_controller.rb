@@ -3,8 +3,6 @@ require 'authlogic'
 module Casein
   class CaseinController < ApplicationController
 
-    unloadable
-
     require 'casein/casein_helper'
     include Casein::CaseinHelper
 
