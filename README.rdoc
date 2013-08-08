@@ -181,22 +181,22 @@ You will find the form used for both new and show in a partial named _form.html.
 
 All of the standard Rails form helpers are available, but the Casein versions are prefixed with casein_. These versions are styled for the Casein interface and have automatic support for validation error reporting.
 
-  casein_text_field form, model, attribute, options = {}
-  casein_password_field form, model, attribute, options = {}
-  casein_text_area form, model, attribute, options = {}
-  casein_text_area_big form, model, attribute, options = {}
-  casein_check_box form, model, attribute, options = {}
-  casein_check_box_group form, model, check_boxes = {}
-  casein_radio_button form, model, attribute, tag_value, options = {}
-  casein_radio_button_group form, model, radio_buttons = {}
-  casein_select form, model, attribute, option_tags, options = {}
+  casein_text_field form, obj, attribute, options = {}
+  casein_password_field form, obj, attribute, options = {}
+  casein_text_area form, obj, attribute, options = {}
+  casein_text_area_big form, obj, attribute, options = {}
+  casein_check_box form, obj, attribute, options = {}
+  casein_check_box_group form, obj, check_boxes = {}
+  casein_radio_button form, obj, attribute, tag_value, options = {}
+  casein_radio_button_group form, obj, radio_buttons = {}
+  casein_select form, obj, attribute, option_tags, options = {}
   casein_time_zone_select form, obj, attribute, option_tags, options = {}
   casein_collection_select form, obj, object, attribute, collection, value_method, text_method, options = {}
-  casein_date_select form, model, attribute, options = {}
-  casein_time_select form, model, attribute, options = {}
-  casein_datetime_select form, model, attribute, options = {}
-  casein_file_field form, model, object_name, attribute, options = {}
-  casein_hidden_field form, model, attribute, options = {}
+  casein_date_select form, obj, attribute, options = {}
+  casein_time_select form, obj, attribute, options = {}
+  casein_datetime_select form, obj, attribute, options = {}
+  casein_file_field form, obj, object_name, attribute, options = {}
+  casein_hidden_field form, obj, attribute, options = {}
 
 For more information on each function, check the app/helpers/casein/casein_helper.rb file within the project. The method parameters are typically the same as the Rails form tag helpers. There are some extra Casein options that can be passed through as part of the options hash:
 
