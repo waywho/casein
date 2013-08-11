@@ -7,7 +7,7 @@ module Casein
   
     argument :attributes, :type => :array, :required => true, :desc => "attribute list required"
     
-    class_options :create_model_and_migration => false, :read_only => false
+    class_options :create_model_and_migration => false, :read_only => false, :no_index => false
   
     def self.next_migration_number dirname
       if ActiveRecord::Base.timestamped_migrations
@@ -20,9 +20,10 @@ module Casein
     def generate_files
       @plural_route = (plural_name != singular_name) ? plural_name : "#{plural_name}_index"
       @read_only = options[:read_only]
+      @no_index = options[:no_index]
 
       template 'controller.rb', "app/controllers/casein/#{plural_name}_controller.rb"
-      template 'views/index.html.erb', "app/views/casein/#{plural_name}/index.html.erb"
+      template 'views/index.html.erb', "app/views/casein/#{plural_name}/index.html.erb" unless @no_index
       template 'views/show.html.erb', "app/views/casein/#{plural_name}/show.html.erb"
       template 'views/new.html.erb', "app/views/casein/#{plural_name}/new.html.erb" unless @read_only
       template 'views/_form.html.erb', "app/views/casein/#{plural_name}/_form.html.erb"
@@ -30,7 +31,7 @@ module Casein
       
       add_namespace_to_routes
       add_to_routes
-      add_to_navigation
+      add_to_navigation unless @no_index
       
       if options[:create_model_and_migration]
         template 'model.rb', "app/models/#{singular_name}.rb"
@@ -54,7 +55,17 @@ module Casein
     def add_to_routes
       puts "   casein     adding #{plural_name} resources to routes.rb"
       file_to_update = Rails.root + 'config/routes.rb'
-      line_to_add = "resources :#{plural_name}"
+
+      if @no_index && @read_only
+        line_to_add = "resources :#{plural_name}, :only => [:show]"
+      elsif @no_index
+        line_to_add = "resources :#{plural_name}, :except => [:index]"
+      elsif @read_only
+        line_to_add = "resources :#{plural_name}, :only => [:index, :show]"
+      else
+        line_to_add = "resources :#{plural_name}"
+      end
+
       insert_sentinel = 'namespace :casein do'
       gsub_add_once plural_name, file_to_update, "\t\t" + line_to_add, insert_sentinel
     end

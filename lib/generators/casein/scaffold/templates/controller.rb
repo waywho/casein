@@ -6,17 +6,17 @@ module Casein
     ## optional filters for defining usage according to Casein::AdminUser access_levels
     # before_filter :needs_admin, :except => [:action1, :action2]
     # before_filter :needs_admin_or_current_user, :only => [:action1, :action2]
-  
+  <% unless @no_index %>
     def index
       @casein_page_title = '<%= plural_name.humanize.capitalize %>'
   		@<%= plural_name %> = <%= class_name %>.order(sort_order(:<%= attributes[0].name %>)).paginate :page => params[:page]
     end
-  
+  <% end %>
     def show
       @casein_page_title = 'View <%= singular_name.humanize.downcase %>'
       @<%= singular_name %> = <%= class_name %>.find params[:id]
     end
- 
+  <% unless @read_only %>
     def new
       @casein_page_title = 'Add a new <%= singular_name.humanize.downcase %>'
     	@<%= singular_name %> = <%= class_name %>.new
@@ -67,6 +67,6 @@ module Casein
       def <%= singular_name %>_params
         params.require(:<%= singular_name %>).permit(<%= permit_list %>)
       end
-
+<% end %>
   end
 end

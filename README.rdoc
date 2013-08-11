@@ -94,7 +94,8 @@ e.g. a typical scaffolding command might look like:
 Command-line options that can be added to the end of the generate command:
 
   --create-model-and-migration = Also creates a model and migration. By default the scaffold generator will work from existing models, but this option will generate the model and database migration files for you. This means you can also use Casein to set up a new project quickly as well.
-  --read-only = Creates scaffolding to view model data only (you will not be able to edit or create records). This is useful if you want to create a read-only viewer of data that's generated elsewhere.
+  --read-only = Creates scaffolding to view model data only (you will not be able to edit, create, or delete records). This is useful if you want to create a read-only viewer of data that's generated elsewhere.
+  --no-index = Excludes the index view and does not add to the model to the navigation. The _table partial is still generated. This is useful generating has/belongs relationships.
 
 Once the command has been executed, the generator will:
 
