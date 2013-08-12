@@ -21,17 +21,13 @@
 /* CASEIN NAVIGATION BAR */
 
 .casein-tab-separator {
-	width: 20%;
-	height: 1px;
-	margin: 14px 40% 15px 40%;
-	border-bottom: 1px solid #cdcdcd;
+	display: none;
 }
 
 @media (min-width: 768px){
     .casein-tab-separator {
+    	display: block;
     	float: left;
-    	margin: 0px;
-    	border: 0px;
     	width: 9px;
 		height: 12px;
 		border-right: 1px solid #cdcdcd;
