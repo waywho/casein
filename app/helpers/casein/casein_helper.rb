@@ -207,6 +207,10 @@ module Casein
   	def casein_hidden_field form, obj, attribute, options = {}
   	  form.hidden_field(attribute, strip_casein_options(options)).html_safe
   	end
+
+    def casein_custom_field form, obj, attribute, custom_contents, options = {}
+      casein_form_tag_wrapper(custom_contents, form, obj, attribute, options).html_safe
+    end
 	
   protected
 
