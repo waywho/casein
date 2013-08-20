@@ -177,8 +177,8 @@ module Casein
   	  casein_form_tag_wrapper(form.time_zone_select(attribute, option_tags, strip_casein_options(options), merged_class_hash(options, 'form-control')), form, obj, attribute, options).html_safe
   	end
 	
-  	def casein_collection_select form, obj, object, attribute, collection, value_method, text_method, options = {}
-  		casein_form_tag_wrapper(collection_select(object, attribute, collection, value_method, text_method, strip_casein_options(options), merged_class_hash(options, 'form-control')), form, obj, attribute, options).html_safe
+  	def casein_collection_select form, obj, attribute, collection, value_method, text_method, options = {}
+  		casein_form_tag_wrapper(collection_select(obj, attribute, collection, value_method, text_method, strip_casein_options(options), merged_class_hash(options, 'form-control')), form, obj, attribute, options).html_safe
   	end
   	
   	def casein_date_select form, obj, attribute, options = {}
