@@ -43,9 +43,9 @@ There is no real upgrade path from previous versions of Casein, including v4.x. 
 
 — Then use bundler to install Casein and its dependencies:
 
-  bundle install
+  sudo bundle install
 	
-— If you have just created a new project, then remember to add your database details to /config/database.yml at this point.
+— If you have just created a new project — and don't want to use the default SQLite settings — then remember to add your database details to /config/database.yml at this point.
 
 — To enable Casein notification emails (used for new users and forgotten passwords) then add your SMTP server information to your initializers. For development, you can use something cool like MailCatcher (http://mailcatcher.me)
 
