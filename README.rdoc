@@ -1,8 +1,10 @@
 =Casein - a lightweight CMS toolkit for Ruby on Rails, based on Bootstrap
 
-**WORK IN PROGRESS ON CASEIN 5.0.0.beta2 — featuring new responsive UI based on Bootstrap 3**
+** ALL-NEW CASEIN 5.0.0 — featuring new responsive UI based on Bootstrap 3! **
 
 Casein is a Rails 4.x gem that provides scaffolding generators and helper functions to quickly create a clean and minimal CRUD (Create, Read, Update and Delete) interface for your data. It also comes with a pre-rolled user authentication system. As Casein is completely decoupled from the front-end, it can be added to a new or existing Rails project, or used as a standalone CMS to drive platforms built on other technologies.
+
+Screenshots at: http://www.caseincms.com
 
 ==Requirements
 
@@ -39,11 +41,11 @@ There is no real upgrade path from previous versions of Casein, including v4.x. 
 
 — Add the Casein gem to your Gemfile: (temporary git link, until official release)
 
-  gem 'casein', :git => 'git://github.com/russellquinn/casein.git', :branch => 'new-ui'
+  gem 'casein', '5.0.0'
 
 — Then use bundler to install Casein and its dependencies:
 
-  sudo bundle install
+  bundle install
 	
 — If you have just created a new project — and don't want to use the default SQLite settings — then remember to add your database details to /config/database.yml at this point.
 
@@ -173,6 +175,8 @@ The Casein Rake tasks are all namespaced with ‘casein:’
 ===Bootstrap
 
 Casein is now based on Bootstrap (http://getbootstrap.com) and jQuery. Bootstrap offers a wealth of UI components, CSS styles, and JavaScript plugins. See the Bootstrap website for full details.
+
+Note that Casein runs from the shortlived Bootstrap v3.0.0 and hasn't yet been updated to Bootstrap v3.1.x. Some of the Bootstrap syntax might be different if you're used to 3.1.x. (Update coming soon!)
 
 ===Changing form elements / other helpers
 
