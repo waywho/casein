@@ -176,7 +176,7 @@ The Casein Rake tasks are all namespaced with ‘casein:’
 
 Casein is now based on Bootstrap (http://getbootstrap.com) and jQuery. Bootstrap offers a wealth of UI components, CSS styles, and JavaScript plugins. See the Bootstrap website for full details.
 
-Note that Casein runs from the shortlived Bootstrap v3.0.0 and hasn't yet been updated to Bootstrap v3.1.x. Some of the Bootstrap syntax might be different if you're used to 3.1.x. (Update coming soon!)
+Note that Casein runs from the shortlived Bootstrap v3.0.0 beta and hasn't yet been updated to Bootstrap v3.1.x. Some of the Bootstrap syntax might be different if you're used to 3.1.x. (Update coming soon!)
 
 ===Changing form elements / other helpers
 
