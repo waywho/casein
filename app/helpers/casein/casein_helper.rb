@@ -66,7 +66,7 @@ module Casein
   	    contents = truncate(contents, :length => options[:casein_truncate], :omission => "...")
   	  end
 	  
-    	"<div class='noLink'>#{contents}</div>".html_safe
+    	"<div class='no-link'>#{contents}</div>".html_safe
     end
 	
   	def casein_show_icon icon_name
