@@ -35,6 +35,7 @@ begin
     gem.homepage = "http://github.com/russellquinn/casein"
     gem.add_dependency("will_paginate", ["3.0.5"])
     gem.add_dependency("authlogic", ["3.4.2"])
+    gem.add_dependency("scrypt", ["1.2.1"])
     gem.add_dependency("jquery-rails")
   end
 rescue

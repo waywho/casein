@@ -94,17 +94,20 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<casein>, [">= 0"])
       s.add_runtime_dependency(%q<will_paginate>, ["= 3.0.5"])
       s.add_runtime_dependency(%q<authlogic>, ["= 3.4.2"])
+      s.add_runtime_dependency(%q<scrypt>, ["= 1.2.1"])
       s.add_runtime_dependency(%q<jquery-rails>, [">= 0"])
     else
       s.add_dependency(%q<casein>, [">= 0"])
       s.add_dependency(%q<will_paginate>, ["= 3.0.5"])
       s.add_dependency(%q<authlogic>, ["= 3.4.2"])
+      s.add_dependency(%q<scrypt>, ["= 1.2.1"])
       s.add_dependency(%q<jquery-rails>, [">= 0"])
     end
   else
     s.add_dependency(%q<casein>, [">= 0"])
     s.add_dependency(%q<will_paginate>, ["= 3.0.5"])
     s.add_dependency(%q<authlogic>, ["= 3.4.2"])
+    s.add_dependency(%q<scrypt>, ["= 1.2.1"])
     s.add_dependency(%q<jquery-rails>, [">= 0"])
   end
 end
