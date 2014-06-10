@@ -1,6 +1,6 @@
 CASEIN v5.x — A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap.
 
-Copyright (c) 2013 Russell Quinn. Previously copyright (c) 2010-2012 Spoiled Milk ApS and Russell Quinn.
+Copyright (c) 2013-onwards Russell Quinn. Previously copyright (c) 2010-2012 Spoiled Milk ApS and Russell Quinn.
 
 www.russellquinn.com
 
@@ -31,13 +31,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Casein uses Bootstrap and Glyphicons.
 
-Bootstrap is copyright (c) 2013 Twitter and is used under the Apache 2.0 license.
+Bootstrap is copyright (c) 2014 Twitter and is used under the Apache 2.0 license.
 http://getbootstrap.com
 
 Glyphicons is an extensive glyph library created by Jan Kovařík and made available for Bootstrap under the same Apache 2.0 license.
 http://glyphicons.com
 
-Bootstrap-glyphicons is copyright (c) 2013 Mark Otto and is used under the MIT License.
+Bootstrap-glyphicons is copyright (c) 2014 Mark Otto and is used under the MIT License.
 http://glyphicons.getbootstrap.com
 
 - - -
@@ -225,7 +225,7 @@ Bootstrap and Glyphicons license:
 
 Bootstrap-glyphicons license:
 
-Copyright (c) 2013 Mark Otto
+Copyright (c) 2014 Mark Otto
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
