@@ -242,7 +242,7 @@ Every Casein user can set their own timezone via their profile. To change the de
 
 Casein uses Bootstrap and Glyphicons.
 
-Bootstrap is copyright (c) 2013 Twitter and is used under the Apache 2.0 license. http://getbootstrap.com
+Bootstrap is copyright (c) 2014 Twitter and is used under the MIT license. http://getbootstrap.com
 
 Glyphicons is an extensive glyph library created by Jan Kovařík and made available for Bootstrap under the same Apache 2.0 license. http://glyphicons.com
 
