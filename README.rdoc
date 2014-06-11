@@ -6,7 +6,7 @@ Casein is a Rails 4.x gem that provides scaffolding generators and helper functi
 
 It comes with a pre-rolled user-authentication system, supports user-based timezones, and is mobile-ready.
 
-As Casein is completely decoupled from the front end, it can be added to a new or existing Rails project, or used as a standalone CMS to drive platforms built on other technologies.
+As Casein is completely decoupled from the front end, it can be added to new or existing Rails projects, or used as a standalone CMS to drive platforms built on other technologies.
 
 Screenshots at: http://www.caseincms.com
 
