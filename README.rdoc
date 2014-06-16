@@ -97,9 +97,12 @@ e.g. a typical scaffolding command might look like:
 
   rails g casein:scaffold Customer name:string age:integer date_of_birth:date is_male:boolean
 
+By default the scaffold generator expects the model and database migration to already exist. This is because you typically won't want all of your model attributes to be editable in Casein. So you'd set up your model and migration the usual way, then run the Casein scaffold generator just for the appropriate attributes. However, you can add --create-model-and-migration to the generator to also create these files at the same time.
+
+
 Command-line options that can be added to the end of the generate command:
 
-  --create-model-and-migration = Also creates a model and migration. By default the scaffold generator will work from existing models, but this option will generate the model and database migration files for you. This means you can also use Casein to set up a new project quickly as well.
+  --create-model-and-migration = Also creates a model and migration.
   --read-only = Creates scaffolding to view model data only (you will not be able to edit, create, or delete records). This is useful if you want to create a read-only viewer of data that's generated elsewhere.
   --no-index = Excludes the index view and does not add to the model to the navigation. The _table partial is still generated. This is useful generating has/belongs relationships.
 
@@ -110,7 +113,7 @@ Once the command has been executed, the generator will:
 * Add views for index, new and show to: app/views/casein/model/
 * If you restart and run your application now, you’ll be able to sign in to Casein and directly edit and create new instances of your model data right away!
 
-However, you’ll probably want to customise your views and side bars and extend your controller to suit your project. The scaffold generator just sets up the defaults for you.
+However, you’ll want to customise your views and side bars and extend your controller to suit your project. The scaffold generator just sets up the defaults for you.
 
 <em>NOTE: Once you start customising the generated scaffolding files, you should be aware that if you run the generator again you should not overwrite the changed files without backing them up first. The generator will warn you each time it finds a file that you’ve customised. If you run the scaffold generator from a new version of Casein, then you should manually merge your backup and the new file. You can of course however, leave your originals untouched.</em>
 
@@ -119,6 +122,12 @@ However, you’ll probably want to customise your views and side bars and extend
 <b>app/helpers/casein/config_helper.rb</b>
 
 This is the main Casein configuration file that allows you to change things such as the website name, logo, notification email address, dashboard URL, etc. The options are documented within the file.
+
+To change the default page that Casein shows, you should change casein_config_dashboard_url. For example, to just go straight to the index page for a model named Page, you'd use:
+
+  def casein_config_dashboard_url
+    url_for casein_pages_path
+  end
 
 <b>views/casein/layouts/_tab_navigation.html.erb</b>
 
