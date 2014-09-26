@@ -45,7 +45,7 @@ There is no real upgrade path from previous versions of Casein, including v4.x. 
 
 — Add the Casein gem to your Gemfile:
 
-  gem 'casein', '5.0.0'
+  gem 'casein', '~>5.0.0'
 
 — Then use bundler to install Casein and its dependencies:
 
