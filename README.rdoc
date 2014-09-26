@@ -100,11 +100,11 @@ e.g. a typical scaffolding command might look like:
 By default the scaffold generator expects the model and database migration to already exist. This is because you typically won't want all of your model attributes to be editable in Casein. So you'd set up your model and migration the usual way, then run the Casein scaffold generator just for the appropriate attributes. However, you can add --create-model-and-migration to the generator to also create these files at the same time.
 
 
-Command-line options that can be added to the end of the generate command:
+Command-line options that can be added to the end of the scaffold generate command:
 
   --create-model-and-migration = Also creates a model and migration.
   --read-only = Creates scaffolding to view model data only (you will not be able to edit, create, or delete records). This is useful if you want to create a read-only viewer of data that's generated elsewhere.
-  --no-index = Excludes the index view and does not add to the model to the navigation. The _table partial is still generated. This is useful generating has/belongs relationships.
+  --no-index = Excludes the index view and does not add the model to the navigation. The _table partial is still generated. This is useful when generating has/belongs relationships.
 
 Once the command has been executed, the generator will:
 
@@ -209,7 +209,7 @@ All of the standard Rails form helpers are available, but the Casein versions ar
   casein_radio_button_group form, obj, radio_buttons = {}
   casein_select form, obj, attribute, option_tags, options = {}
   casein_time_zone_select form, obj, attribute, option_tags, options = {}
-  casein_collection_select form, obj, object, attribute, collection, value_method, text_method, options = {}
+  casein_collection_select form, obj, object_name, attribute, collection, value_method, text_method, options = {}
   casein_date_select form, obj, attribute, options = {}
   casein_time_select form, obj, attribute, options = {}
   casein_datetime_select form, obj, attribute, options = {}
