@@ -95,7 +95,7 @@ Where:
 
 e.g. a typical scaffolding command might look like:
 
-  rails g casein:scaffold Customer name:string age:integer date_of_birth:date is_male:boolean
+  rails g casein:scaffold Customer name:string age:integer date_of_birth:date has_paid:boolean
 
 By default the scaffold generator expects the model and database migration to already exist. This is because you typically won't want all of your model attributes to be editable in Casein. So you'd set up your model and migration the usual way, then run the Casein scaffold generator just for the appropriate attributes. However, you can add --create-model-and-migration to the generator to also create these files at the same time.
 
