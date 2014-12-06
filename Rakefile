@@ -36,6 +36,8 @@ begin
     gem.add_dependency("will_paginate", ["3.0.7"])
     gem.add_dependency("authlogic", ["3.4.3"])
     gem.add_dependency("scrypt", ["1.2.1"])
+    gem.add_dependency("bootstrap-sass", ["3.3.1"])
+    gem.add_dependency("sass-rails")
     gem.add_dependency("jquery-rails")
   end
 rescue

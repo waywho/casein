@@ -68,13 +68,17 @@ module Casein
 	  
     	"<div class='no-link'>#{contents}</div>".html_safe
     end
+
+    def casein_span_icon icon_name
+        "<span class='glyphicon glyphicon-#{icon_name}' title='#{icon_name.titleize}'></span>"
+    end
 	
   	def casein_show_icon icon_name
-  		"<div class='icon'><span class='glyphicon glyphicon-#{icon_name}'></span></div>".html_safe
+  		"<div class='icon'>#{casein_span_icon icon_name}></div>".html_safe
   	end
 	
   	def casein_show_row_icon icon_name
-      "<div class='iconRow'><span class='glyphicon glyphicon-#{icon_name}'></span></div>".html_safe
+      "<div class='iconRow'>#{casein_span_icon icon_name}></div>".html_safe
   	end
 
     def casein_format_date date, format = "%b %d, %Y"
