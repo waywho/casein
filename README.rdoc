@@ -1,6 +1,6 @@
 =Casein - a lightweight CMS toolkit for Ruby on Rails, based on Bootstrap
 
-** ALL-NEW CASEIN 5.0.0 — featuring new responsive UI based on Bootstrap 3! **
+** ALL-NEW CASEIN 5.1.0 — featuring new responsive UI based on Bootstrap 3! **
 
 Casein is a Rails 4.x gem that provides scaffolding generators and helper functions to quickly create a clean and minimal CRUD interface for your data.
 
@@ -45,7 +45,7 @@ There is no real upgrade path from previous versions of Casein, including v4.x. 
 
 — Add the Casein gem to your Gemfile:
 
-  gem 'casein', '~>5.0.0'
+  gem 'casein', '~>5.1.0'
 
 — Then use bundler to install Casein and its dependencies:
 
