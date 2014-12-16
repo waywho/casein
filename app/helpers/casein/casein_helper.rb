@@ -74,11 +74,11 @@ module Casein
     end
 	
   	def casein_show_icon icon_name
-  		"<div class='icon'>#{casein_span_icon icon_name}></div>".html_safe
+  		"<div class='icon'>#{casein_span_icon icon_name}</div>".html_safe
   	end
 	
   	def casein_show_row_icon icon_name
-      "<div class='iconRow'>#{casein_span_icon icon_name}></div>".html_safe
+      "<div class='iconRow'>#{casein_span_icon icon_name}</div>".html_safe
   	end
 
     def casein_format_date date, format = "%b %d, %Y"
