@@ -17,21 +17,20 @@ This version of Casein is designed for Ruby on Rails 4.x and Ruby 2.x.
 Legacy versions:
 
 Rails 3.x: http://github.com/spoiledmilk/casein3
-
 Rails 2.x: http://github.com/spoiledmilk/casein
 
 ==What’s New in 5.1
 
 Casein 5.1 has the following updates:
 
-* Finally updated to Boostrap 3.3; all bundled Bootstrap files removed in favor of bootstrap-sass gem
+* Finally updated to Boostrap 3.3 (all bundled Bootstrap files removed in favor of bootstrap-sass gem)
 * Rake task to create admin user now takes an optional password
 * Authlogic version bumped to 3.4
 * UI tweaks
 
-Thanks to @bunnymatic for help with this release.
+Thanks to [bunnymatic](https://github.com/bunnymatic) for help with this release.
 
-==What’s Was New in 5.0
+==What Was New in 5.0
 
 * Now based on Bootstrap 3
 * Complete UI overhaul, now mobile-first
