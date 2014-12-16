@@ -1,10 +1,10 @@
 =Casein - a lightweight CMS toolkit for Ruby on Rails, based on Bootstrap
 
-** ALL-NEW CASEIN 5.1.0 — featuring new responsive UI based on Bootstrap 3! **
+** ALL-NEW CASEIN 5.1.0 — featuring new responsive UI based on Bootstrap 3.3! **
 
 Casein is a Rails 4.x gem that provides scaffolding generators and helper functions to quickly create a clean and minimal CRUD interface for your data.
 
-It comes with a pre-rolled user-authentication system, supports user-based timezones, and is mobile-ready.
+It comes with a pre-rolled user-authentication system, supports user-based timezones, and is mobile ready.
 
 As Casein is completely decoupled from the front end, it can be added to new or existing Rails projects, or used as a standalone CMS to drive platforms built on other technologies.
 
@@ -20,15 +20,18 @@ Rails 3.x: http://github.com/spoiledmilk/casein3
 
 Rails 2.x: http://github.com/spoiledmilk/casein
 
-==Disclaimer
+==What’s New in 5.1
 
-Casein was created and is maintained by Russell Quinn. http://www.russellquinn.com
+Casein 5.1 has the following updates:
 
-Casein is available to use under the terms of the MIT License. See the LICENSE file for more details.
+* Finally updated to Boostrap 3.3; all bundled Bootstrap files removed in favor of bootstrap-sass gem
+* Rake task to create admin user now takes an optional password
+* Authlogic version bumped to 3.4
+* UI tweaks
 
-==What’s New
+Thanks to @bunnymatic for help with this release.
 
-Casein 5.x is built for Ruby on Rails 4.x and has the following major updates:
+==What’s Was New in 5.0
 
 * Now based on Bootstrap 3
 * Complete UI overhaul, now mobile-first
@@ -189,8 +192,6 @@ The Casein Rake tasks are all namespaced with ‘casein:’
 
 Casein is now based on Bootstrap (http://getbootstrap.com) and jQuery. Bootstrap offers a wealth of UI components, CSS styles, and JavaScript plugins. See the Bootstrap website for full details.
 
-Note that Casein runs from the shortlived Bootstrap v3.0.0 beta and hasn't yet been updated to Bootstrap v3.1.x. Some of the Bootstrap syntax might be different if you're used to 3.1.x. (Update coming soon!)
-
 ===Changing form elements / other helpers
 
 Casein will insert form elements suitable for the field types you specified in the command line. However, you may wish to customise these, e.g. swap a text field for a password field, swap an integer field for a select dropdown, or swap a date field for a full calendar picker, etc.
@@ -220,6 +221,7 @@ All of the standard Rails form helpers are available, but the Casein versions ar
 For more information on each function, check the app/helpers/casein/casein_helper.rb file within the project. The method parameters are typically the same as the Rails form tag helpers. There are some extra Casein options that can be passed through as part of the options hash:
 
   :casein_label – by default the humanized version of the database field name is used as the label, but this will override it with a string of your choice.
+  :casein_sublabel — add a smaller, clarrifying label to the right of the main label 
   :casein_button_label – available in casein_radio_button and casein_check_box. Used to give individual buttons their labels.
   :casein_truncate - may be passed into casein_table_cell_link along with a maximum length to automatically truncate strings and suffix with '...'
 
@@ -251,12 +253,8 @@ e.g.
 
 Every Casein user can set their own timezone via their profile. To change the default timezone for new users, set config.time_zone in your app.
 
-===Acknowledgements
+==Disclaimer
 
-Casein uses Bootstrap and Glyphicons.
+Casein was created and is maintained by Russell Quinn. http://www.russellquinn.com
 
-Bootstrap is copyright (c) 2014 Twitter and is used under the MIT license. http://getbootstrap.com
-
-Glyphicons is an extensive glyph library created by Jan Kovařík and made available for Bootstrap under the same Apache 2.0 license. http://glyphicons.com
-
-Bootstrap-glyphicons is copyright (c) 2013 Mark Otto and is used under the MIT License. http://glyphicons.getbootstrap.com
+Casein is available to use under the terms of the MIT License. See the LICENSE file for more details.
