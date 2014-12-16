@@ -28,7 +28,7 @@ Casein 5.1 has the following updates:
 * Authlogic version bumped to 3.4
 * UI tweaks
 
-Thanks to [bunnymatic](https://github.com/bunnymatic) for help with this release.
+Thanks to <a href="https://github.com/bunnymatic">bunnymatic</a> for help with this release.
 
 ==What Was New in 5.0
 
