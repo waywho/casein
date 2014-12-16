@@ -28,6 +28,8 @@ Casein 5.1 has the following updates:
 * Authlogic version bumped to 3.4
 * UI tweaks
 
+Version 5.1 should be a drop-in replacement for 5.0.
+
 Thanks to @bunnymatic for help with this release.
 
 ==What Was New in 5.0
@@ -38,8 +40,6 @@ Thanks to @bunnymatic for help with this release.
 * Support for asset pipeline
 * Rails 4 compatibility fixes
 * Many other tweaks and improvements over Casein 3.x and 4.x
-
-There is no real upgrade path from previous versions of Casein, including v4.x. It’s recommended to only use Casein v5.x on new projects.
 
 ==Installation
 
