@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Russell Quinn"]
-  s.date = "2014-12-06"
+  s.date = "2014-12-16"
   s.description = "A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap."
   s.email = "mail@russellquinn.com"
   s.extra_rdoc_files = [
@@ -76,7 +76,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://www.caseincms.com"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.2.2"
+  s.rubygems_version = "2.4.5"
   s.summary = "A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap."
 
   if s.respond_to? :specification_version then
