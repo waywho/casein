@@ -1,45 +1,33 @@
-require 'rake'
-require 'rake/testtask'
-require 'rdoc/task'
-
-desc 'Default: run unit tests.'
-task :default => :test
-
-desc 'Test the Casein gem.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
+begin
+  require 'bundler/setup'
+rescue LoadError
+  puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
 
+require 'rdoc/task'
+
 desc 'Generate documentation for the Casein gem.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
+RDoc::Task.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'Casein'
   rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
+  rdoc.rdoc_files.include('README.rdoc')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
+Bundler::GemHelper.install_tasks
+
 begin
-  require "jeweler"
-  Jeweler::Tasks.new do |gem|
-    gem.name = "casein"
-    gem.summary = "A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap."
-    gem.description = "A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap."
-    gem.files = Dir["Gemfile", "LICENSE", "Rakefile", "README.rdoc", "PUBLIC_VERSION.yml", "{lib}/**/*", "{app}/**/*", "{config}/**/*"]
-    gem.email = "mail@russellquinn.com"
-    gem.authors = ["Russell Quinn"]
-    gem.license = "MIT"
-    gem.homepage = "http://www.caseincms.com"
-    gem.add_dependency("will_paginate", ["3.0.7"])
-    gem.add_dependency("authlogic", ["3.4.3"])
-    gem.add_dependency("scrypt", ["1.2.1"])
-    gem.add_dependency("bootstrap-sass", ["3.3.1"])
-    gem.add_dependency("sass-rails")
-    gem.add_dependency("jquery-rails")
-  end
-rescue
-  puts "Jeweler or one of its dependencies is not installed."
+  APP_RAKEFILE=File.expand_path('../spec/rails_test_app/Rakefile', __FILE__)
+  load 'rails/tasks/engine.rake'
+
+  Bundler::GemHelper.install_tasks
+  Dir[File.join(File.dirname(__FILE__), 'tasks/**/*.rake')].each{|f| load f}
+  require 'rspec/core'
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+rescue LoadError => ex
+  puts "RSpec tasks were unavailable"
+  puts "*** #{ex}"
 end
+
