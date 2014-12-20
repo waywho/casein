@@ -52,7 +52,7 @@ Thanks to @bunnymatic for help with this release.
 — Then use bundler to install Casein and its dependencies:
 
   bundle install
-	
+
 — If you have just created a new project — and don't want to use the default SQLite settings — then remember to add your database details to /config/database.yml at this point.
 
 — To enable Casein notification emails (used for new users and forgotten passwords) then add your SMTP server information to your initializers. For development, you can use something cool like MailCatcher (http://mailcatcher.me)
@@ -60,12 +60,12 @@ Thanks to @bunnymatic for help with this release.
 — Install Casein configuration files into your project. This should not be run more than once without backing up or merging the generated files, as your customisations will be overwritten:
 
   rails g casein:install
-	
+
 — Perform a database migration to create the Casein users table:
- 
+
   rake db:create (if needed)
   rake db:migrate
-	
+
 — Run the following Rake task to set up an initial user. The default username and a random password will be displayed once the task has completed. You should specify your email address and password. (Or omit the password parameter to have a random password assigned.) If you've set up an SMTP server in your Rails environment then you’ll also receive an email notification about the new account.
 
   rake casein:users:create_admin email=you@yourdomain.com [password=your_password]
@@ -158,7 +158,7 @@ Once you have the Casein core installed and configured, and have added support f
 The sidebar in Casein should be used for view specific actions, e.g. "Add user" for users/index, or "Back to list", "Delete user" for users/show.
 
 To specify the contents of the sidebar, you must add a 'content_for :sidebar' block in the relevant view file (index, show, etc.) e.g.:
- 
+
   <%= content_for :sidebar do %>
     <li><%= link_to "#{casein_show_icon('th-list')}Back to list".html_safe, casein_admin_users_path %></li>
   <% end %>
@@ -220,7 +220,7 @@ All of the standard Rails form helpers are available, but the Casein versions ar
 For more information on each function, check the app/helpers/casein/casein_helper.rb file within the project. The method parameters are typically the same as the Rails form tag helpers. There are some extra Casein options that can be passed through as part of the options hash:
 
   :casein_label – by default the humanized version of the database field name is used as the label, but this will override it with a string of your choice.
-  :casein_sublabel — add a smaller, clarrifying label to the right of the main label 
+  :casein_sublabel — add a smaller, clarrifying label to the right of the main label
   :casein_button_label – available in casein_radio_button and casein_check_box. Used to give individual buttons their labels.
   :casein_truncate - may be passed into casein_table_cell_link along with a maximum length to automatically truncate strings and suffix with '...'
 
@@ -251,6 +251,15 @@ e.g.
 ===Default Timezone
 
 Every Casein user can set their own timezone via their profile. To change the default timezone for new users, set config.time_zone in your app.
+
+==Development/Contributing
+
+If you contribute, please help us flesh out the test suites.  Do not include new methods that you cannot test.
+
+To run tests:
+
+    rake app:db:migrate app:db:test:prepare
+    rake spec
 
 ==Disclaimer
 
