@@ -213,24 +213,11 @@ module Casein
   	  form.hidden_field(attribute, strip_casein_options(options)).html_safe
   	end
 
-    def casein_color_field form, obj, attribute, options = {}
-      casein_wrapped_field :color_field, form, obj, attribute, options
-    end
-
     def casein_custom_field form, obj, attribute, custom_contents, options = {}
       casein_form_tag_wrapper(custom_contents, form, obj, attribute, options).html_safe
     end
 
     protected
-
-    def casein_wrapped_field field_helper_method, form, attribute, options
-      clz = field_helper_method.to_s.paramaterize.gsub(/-field$/,'')
-      contents = content_tag 'div', class: clz do
-        form.send(field_helper_method, attribute, strip_casein_options(options))
-      end
-      casein_form_tag_wrapper(contents.html_safe, form, obj, attribute, options).html_safe
-    end
-
 
     def strip_casein_options options
       options.reject {|key, value| key.to_s.include? "casein_" }
