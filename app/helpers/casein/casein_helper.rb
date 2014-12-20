@@ -10,17 +10,16 @@ module Casein
     end
 
 	  def casein_get_version_info
-	    YAML::load_file File.join(File.dirname(__FILE__), '..', '..', '..', 'PUBLIC_VERSION.yml')
+      Casein::VERSION_HASH
 	  end
 
   	def casein_get_full_version_string
-  	  version_info = casein_get_version_info
-  	  "v#{version_info['major']}.#{version_info['minor']}.#{version_info['patch']}.#{version_info['build']}"
+      "v#{Casein::VERSION}"
   	end
 
   	def casein_get_short_version_string
-  	  version_info = casein_get_version_info
-  	  "v#{version_info['major']}"
+      version_info = casein_get_version_info
+  	  "v#{version_info[:major]}"
   	end
 
   	def casein_generate_page_title
