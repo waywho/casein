@@ -7,3 +7,7 @@ pkg/*
 \#*
 *~
 *.orig
+spec/rails_test_app/db/*.sqlite3
+spec/rails_test_app/log/*.log
+spec/rails_test_app/tmp/**/*
+
