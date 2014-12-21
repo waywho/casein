@@ -169,7 +169,8 @@ The casein_show_icon function will display any icon from the Glyphicon collectio
 
 There are several Casein helper functions that are automatically available in any of your Casein extension views.
 
-<i>TODO: These will be documented later. For now, just browse the casein_helper.rb file to see what’s available.</i>
+<i>NOTE: Not all are documented here.  Please browse the casein_helper.rb file to see what’s available that is not listed below.</i>
+
 
 <b>Casein version</b>
 
@@ -216,6 +217,20 @@ All of the standard Rails form helpers are available, but the Casein versions ar
   casein_file_field form, obj, object_name, attribute, options = {}
   casein_hidden_field form, obj, attribute, options = {}
   casein_custom_field form, obj, attribute, custom_contents, options = {}
+  casein_color_field form, obj, attribute, options = nil
+  casein_search_field form, obj, attribute, options = nil
+  casein_telephone_field form, obj, attribute, options = nil
+  casein_url_field form, obj, attribute, options = nil
+  casein_email_field form, obj, attribute, options = nil
+  casein_date_field form, obj, attribute, options = nil
+  casein_datetime_field form, obj, attribute, options = nil
+  casein_datetime_local_field form, obj, attribute, options = nil
+  casein_month_field form, obj, attribute, options = nil
+  casein_week_field form, obj, attribute, options = nil
+  casein_time_field form, obj, attribute, options = nil
+  casein_number_field form, obj, attribute, range, step, options = nil
+  casein_range_field form, obj, attribute, range, options = nil
+
 
 For more information on each function, check the app/helpers/casein/casein_helper.rb file within the project. The method parameters are typically the same as the Rails form tag helpers. There are some extra Casein options that can be passed through as part of the options hash:
 
