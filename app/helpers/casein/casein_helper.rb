@@ -200,7 +200,7 @@ module Casein
 	
   	def casein_file_field form, obj, object_name, attribute, options = {}
   	  class_hash = merged_class_hash(options, 'form-control')
-  	  contents = "<div class='#{class_hash[:class]}'>" + file_field(object_name, attribute, strip_casein_options(options)) + '</div>'
+  	  contents = "<div class='#{class_hash[:class]}'>" + form.file_field(attribute, strip_casein_options(options)) + '</div>'
 
       if options.key? :casein_contents_preview
         contents = options[:casein_contents_preview].html_safe + contents.html_safe
