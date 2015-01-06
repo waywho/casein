@@ -1,6 +1,6 @@
 =Casein - a lightweight CMS toolkit for Ruby on Rails, based on Bootstrap
 
-** ALL-NEW CASEIN 5.1.0 — featuring new responsive UI based on Bootstrap 3.3! **
+** ALL-NEW CASEIN 5.1.1 — featuring new responsive UI based on Bootstrap 3.3! **
 
 Casein is a Rails 4.x gem that provides scaffolding generators and helper functions to quickly create a clean and minimal CRUD interface for your data.
 
@@ -19,20 +19,29 @@ Legacy versions:
 Rails 3.x: http://github.com/spoiledmilk/casein3
 Rails 2.x: http://github.com/spoiledmilk/casein
 
-==What’s New in 5.1
+==What’s New in 5.1.1
 
-Casein 5.1 has the following updates:
+Casein 5.1.1 has the following updates:
+
+* Fixes for Rails 4.2 compatibility
+* Added new Casein helpers for HTML5 form helpers (see “Changing form elements” below)
+* First steps in building a test suite
+* Switched from Jeweler to Bundler for gem distribution
+
+Version 5.1.1 should be a drop-in replacement for 5.1.0
+
+Thanks to @bunnymatic for this release.
+
+==What Was New in 5.1.0
 
 * Finally updated to Boostrap 3.3 (all bundled Bootstrap files removed in favor of bootstrap-sass gem)
 * Rake task to create admin user now takes an optional password
-* Authlogic version bumped to 3.4
+* Authlogic version bumped to 3.4.3
 * UI tweaks
 
-Version 5.1 should be a drop-in replacement for 5.0.
+Version 5.1.0 should be a drop-in replacement for 5.0.0
 
-Thanks to @bunnymatic for help with this release.
-
-==What Was New in 5.0
+==What Was New in 5.0.0
 
 * Now based on Bootstrap 3
 * Complete UI overhaul, now mobile-first
@@ -47,7 +56,7 @@ Thanks to @bunnymatic for help with this release.
 
 — Add the Casein gem to your Gemfile:
 
-  gem 'casein', '~>5.1.0'
+  gem 'casein', '~>5.1.1'
 
 — Then use bundler to install Casein and its dependencies:
 
@@ -267,7 +276,7 @@ e.g.
 
 Every Casein user can set their own timezone via their profile. To change the default timezone for new users, set config.time_zone in your app.
 
-==Development/Contributing
+==Contributing
 
 If you contribute, please help us flesh out the test suites.  Do not include new methods that you cannot test.
 
