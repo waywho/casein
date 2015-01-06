@@ -7,3 +7,5 @@ pkg/*
 \#*
 *~
 *.orig
+Gemfile.lock
+test.log
