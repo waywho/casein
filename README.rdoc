@@ -14,11 +14,6 @@ Screenshots at: http://www.caseincms.com
 
 This version of Casein is designed for Ruby on Rails 4.x and Ruby 2.x.
 
-Legacy versions:
-
-Rails 3.x: http://github.com/spoiledmilk/casein3
-Rails 2.x: http://github.com/spoiledmilk/casein
-
 ==What’s New in 5.1.1
 
 Casein 5.1.1 has the following updates:
