@@ -216,10 +216,84 @@ module Casein
       casein_form_tag_wrapper(custom_contents, form, obj, attribute, options).html_safe
     end
 
+    def casein_color_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :color_field, form, obj, attribute, options
+    end
+
+    def casein_search_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :search_field, form, obj, attribute, options
+    end
+
+    def casein_telephone_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :telephone_field, form, obj, attribute, options
+    end
+
+    def casein_url_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :url_field, form, obj, attribute, options
+    end
+
+    def casein_email_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :email_field, form, obj, attribute, options
+    end
+
+    def casein_date_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :date_field, form, obj, attribute, options
+    end
+
+    def casein_datetime_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :datetime_field, form, obj, attribute, options
+    end
+
+    def casein_datetime_local_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :datetime_local_field, form, obj, attribute, options
+    end
+
+    def casein_month_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :month_field, form, obj, attribute, options
+    end
+
+    def casein_week_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :week_field, form, obj, attribute, options
+    end
+
+    def casein_time_field form, obj, attribute, options = nil
+      options ||= {}
+      casein_wrapped_field :time_field, form, obj, attribute, options
+    end
+
+    def casein_number_field form, obj, attribute, range, step, options = nil
+      options ||= {}
+      casein_wrapped_field :number_field, form, obj, attribute, {in: range, step: step}.merge(options)
+    end
+
+    def casein_range_field form, obj, attribute, range, options = nil
+      options ||= {}
+      casein_wrapped_field :range_field, form, obj, attribute, {in: range}.merge(options)
+    end
+
+
     protected
 
+    def casein_wrapped_field field_helper_method, form, obj, attribute, options
+      clz = "casein-" + field_helper_method.to_s.gsub(/_field$/,'').gsub('_', '-')
+      contents = content_tag 'div', class: clz do
+        form.send(field_helper_method, attribute, strip_casein_options(options))
+      end
+      casein_form_tag_wrapper(contents.html_safe, form, obj, attribute, options).html_safe
+    end
+
     def strip_casein_options options
-      options.reject {|key, value| key.to_s.include? "casein_" }
+      (options || {}).reject {|key, value| key.to_s.include? "casein_" }
     end
 
     def merged_class_hash options, new_class
@@ -238,7 +312,8 @@ module Casein
       options
     end
 
-    def casein_form_tag_wrapper form_tag, form, obj, attribute, options = {}
+    def casein_form_tag_wrapper form_tag, form, obj, attribute, options = nil
+      options ||= {}
       unless options.key? :casein_label
     		human_attribute_name = attribute.to_s.humanize
       else
