@@ -70,7 +70,7 @@ Version 5.1.0 should be a drop-in replacement for 5.0.0
   rake db:create (if needed)
   rake db:migrate
 
-— Run the following Rake task to set up an initial user. The default username and a random password will be displayed once the task has completed. You should specify your email address and password. (Or omit the password parameter to have a random password assigned.) If you've set up an SMTP server in your Rails environment then you’ll also receive an email notification about the new account.
+— Run the following Rake task to set up an initial user. You should specify your email address and password (or omit the password parameter to have a random password assigned.) If you've set up an SMTP server in your Rails environment then you’ll also receive an email notification about the new account.
 
   rake casein:users:create_admin email=you@yourdomain.com [password=your_password]
 
