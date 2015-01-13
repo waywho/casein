@@ -10,7 +10,7 @@ describe Casein::CaseinHelper, type: :helper do
   describe '#casein_get_footer_string' do
     it "builds a form field" do
       expect(helper.casein_get_footer_string false).to include "Running on"
-      expect(helper.casein_get_footer_string false).to have_link "Casein", href: 'http://www.github.com/russellquinn/casein'
+      expect(helper.casein_get_footer_string false).to have_link "Casein", href: 'http://www.caseincms.com'
     end
   end
 
