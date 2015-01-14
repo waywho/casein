@@ -216,71 +216,57 @@ module Casein
       casein_form_tag_wrapper(custom_contents, form, obj, attribute, options).html_safe
     end
 
-    def casein_color_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_color_field form, obj, attribute, options = {}
       casein_wrapped_field :color_field, form, obj, attribute, options
     end
 
-    def casein_search_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_search_field form, obj, attribute, options = {}
       casein_wrapped_field :search_field, form, obj, attribute, options
     end
 
-    def casein_telephone_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_telephone_field form, obj, attribute, options = {}
       casein_wrapped_field :telephone_field, form, obj, attribute, options
     end
 
-    def casein_url_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_url_field form, obj, attribute, options = {}
       casein_wrapped_field :url_field, form, obj, attribute, options
     end
 
-    def casein_email_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_email_field form, obj, attribute, options = {}
       casein_wrapped_field :email_field, form, obj, attribute, options
     end
 
-    def casein_date_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_date_field form, obj, attribute, options = {}
       casein_wrapped_field :date_field, form, obj, attribute, options
     end
 
-    def casein_datetime_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_datetime_field form, obj, attribute, options = {}
       casein_wrapped_field :datetime_field, form, obj, attribute, options
     end
 
-    def casein_datetime_local_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_datetime_local_field form, obj, attribute, options = {}
       casein_wrapped_field :datetime_local_field, form, obj, attribute, options
     end
 
-    def casein_month_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_month_field form, obj, attribute, options = {}
       casein_wrapped_field :month_field, form, obj, attribute, options
     end
 
-    def casein_week_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_week_field form, obj, attribute, options = {}
       casein_wrapped_field :week_field, form, obj, attribute, options
     end
 
-    def casein_time_field form, obj, attribute, options = nil
-      options ||= {}
+    def casein_time_field form, obj, attribute, options = {}
       casein_wrapped_field :time_field, form, obj, attribute, options
     end
 
-    def casein_number_field form, obj, attribute, range, step, options = nil
-      options ||= {}
+    def casein_number_field form, obj, attribute, range, step, options = {}
       casein_wrapped_field :number_field, form, obj, attribute, {in: range, step: step}.merge(options)
     end
 
-    def casein_range_field form, obj, attribute, range, options = nil
-      options ||= {}
+    def casein_range_field form, obj, attribute, range, options = {}
       casein_wrapped_field :range_field, form, obj, attribute, {in: range}.merge(options)
     end
-
 
     protected
 
