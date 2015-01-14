@@ -220,20 +220,24 @@ All of the standard Rails form helpers are available, but the Casein versions ar
   casein_datetime_select form, obj, attribute, options = {}
   casein_file_field form, obj, object_name, attribute, options = {}
   casein_hidden_field form, obj, attribute, options = {}
+  casein_color_field form, obj, attribute, options = {}
+  casein_search_field form, obj, attribute, options = {}
+  casein_telephone_field form, obj, attribute, options = {}
+  casein_url_field form, obj, attribute, options = {}
+  casein_email_field form, obj, attribute, options = {}
+  casein_date_field form, obj, attribute, options = {}
+  casein_datetime_field form, obj, attribute, options = {}
+  casein_datetime_local_field form, obj, attribute, options = {}
+  casein_month_field form, obj, attribute, options = {}
+  casein_week_field form, obj, attribute, options = {}
+  casein_time_field form, obj, attribute, options = {}
+  casein_number_field form, obj, attribute, range, step, options = {}
+  casein_range_field form, obj, attribute, range, options = {}
+
+
+You can also add custom contents:
+
   casein_custom_field form, obj, attribute, custom_contents, options = {}
-  casein_color_field form, obj, attribute, options = nil
-  casein_search_field form, obj, attribute, options = nil
-  casein_telephone_field form, obj, attribute, options = nil
-  casein_url_field form, obj, attribute, options = nil
-  casein_email_field form, obj, attribute, options = nil
-  casein_date_field form, obj, attribute, options = nil
-  casein_datetime_field form, obj, attribute, options = nil
-  casein_datetime_local_field form, obj, attribute, options = nil
-  casein_month_field form, obj, attribute, options = nil
-  casein_week_field form, obj, attribute, options = nil
-  casein_time_field form, obj, attribute, options = nil
-  casein_number_field form, obj, attribute, range, step, options = nil
-  casein_range_field form, obj, attribute, range, options = nil
 
 
 For more information on each function, check the app/helpers/casein/casein_helper.rb file within the project. The method parameters are typically the same as the Rails form tag helpers. There are some extra Casein options that can be passed through as part of the options hash:

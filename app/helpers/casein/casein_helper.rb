@@ -212,10 +212,6 @@ module Casein
   	  form.hidden_field(attribute, strip_casein_options(options)).html_safe
   	end
 
-    def casein_custom_field form, obj, attribute, custom_contents, options = {}
-      casein_form_tag_wrapper(custom_contents, form, obj, attribute, options).html_safe
-    end
-
     def casein_color_field form, obj, attribute, options = {}
       casein_wrapped_field :color_field, form, obj, attribute, options
     end
@@ -268,12 +264,16 @@ module Casein
       casein_wrapped_field :range_field, form, obj, attribute, {in: range}.merge(options)
     end
 
+    def casein_custom_field form, obj, attribute, custom_contents, options = {}
+      casein_form_tag_wrapper(custom_contents, form, obj, attribute, options).html_safe
+    end
+
     protected
 
     def casein_wrapped_field field_helper_method, form, obj, attribute, options
       clz = "casein-" + field_helper_method.to_s.gsub(/_field$/,'').gsub('_', '-')
       contents = content_tag 'div', class: clz do
-        form.send(field_helper_method, attribute, strip_casein_options(options))
+        form.send(field_helper_method, attribute, strip_casein_options(options), merged_class_hash(options, 'form-control'))
       end
       casein_form_tag_wrapper(contents.html_safe, form, obj, attribute, options).html_safe
     end
