@@ -231,8 +231,8 @@ All of the standard Rails form helpers are available, but the Casein versions ar
   casein_month_field form, obj, attribute, options = {}
   casein_week_field form, obj, attribute, options = {}
   casein_time_field form, obj, attribute, options = {}
-  casein_number_field form, obj, attribute, range, step, options = {}
-  casein_range_field form, obj, attribute, range, options = {}
+  casein_number_field form, obj, attribute, options = {}
+  casein_range_field form, obj, attribute, options = {}
 
 
 You can also add custom contents:
