@@ -27,9 +27,9 @@ Gem::Specification.new do |s|
   s.add_dependency "bootstrap-sass", "= 3.3.1"
   s.add_dependency "sass-rails", '>= 0'
   s.add_dependency "jquery-rails", '>= 0'
-  s.add_dependency "rspec", "~> 3.0"
-  s.add_dependency "rspec-rails", ">= 0"
-  s.add_dependency "capybara-rails", ">= 0"
-    
+
+  s.add_development_dependency "rspec", "~> 3.0"
+  s.add_development_dependency "rspec-rails", ">= 0"
+  s.add_development_dependency "capybara-rails", ">= 0"  
   s.add_development_dependency "sqlite3", '>= 0'
 end
