@@ -220,6 +220,9 @@ All of the standard Rails form helpers are available, but the Casein versions ar
   casein_datetime_select form, obj, attribute, options = {}
   casein_file_field form, obj, object_name, attribute, options = {}
   casein_hidden_field form, obj, attribute, options = {}
+
+Casein also supports the newer HTML5 form helpers:
+
   casein_color_field form, obj, attribute, options = {}
   casein_search_field form, obj, attribute, options = {}
   casein_telephone_field form, obj, attribute, options = {}
@@ -235,7 +238,7 @@ All of the standard Rails form helpers are available, but the Casein versions ar
   casein_range_field form, obj, attribute, options = {}
 
 
-You can also add custom contents:
+You can even insert custom content directly into the Casein field UI chrome:
 
   casein_custom_field form, obj, attribute, custom_contents, options = {}
 
