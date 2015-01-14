@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "casein"
   s.version     = Casein::VERSION
   s.authors     = ["Russell Quinn"]
-  s.date        = "2015-01-06"
+  s.date        = "2015-01-13"
   s.description = "A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap."
   s.summary     = "A lightweight CMS toolkit for Ruby on Rails, based on Bootstrap."
   s.email       = ["mail@russellquinn.com"]
