@@ -12,7 +12,8 @@ module Casein
 
     acts_as_authentic do |c|
         c.validate_email_field = false
-        c.crypto_provider = Authlogic::CryptoProviders::Sha512
+        c.transition_from_crypto_providers = [Authlogic::CryptoProviders::Sha512]
+        c.crypto_provider = Authlogic::CryptoProviders::SCrypt
     end
 
     attr_accessor :notify_of_new_password
