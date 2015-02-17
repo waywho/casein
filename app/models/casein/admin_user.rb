@@ -10,8 +10,11 @@ module Casein
       self.to_s.gsub("::", "_").tableize
     end
 
-    acts_as_authentic { |c| c.validate_email_field = false }
-	 
+    acts_as_authentic do |c|
+        c.validate_email_field = false
+        c.crypto_provider = Authlogic::CryptoProviders::Sha512
+    end
+
     attr_accessor :notify_of_new_password
 	 
     after_create :send_create_notification
