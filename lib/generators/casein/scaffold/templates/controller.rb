@@ -9,7 +9,7 @@ module Casein
   <% unless @no_index %>
     def index
       @casein_page_title = '<%= plural_name.humanize.capitalize %>'
-  		@<%= plural_name %> = <%= class_name %>.order(sort_order(:<%= attributes[0].name %>)).paginate :page => params[:page]
+      @<%= plural_name %> = <%= class_name %>.order(sort_order(:<%= attributes[0].name %>)).paginate :page => params[:page]
     end
   <% end %>
     def show
@@ -19,7 +19,7 @@ module Casein
   <% unless @read_only %>
     def new
       @casein_page_title = 'Add a new <%= singular_name.humanize.downcase %>'
-    	@<%= singular_name %> = <%= class_name %>.new
+      @<%= singular_name %> = <%= class_name %>.new
     end
 
     def create
@@ -67,6 +67,6 @@ module Casein
       def <%= singular_name %>_params
         params.require(:<%= singular_name %>).permit(<%= permit_list %>)
       end
-<% end %>
+  <% end %>
   end
 end
