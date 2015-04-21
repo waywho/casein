@@ -268,7 +268,7 @@ Help is set on a page by adding a content_for block to a view:
 
 ===Routes
 
-Casein adds the routes for the scaffolded models to the top of your application’s routes.rb file. It also adds default routes for basic Casein functionality <b>after</b> your application’s routes. If you have a catch-all style route defined, then these defaults won’t be run. You can solve this be using Rails’ constraint feature and the supplied Casein::RouteConstraint, which will stop your catch-all from matching if the request is for a Casein resource.
+Casein adds the routes for the scaffolded models to the top of your application’s routes.rb file. It also adds default routes for basic Casein functionality <b>after</b> your application’s routes. If you have a catch-all style route defined, then these defaults won’t be run. You can solve this using Rails’ constraint feature and the supplied Casein::RouteConstraint, which will stop your catch-all from matching if the request is for a Casein resource.
 
 e.g.
 
