@@ -1,7 +1,7 @@
 class CaseinCreateAdminUsers < ActiveRecord::Migration
   
   def self.up
-    create_table :casein_admin_users do |t|   
+    create_table :casein_admin_users do |t|
       t.string    :login, :null => false
       t.string    :name
       t.string    :email
