@@ -74,6 +74,8 @@ Version 5.1.0 should be a drop-in replacement for 5.0.0
 
   rake casein:users:create_admin email=you@yourdomain.com [password=your_password]
 
+(square brackets indicate an optional parameter, do not include)
+
 — Run your app! (rebooting the web server if applicable)
 
 — You can access Casein at http://yourdomain.com/casein or http://yourdomain.com/admin
@@ -93,6 +95,8 @@ Casein has a scaffolding generator to automatically create all the CRUD views an
 The command to run the scaffolding generator is:
 
   rails g casein:scaffold ModelName [field:type, field:type]
+
+(square brackets indicate an optional parameter, do not include)
 
 Where:
 
