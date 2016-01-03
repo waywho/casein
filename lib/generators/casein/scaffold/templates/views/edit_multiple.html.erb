@@ -3,7 +3,7 @@
 
 <%%= form_tag update_multiple_casein_<%= plural_name %>_path, defaults: { input_html: { :class => 'multiple-edit' } } do %>	
 
-<table class="table table-striped table-hover table-condensed">
+	<table class="table table-striped table-hover table-condensed">
 	<thead>
 		<tr>
 			<% for attribute in attributes %><th><%%= casein_sort_link "<%= attribute.name.humanize %>", :<%= attribute.name %> %></th>
@@ -12,7 +12,7 @@
 	</thead>
 	
 	<%% @<%= plural_name %>.each do |<%= singular_name %>| %>
-	<%%= simple_fields_for '<%= plural_name %>[]', <%= singular_name %> do |f| %>
+		<%%= simple_fields_for '<%= plural_name %>[]', <%= singular_name %> do |f| %>
 		<tr>
 			<% attributes.each do |attribute| %>
 			<td><%%= casein_table_cell_link <%= singular_name %>.<%= attribute.name %>, casein_<%= singular_name %>_path(<%= singular_name %>) %></td>
@@ -22,13 +22,13 @@
 		</tr>
 		<%% end %>
 	<%% end %>
-</table>
+	</table>
 
-<p class="submits">
+	<p class="submits">
 	<%%= link_to 'Cancel', casein_<%= plural_name %>_path, :class => 'btn btn-mini btn-default' %>
 	<%%= submit_tag "Save changes", :class => "btn btn-mini btn-primary" %>
 	</p>
-	<%% end %>	
+<%% end %>	
 
 <%= content_for :sidebar do %>
 
