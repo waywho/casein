@@ -3,7 +3,7 @@
 <h2><%= plural_name.humanize.capitalize %><%%= casein_pagination_details @<%= plural_name %> %></h2>
 
 <%%= render :partial => 'casein/<%= plural_name %>/table', :locals => { :<%= plural_name %> => @<%= plural_name %> } %>
-<%= render :partial => 'casein/layouts/multi_btns' %>
+<%%= render :partial => 'casein/layouts/multi_btns' %>
 
 <div class="text-center">
 	<%%= will_paginate @<%= plural_name %> %>
