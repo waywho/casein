@@ -94,6 +94,9 @@ module Casein
     def destroy
 
       @<%= singular_name %>.destroy
+      @<%= singular_name %>.photos.each do |photo|
+        photo.update_attributes(imageable_id: nil, imageable_type: nil)
+      end
       flash[:notice] = '<%= singular_name.humanize.capitalize %> has been deleted. #{undo_link}"'
       redirect_to casein_<%= @plural_route %>_path
     end
