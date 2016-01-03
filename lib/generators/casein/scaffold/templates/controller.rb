@@ -2,7 +2,7 @@
 
 module Casein
   class <%= class_name.pluralize %>Controller < Casein::CaseinController
-  
+    before_filter :load_<%= singular_name %>, :only => [:show, :update, :destroy]
     ## optional filters for defining usage according to Casein::AdminUser access_levels
     # before_filter :needs_admin, :except => [:action1, :action2]
     # before_filter :needs_admin_or_current_user, :only => [:action1, :action2]
@@ -14,7 +14,6 @@ module Casein
   <% end %>
     def show
       @casein_page_title = 'View <%= singular_name.humanize.downcase %>'
-      @<%= singular_name %> = <%= class_name %>.find params[:id]
     end
   <% unless @read_only %>
     def new
@@ -37,22 +36,65 @@ module Casein
     def update
       @casein_page_title = 'Update <%= singular_name.humanize.downcase %>'
       
-      @<%= singular_name %> = <%= class_name %>.find params[:id]
+      respond_to do |format|
+          if params[:submit]
+            @<%= singular_name %>.submit!
+          elsif params[:approve]
+            @<%= singular_name %>.approve!
+          elsif params[:reject]
+            @<%= singular_name %>.reject!
+          elsif params[:publish]
+            @<%= singular_name %>.publish!
+          elsif params[:unpublish]
+            @<%= singular_name %>.unpublish!
+          end
+
+        if @<%= singular_name %>.update_attributes <%= singular_name %>_params
+        
+          format.html { redirect_to casein_<%= singular_route %>_path(@<%= singular_name %>), notice: "<%= singular_name.humanize.capitalize %> has been updated. #{undo_link}" }
+          format.js
+        else
+          flash.now[:warning] = 'There were problems when trying to update this <%= singular_name.humanize.downcase %>'
+          render :action => :show
+        end
+     end
+    end
     
-      if @<%= singular_name %>.update_attributes <%= singular_name %>_params
-        flash[:notice] = '<%= singular_name.humanize.capitalize %> has been updated'
-        redirect_to casein_<%= @plural_route %>_path
+    def edit_multiple
+      @<%= plural_name %> = <%= class_name %>.where(id: <%= singular_name %>_params[:<%= singular_name %>_ids])
+
+      if params[:edit]
+        render "<%= plural_name %>/edit_multiple"
+      elsif params[:unpublish]
+        @<%= plural_name %>.each do |<%= singular_name %>|
+          <%= singular_name %>.unpublish! if <%= singular_name %>.published?
+        end
+        redirect_to casein_<%= plural_name %>_path
+      elsif params[:publish]
+        @<%= plural_name %>.each do |<%= singular_name %>|
+          <%= singular_name %>.publish! if !<%= singular_name %>.published?
+        end
+          redirect_to casein_<%= plural_name %>_path
+      elsif params[:delete]
+          @<%= plural_name %>.destroy_all
+          redirect_to casein_<%= plural_name %>_path
+      end
+    end
+
+    def update_multiple
+     @<%= plural_name %> = <%= class_name %>.friendly.update(params[:<%= plural_name %>].keys, params[:<%= plural_name %>].values)
+      @<%= plural_name %>.reject! { |<%= singular_name %>| <%= singular_name %>.errors.empty? }
+      if @<%= plural_name %>.empty?
+        redirect_to casein_<%= plural_name %>_path
       else
-        flash.now[:warning] = 'There were problems when trying to update this <%= singular_name.humanize.downcase %>'
-        render :action => :show
+        render "<%= plural_name %>/edit_multiple"
       end
     end
  
     def destroy
-      @<%= singular_name %> = <%= class_name %>.find params[:id]
 
       @<%= singular_name %>.destroy
-      flash[:notice] = '<%= singular_name.humanize.capitalize %> has been deleted'
+      flash[:notice] = '<%= singular_name.humanize.capitalize %> has been deleted. #{undo_link}"'
       redirect_to casein_<%= @plural_route %>_path
     end
   
@@ -66,6 +108,14 @@ module Casein
       %>
       def <%= singular_name %>_params
         params.require(:<%= singular_name %>).permit(<%= permit_list %>)
+      end
+      
+      def undo_link
+        view_context.link_to("undo", revert_version_path(@<%= singular_name %>.versions.last), :method => :post).html_safe
+      end
+      
+      def load_<%= singular_name %>
+        @<%= singular_name %> = <%= class_name %>.friendly.find params[:id]
       end
   <% end %>
   end
