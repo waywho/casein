@@ -51,7 +51,7 @@ module Casein
 
         if @<%= singular_name %>.update_attributes <%= singular_name %>_params
         
-          format.html { redirect_to casein_<%= singular_route %>_path(@<%= singular_name %>), notice: "<%= singular_name.humanize.capitalize %> has been updated. #{undo_link}" }
+          format.html { redirect_to casein_<%= singular_name %>_path(@<%= singular_name %>), notice: "<%= singular_name.humanize.capitalize %> has been updated. #{undo_link}" }
           format.js
         else
           flash.now[:warning] = 'There were problems when trying to update this <%= singular_name.humanize.downcase %>'
