@@ -28,6 +28,8 @@ module Casein
       template 'views/new.html.erb', "app/views/casein/#{plural_name}/new.html.erb" unless @read_only
       template 'views/_form.html.erb', "app/views/casein/#{plural_name}/_form.html.erb"
       template 'views/_table.html.erb', "app/views/casein/#{plural_name}/_table.html.erb"
+      template 'views/edit_multiple.html.erb', "app/views/casein/#{plural_name}/edit_multiple.htmle.erb"
+      template 'views/update.js.erb', "app/views/casein/#{plural_name}/update.js.erb"
       
       add_namespace_to_routes
       add_to_routes
