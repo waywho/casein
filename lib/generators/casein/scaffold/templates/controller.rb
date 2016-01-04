@@ -38,6 +38,8 @@ module Casein
       
       respond_to do |format|
           if params[:submit]
+        if @<%= singular_name %>.update_attributes <%= singular_name %>_params
+          
             @<%= singular_name %>.submit!
           elsif params[:approve]
             @<%= singular_name %>.approve!
@@ -48,8 +50,6 @@ module Casein
           elsif params[:unpublish]
             @<%= singular_name %>.unpublish!
           end
-
-        if @<%= singular_name %>.update_attributes <%= singular_name %>_params
         
           format.html { redirect_to casein_<%= singular_name %>_path(@<%= singular_name %>), notice: "<%= singular_name.humanize.capitalize %> has been updated. #{undo_link}" }
           format.js
