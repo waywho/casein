@@ -15,7 +15,7 @@
 		<%%= simple_fields_for '<%= plural_name %>[]', <%= singular_name %> do |f| %>
 		<tr>
 			<% attributes.each do |attribute| %>
-			<td><%%= casein_table_cell_link <%= singular_name %>.<%= attribute.name %>, casein_<%= singular_name %>_path(<%= singular_name %>) %></td>
+			<td><%%= f.input :<%= attribute.name %>, label: false %></td>
 			<% end %><% unless @read_only %><td class="delete">
 				<%%= link_to(casein_show_row_icon("trash"), casein_<%= singular_name %>_path(<%= singular_name %>), :method => :delete, :data => { :confirm => "Are you sure you want to delete this <%= singular_name.humanize.downcase %>?" }) %>
 			</td><% end %>
