@@ -10,12 +10,23 @@ module Casein
     def index
       @casein_page_title = '<%= plural_name.humanize.capitalize %>'
       @<%= plural_name %> = <%= class_name %>.order(sort_order(:<%= attributes[0].name %>)).paginate :page => params[:page]
+      respond_to do |format|
+        format.html
+        format.csv { send_data @<%= plural_name %>.to_csv, filename: "<%= plural_name %>-#{Date.today}.csv"}
+        format.xlsx
+      end
     end
   <% end %>
     def show
       @casein_page_title = 'View <%= singular_name.humanize.downcase %>'
     end
   <% unless @read_only %>
+    def import
+      <%= singular_name.humanize.capitalize %>.import(params[:file])
+      flash[:notice] = 'File has been imported'
+      redirect_to casein_<%= @plural_route %>_path
+    end
+
     def new
       @casein_page_title = 'Add a new <%= singular_name.humanize.downcase %>'
       @<%= singular_name %> = <%= class_name %>.new
@@ -94,9 +105,6 @@ module Casein
     def destroy
 
       @<%= singular_name %>.destroy
-      @<%= singular_name %>.photos.each do |photo|
-        photo.update_attributes(imageable_id: nil, imageable_type: nil)
-      end
       flash[:notice] = '<%= singular_name.humanize.capitalize %> has been deleted. #{undo_link}"'
       redirect_to casein_<%= @plural_route %>_path
     end
