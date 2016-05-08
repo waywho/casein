@@ -39,39 +39,34 @@
             </div>
           </li>
 
-<!--           <div class="container">
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav"> -->
-                <%= render :partial => '/casein/layouts/tab_navigation' %>
-<!--               </ul>
-            </div>
-          </div> -->
+          <%= render :partial => '/casein/layouts/tab_navigation' %>
+
         </ul>
       </nav>
 
       <div id="page-content-wrapper">
         <div class="container-fluid">
-          <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
-                  <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                </a>
-          <% if @session_user != nil %>
             <div class="container-fluid">
-              <div id="user-info">
-                <ul>
-                  <li class="hidden-xs hidden-sm">Hello <%= @session_user.name %></li>
-                  <li class="hidden-xs hidden-sm"><%= Time.zone.name %></li>
-                  <li><%= link_to 'Profile', casein_admin_user_path(@session_user) %></li>
+              <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+                      <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    </a>
+              <% if @session_user != nil %>
+                  <div id="user-info">
+                    <ul>
+                      <li class="hidden-xs hidden-sm">Hello <%= @session_user.name %></li>
+                      <li class="hidden-xs hidden-sm"><%= Time.zone.name %></li>
+                      <li><%= link_to 'Profile', casein_admin_user_path(@session_user) %></li>
 
-                  <% if @session_user.is_admin? %>
-                    <li><%= link_to 'Users', casein_admin_users_path %></li>
-                  <% end %>
+                      <% if @session_user.is_admin? %>
+                        <li><%= link_to 'Users', casein_admin_users_path %></li>
+                      <% end %>
 
-                  <%= render :partial => '/casein/layouts/top_navigation' %>
-                  <li class="last-item signout"><%= link_to 'Sign out', casein_admin_user_session_path, :method => :delete %></li>
-                </ul>
-              </div>
+                      <%= render :partial => '/casein/layouts/top_navigation' %>
+                      <li class="last-item signout"><%= link_to 'Sign out', casein_admin_user_session_path, :method => :delete %></li>
+                    </ul>
+                  </div>
+              <% end %>
             </div>
-          <% end %>
           <div id="content">
             <div class="row">
               <% if content_for?(:sidebar) %>
