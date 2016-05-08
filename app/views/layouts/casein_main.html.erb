@@ -51,7 +51,7 @@
                       <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
                     </a>
               <% if @session_user != nil %>
-                  <div id="user-info">
+                  <div id="user-info" class="pull-right">
                     <ul>
                       <li class="hidden-xs hidden-sm">Hello <%= @session_user.name %></li>
                       <li class="hidden-xs hidden-sm"><%= Time.zone.name %></li>
@@ -67,6 +67,7 @@
                   </div>
               <% end %>
             </div>
+          <br />
           <div id="content">
             <div class="row">
               <% if content_for?(:sidebar) %>
