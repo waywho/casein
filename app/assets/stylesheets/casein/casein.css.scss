@@ -1,6 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'casein-bootstrap-overrides';
+@import 'simple-sidebar';
 
 /* CASEIN LAYOUT */
 
@@ -38,6 +39,7 @@
 	font-size: 12px;
 	padding-top: 10px;
 	height: auto;
+	display: inline-block;
 }
 
 #user-info ul {
@@ -254,4 +256,8 @@ label.control-label small {
 		width: 14%;
 	margin-bottom: 0px;
 	}
+}
+
+input.index-check {
+	margin: 15px 2px 15px 10px;
 }
